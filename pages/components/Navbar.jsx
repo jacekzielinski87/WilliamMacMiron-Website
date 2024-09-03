@@ -12,36 +12,34 @@ const Navbar = () => {
 
 return (
     <>
-    <div className=''>
-    <div className='bg-gray-700 flex justify-between p-2 m-20 w-[1750px] h-[60px]'>
+    <div className='flex justify-around items-center bg-gray-600 p-2 w-screen rounded-xl'>
         <div>
             <GiHamburgerMenu size={40} />
         </div>
-        <div>
-            <SearchBar/>
-        </div>
+        
         <div>
             <TfiMenuAlt size={40} />
         </div>
     </div>
-    <div className=''>
-    <div className='bg-gray-700 p-2 m-20 absolute bottom-0 w-[1750px] h-[60px]'>
-        <div className='flex justify-between items-center'>
         <div>
-            <FaInfo size={40} />
+            <SearchBar/>
+        </div>
+   
+    <div className='bg-gray-600 absolute bottom-0 w-full rounded-xl'>
+        <div className='flex justify-around p-2 items-center'>
+        <div className=''>
+            <FaInfo size={40} className='flex' />
         </div>
         <div>
             <MdLocalParking size={40} />
         </div>
         </div>
     </div>
-    </div>
+    <div className=''>
     <div className='flex justify-center items-center'>
-    <div className='flex justify-center'>
-            <Image src={Logo} className='p-6 absolute bottom-14' alt='william mac miron logo'/>
+            <Image src={Logo} className='absolute bottom-0 rounded-xl' alt='william mac miron logo'/>
     </div>
     </div>
-   </div>
     </>
     
   )
