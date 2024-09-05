@@ -25,8 +25,8 @@ return (
             <SearchBar/>
         </div>
    
-    <div className='bg-gray-600 absolute bottom-0 w-full rounded-xl'>
-        <div className='flex justify-around p-2 items-center'>
+    <div className=' bg-gray-600 fixed bottom-0 w-full rounded-xl'>
+        <div className='flex justify-around items center p-2'>
         <div className=''>
             <FaInfo size={40} className='flex' />
         </div>
@@ -37,7 +37,7 @@ return (
     </div>
     <div className=''>
     <div className='flex justify-center items-center'>
-            <Image src={Logo} className='absolute bottom-0 rounded-xl' alt='william mac miron logo'/>
+            <Image src={Logo} className='fixed bottom-0 rounded-2xl' alt='william mac miron logo'/>
     </div>
     </div>
     </>
