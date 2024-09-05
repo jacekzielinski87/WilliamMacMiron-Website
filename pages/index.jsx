@@ -16,8 +16,7 @@ export default function Home() {
     </Head>
     <Navbar/>
     <AlcoholItem/>
-    <AlcoholItem/>
     <Footer/>
-    </>
+  </>
   );
 }
