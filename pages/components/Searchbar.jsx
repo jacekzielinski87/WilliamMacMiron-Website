@@ -13,7 +13,7 @@ function SearchBar({ onSearch }) {
 
   return (
     <div className='flex justify-center items-center relative bottom-12'>
-      <input className='bg-gray-500 w-[750px] h-[40px] border-2 rounded-2xl border-black p-2 outline-none flex justify-center items-center'
+      <input className='bg-slate-100 w-[750px] h-[40px] border-2 rounded-2xl border-black p-2 outline-none flex justify-center items-center'
         type="text"
         value={query}
         onChange={handleInputChange}

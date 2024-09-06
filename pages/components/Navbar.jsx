@@ -12,33 +12,28 @@ const Navbar = () => {
 
 return (
     <>
-    <div className='flex justify-around items-center bg-gray-600 p-2 w-full rounded-xl'>
-        <div>
-            <GiHamburgerMenu size={40} />
+    <div className='flex justify-between items-center bg-gray-600/20 p-2 w-2/3 m-auto rounded-xl border-2 border-black'>
+        <div className='cursor-pointer'>
+            <GiHamburgerMenu size={40}/>
         </div>
-        
-        <div>
-            <TfiMenuAlt size={40} />
+        <div className='cursor-pointer'>
+            <TfiMenuAlt size={40}/>
         </div>
     </div>
         <div>
             <SearchBar/>
         </div>
    
-    <div className=' bg-gray-600 fixed bottom-0 w-full rounded-xl'>
-        <div className='flex justify-around items center p-2'>
+    <div className='flex justify-between items-center fixed bottom-0 left-80 bg-gray-600/20 w-2/3 mx-auto rounded-xl border-2 border-black'>
+       <div className='cursor-pointer'>
+            <FaInfo size={40}/>
+        </div>
         <div className=''>
-            <FaInfo size={40} className='flex' />
+            <Image src={Logo} className='rounded-2xl border-4 border-gray-400/90 h-[60px] w-[60px]' alt='william mac miron logo'/>
         </div>
-        <div>
-            <MdLocalParking size={40} />
+        <div className='cursor-pointer'>
+            <MdLocalParking size={40}/>
         </div>
-        </div>
-    </div>
-    <div className=''>
-    <div className='flex justify-center items-center'>
-            <Image src={Logo} className='fixed bottom-0 rounded-2xl border-4 border-gray-600 h-[60px] w-[60px]' alt='william mac miron logo'/>
-    </div>
     </div>
     </>
     

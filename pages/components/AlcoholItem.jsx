@@ -6,7 +6,7 @@ const AlcoholItem = () => {
   return (
     <>
     <div className='flex justify-center items-center m-4 p-4'>
-    <div className='bg-[#747774] h-[400px] font-bold border-2 border-gray-300 shadow-2xl rounded-lg shadow-slate-500'>
+    <div className='bg-gray-400/90 h-[400px] border-2 rounded-xl border-black shadow-2xl shadow-slate-700'>
       <li className='p-2 ml-3'>Maccalan 1926 Fine & Rare, '263. 60Y0, 1986, 42.60%</li>
       <div className=' flex justify-start ml-4'>
         <Image src={Thumbail} className='w-[200px] h-[200px] my-6 shadow-xl shadow-gray-900' alt="Thumbail of Alkohol"/>
@@ -22,7 +22,7 @@ const AlcoholItem = () => {
     </div>
     </div>
     <div className='flex justify-center items-center m-2 p-4'>
-    <div className='bg-[#747774] h-[400px] font-bold border-2 border-gray-300 shadow-2xl rounded-lg shadow-slate-500'>
+    <div className='bg-gray-400/90 h-[400px] border-2 rounded-xl border-black shadow-2xl shadow-slate-500'>
       <li className='p-2 ml-3'>Maccalan 1926 Fine & Rare, '263. 60Y0, 1986, 42.60%</li>
       <div className='flex justify-start ml-4'>
         <Image src={Thumbail} className='w-[200px] h-[200px] my-6 shadow-xl shadow-gray-900' alt="Thumbail of Alkohol"/>
