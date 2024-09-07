@@ -5,7 +5,7 @@ import Image from 'next/image';
 const AlcoholItem = () => {
   return (
     <>
-    <div className='bg-slate-100 w-2/3 ml-80 rounded-xl mb-12'>
+    <div className='bg-slate-100 w-2/3 ml-80'>
     <div className='flex justify-center items-center m-4 p-3'>
     <div className='bg-gray-400/90 h-[400px] border-2 rounded-xl border-black shadow-2xl shadow-slate-700'>
       <li className='p-2 ml-3'>Maccalan 1926 Fine & Rare, '263. 60Y0, 1986, 42.60%</li>

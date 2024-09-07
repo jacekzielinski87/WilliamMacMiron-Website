@@ -2,6 +2,7 @@ import Head from "next/head";
 import Navbar from "./components/Navbar";
 import AlcoholItem from "./components/AlcoholItem";
 import Footer from "./components/Footer";
+import WelcomeMessage from "./components/WelcomeMessage";
 
 
 
@@ -15,8 +16,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
     </Head>
     <Navbar/>
+    <WelcomeMessage/>
     <AlcoholItem/>
-    <Footer/>
+    
   </>
   );
 }
