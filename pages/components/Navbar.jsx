@@ -12,7 +12,7 @@ const Navbar = () => {
 
 return (
     <>
-    <div className='flex justify-between items-center bg-gray-600/20 p-2 w-2/3 m-auto rounded-xl border-2 border-black'>
+    <div className='flex justify-between items-center bg-gray-300 p-2 w-2/3 m-auto rounded-xl border-2 border-black'>
         <div className='cursor-pointer'>
             <GiHamburgerMenu size={40}/>
         </div>
@@ -24,7 +24,7 @@ return (
             <SearchBar/>
         </div>
    
-    <div className='flex justify-between items-center fixed bottom-0 left-80 bg-gray-600/20 w-2/3 mx-auto rounded-xl border-2 border-black'>
+    <div className='flex justify-between items-center fixed bottom-0 left-80 bg-gray-300 w-2/3 mx-auto rounded-xl border-2 border-black'>
        <div className='cursor-pointer'>
             <FaInfo size={40}/>
         </div>
