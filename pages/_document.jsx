@@ -5,8 +5,8 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <body className="bg-gray-400">
-      <Main />
+      <body className="bg-[#FFFFFF]">
+      <Main/>
       <NextScript />
       </body>
     </Html>

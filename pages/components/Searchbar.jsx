@@ -12,8 +12,8 @@ function SearchBar({ onSearch }) {
   };
 
   return (
-    <div className=' text-black'>
-      <input className='bg-gray-400 border-2 rounded-2xl border-black p-2 outline-none flex justify-center items-center'
+    <div className=' text-black flex justify-center items-center'>
+      <input className='bg-[#FFFFFF] border-2 rounded-2xl border-black p-2 outline-none w-[1200px] h-[25px]'
         type="text"
         value={query}
         onChange={handleInputChange}
