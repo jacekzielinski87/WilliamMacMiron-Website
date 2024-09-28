@@ -11,19 +11,24 @@ const NavbarDown = () => {
     }
     
     return (
-        <nav className="bg-[#C8C8C8] p-4 flex border-4 border-black absolute bottom-0 w-full ">
-          <div className="container mx-auto ">
-           <ul className="flex justify-between items-center">
-              <li className=''>
-                <FaInfo size={40}/>
-            </li>
-             <li>
-                <MdLocalParking size={40} />
-            </li>
-            </ul>
+      <>
+        <div className="bg-[#C8C8C8] p-4  border-4 border-black absolute bottom-0 left-0 w-[900px] rounded-2xl ">
+        <div className="container mx-auto flex justify-around items-center ">
+          <div className="">
+            <FaInfo size={40}/>
           </div>
-        </nav>
-      );
+        </div>
+        </div>
+            
+        <div className="bg-[#C8C8C8] p-4 border-4 border-black  absolute bottom-0 right-0 w-[900px] rounded-2xl ">
+        <div className="container mx-auto flex justify-around items-center ">
+          <div className=''>
+              <MdLocalParking size={40} className='items-end'/>
+          </div>
+        </div>
+        </div>
+        </>
+        );
     };
     
     export default NavbarDown;
