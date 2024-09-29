@@ -12,11 +12,11 @@ const NavbarDown = () => {
     
     return (
       <>
-        <div className="bg-[#C8C8C8] p-4  border-2 border-black absolute bottom-0 w-full rounded-2xl">
+        <div className="bg-[#C8C8C8] p-3  border-2 border-black absolute bottom-0 w-full rounded-2xl">
         <div className="">
-          <div className="flex justify-between">
-            <FaInfo size={40}/>
-            <MdLocalParking size={40}/>
+          <div className="flex justify-around">
+            <FaInfo size={40} className='cursor-pointer'/>
+            <MdLocalParking size={40} className='cursor-pointer'/>
           </div>
         </div>
         </div>
