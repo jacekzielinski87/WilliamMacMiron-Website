@@ -11,14 +11,15 @@ const NavBar = () => {
         <div className="">
           <div className="flex justify-evenly items-center">
             <LuMenu size={40} className='cursor-pointer'/>
-            <div className='flex justify-center items-center'>
-              <SearchBar/>
-            </div>
-            
             <TfiMenuAlt size={40} className='cursor-pointer'/>
           </div>
         </div>
     </div>
+          <div className='flex justify-center'>
+            <div className='absolute top-4 cursor-pointer'>
+            <SearchBar/>
+            </div>
+          </div>
     </>
   );
 };
