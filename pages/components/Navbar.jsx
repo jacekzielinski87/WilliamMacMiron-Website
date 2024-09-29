@@ -6,19 +6,17 @@ import { TfiMenuAlt } from "react-icons/tfi";
 
 const NavBar = () => {
   return (
-    <nav className="bg-[#C8C8C8] p-4 border-4 border-black rounded-2xl ">
-      <div className="container m-auto ">
-       <div className="flex justify-around items-center">
-          <div className='flex justify-around items-center'>
+    <>
+    <div className="bg-[#C8C8C8] p-4  border-2 border-black w-full rounded-2xl ">
+        <div className="">
+          <div className="flex justify-between items-center">
             <LuMenu size={40}/>
-          </div>
             <SearchBar/>
-          <div>
-            <TfiMenuAlt size={40} />
+            <TfiMenuAlt size={40}/>
           </div>
         </div>
-      </div>
-    </nav>
+    </div>
+    </>
   );
 };
 
