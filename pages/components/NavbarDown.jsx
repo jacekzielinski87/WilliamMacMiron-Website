@@ -14,7 +14,7 @@ const NavbarDown = () => {
       <>
         <div className="bg-[#C8C8C8] p-3  border-2 border-black absolute bottom-0 w-full rounded-2xl">
         <div className="">
-          <div className="flex justify-around">
+          <div className="flex justify-evenly">
             <FaInfo size={40} className='cursor-pointer'/>
             <MdLocalParking size={40} className='cursor-pointer'/>
           </div>
