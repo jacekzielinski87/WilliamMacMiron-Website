@@ -10,7 +10,7 @@ const WelcomeMessage = () => {
       </h1>
       
       <p className='text-xl text-black font-serif text-center leading-relaxed '>
-      Welcome to William McMiron, where whiskey isn't just a drink—it’s a journey.
+        Welcome to William McMiron, where whiskey isn't just a drink—it’s a journey.
         <br className='hidden md:block' />
         Explore the world of fine whiskey with us, from rich, smoky single malts to smooth, caramel-kissed bourbons. <br/>Whether you’re a seasoned connoisseur or just beginning your journey, our carefully curated selection, expert insights, and tasting guides are here to help you savor every drop.
         <br className='hidden md:block' />
