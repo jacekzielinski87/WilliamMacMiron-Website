@@ -1,46 +1,63 @@
 import React from 'react';
-import Thumbail from '../../public/assets/cask.jpeg';
+import Thumbnail from '../../public/assets/cask.jpeg';
 import Image from 'next/image';
 
-const AlcoholItem = () => {
-  return (
-    <>
-    <div className='bg-slate-100'>
-    <div className='flex justify-center items-center m-1 p-3'>
-    <div className='bg-gray-400/90 w-[1200px] h-[360px] border-2 rounded-xl border-black shadow-2xl shadow-slate-700'>
-      <li className='p-2 ml-3'>Maccalan 1926 Fine & Rare, '263. 60Y0, 1986, 42.60%</li>
-      <div className=' flex justify-start ml-4'>
-        <Image src={Thumbail} className='w-[200px] h-[200px] my-6 shadow-xl shadow-gray-900' alt="Thumbail of Alkohol"/>
-        <div className='grid gap-4 decoration-solid ml-6 p-4'>
-          <li>Rating: 94/100</li>
-          <li>Aroma:94/100, sweet, slighlty spicy, raisins, plum, white pwpper, white chocolate,<br/> pineapple, apple, apricot, toffi, cocoa, oak, and mowed grass.</li>
-          <li>Taste:95/100, delicate, sweet, slightly bitter, grape, pluum, raisins,<br/> marzipan, dark honey, white chocolate, aloe, oak, and cactus.</li>
-          <li>Finish:94/100, long, slighlty spicy, plum, cherry dark bitter chocolate,<br/> krówka, white pepper, mint, nut, blackcurrant, allspice, and old oak<br/></li>
-          <li>(WHISKY) - Whisky/Whiskey: 94-96- Great</li>
-          <li>Intensity from 1 to 3</li>
-        </div>
-      </div>
-    </div>
-    </div>
-    <div className='flex justify-center items-center m-1 p-3'>
-    <div className='bg-gray-400/90 w-[1200px] h-[360px] border-2 rounded-xl border-black shadow-2xl shadow-slate-500'>
-      <li className='p-2 ml-3'>Maccalan 1926 Fine & Rare, '263. 60Y0, 1986, 42.60%</li>
-      <div className='flex justify-start ml-4'>
-        <Image src={Thumbail} className='w-[200px] h-[200px] my-6 shadow-xl shadow-gray-900' alt="Thumbail of Alkohol"/>
-        <div className='grid gap-4 decoration-solid ml-6 p-4'>
-          <li>Rating: 94/100</li>
-          <li>Aroma:94/100, sweet, slighlty spicy, raisins, plum, white pwpper, white chocolate,<br/> pineapple, apple, apricot, toffi, cocoa, oak, and mowed grass.</li>
-          <li>Taste:95/100, delicate, sweet, slightly bitter, grape, pluum, raisins,<br/> marzipan, dark honey, white chocolate, aloe, oak, and cactus.</li>
-          <li>Finish:94/100, long, slighlty spicy, plum, cherry dark bitter chocolate,<br/> krówka, white pepper, mint, nut, blackcurrant, allspice, and old oak<br/></li>
-          <li>(WHISKY) - Whisky/Whiskey: 94-96- Great</li>
-          <li>Intensity from 1 to 3</li>
-        </div>
-      </div>
-    </div>
-    </div>
-    </div>
-    </>
-  )
-}
+const WhiskyCard = ({ data }) => {
+  if (!data) return null;
 
-export default AlcoholItem
+  return (
+    <div className='flex justify-center items-center m-1 p-3'>
+      <div className='bg-gray-400/90 w-[1200px] h-[360px] border-2 rounded-xl border-black shadow-2xl shadow-slate-700'>
+        <ul className='list-none'>
+          <li className='p-2 ml-3'>{data.name}</li>
+        </ul>
+        <div className='flex justify-start ml-4'>
+          <Image 
+            src={data.image || Thumbnail} 
+            className='w-[200px] h-[200px] my-6 shadow-xl shadow-gray-900' 
+            alt={`Thumbnail of ${data.name}`}
+          />
+          <ul className='grid gap-4 decoration-solid ml-6 p-4'>
+            <li>Rating: {data.rating}/100</li>
+            <li>Aroma: {data.aroma.score}/100, {data.aroma.description}</li>
+            <li>Taste: {data.taste.score}/100, {data.taste.description}</li>
+            <li>Finish: {data.finish.score}/100, {data.finish.description}</li>
+            <li>Whisky/Whiskey: {data.rating}-{data.rating + 2} - {data.ratingText}</li>
+            <li>Intensity: {data.intensity}/3</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const AlcoholItem = () => {
+  const sampleWhisky = {
+    name: "Macallan 1926 Fine & Rare, '263. 60Y0, 1986, 42.60%",
+    image: Thumbnail,
+    rating: 94,
+    ratingText: "Great",
+    intensity: 2,
+    aroma: {
+      score: 94,
+      description: "sweet, slightly spicy, raisins, plum, white pepper, white chocolate, pineapple, apple, apricot, toffee, cocoa, oak, and mowed grass"
+    },
+    taste: {
+      score: 95,
+      description: "delicate, sweet, slightly bitter, grape, plum, raisins, marzipan, dark honey, white chocolate, aloe, oak, and cactus"
+    },
+    finish: {
+      score: 94,
+      description: "long, slightly spicy, plum, cherry dark bitter chocolate, krówka, white pepper, mint, nut, blackcurrant, allspice, and old oak"
+    }
+  };
+
+  return (
+    <div className='bg-slate-100'>
+      <WhiskyCard data={sampleWhisky} />
+      <WhiskyCard data={sampleWhisky} />
+    </div>
+  );
+};
+
+export default AlcoholItem;

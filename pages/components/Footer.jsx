@@ -1,20 +1,21 @@
-import React from 'react'
-import SocialMedia from './SocialMedia'
+import React from 'react';
+import SocialMedia from './SocialMedia';
 
 const Footer = () => {
   return (
-    <>
-    <div className='flex justify-center my-7'>
-    <div className='shadow-2xl shadow-slate-700 text-black rounded-xl flex justify-center items-center text-2xl w-1/3 h-[200px] bg-slate-200/90 border-2 border-black'>
-      <SocialMedia/>
-    </div>
-    </div>
-    <div className='flex justify-center items-end relative right-4 text-white w-[330px] h-[100px] m-2 text-sm font-bold '>
-      <p className=''>All right reserved @ William MacMiron 2024</p>
-    </div>
-    
-    </>
-  )
-}
+    <footer className='flex flex-col items-center'>
+      <div className='flex justify-center my-7'>
+        <div className='shadow-2xl shadow-slate-700 text-black rounded-xl 
+                        flex justify-center text-2xl 
+                         bg-slate-200/90 border-2'>
+          <SocialMedia />
+        </div>
+      </div>
+      <div className='text-black text-sm font-bold mb-4'>
+        <p>&copy; {new Date().getFullYear()} William MacMiron. All rights reserved.</p>
+      </div>
+    </footer>
+  );
+};
 
-export default Footer
+export default Footer;
