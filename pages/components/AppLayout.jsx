@@ -12,12 +12,12 @@ const AppLayout = ({ children }) => {
       
       <div className="flex">
         {/* Left Sidebar */}
-        <aside className="w-64 min-h-screen bg-[#0a0a0a] fixed left-0 top-0 pt-[120px]">
+        <aside className="w-64 min-h-screen bg-[#000000] fixed left-0 top-0 pt-[120px] opacity-35">
           {/* Add your sidebar content here */}
         </aside>
 
         {/* Right Sidebar */}
-        <aside className="w-64 min-h-screen bg-[#0a0a0a] fixed right-0 top-0 pt-[120px]">
+        <aside className="w-64 min-h-screen bg-[#0a0a0a] fixed right-0 top-0 pt-[120px] opacity-35">
           {/* Add your sidebar content here */}
         </aside>
 
