@@ -22,7 +22,7 @@ const NavbarDown = () => {
             <FaInfo size={50} className='cursor-pointer'/>
           </Link>
           <Link 
-            href="/components/Partners"
+            href="/components/Others"
             className={`transition-colors ${
               router.pathname === '/components/Partners' 
                 ? 'text-orange-500' 
