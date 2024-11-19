@@ -1,6 +1,6 @@
 import React from 'react';
 import SearchBar from './Searchbar';
-import { BiSolidDrink } from "react-icons/bi";
+import { TfiMenu } from "react-icons/tfi";
 import { TfiMenuAlt } from "react-icons/tfi";
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -10,25 +10,25 @@ const NavBar = () => {
 
   return (
     <>
-      <div className="bg-[#C8C8C8] p-3 border-2 border-black rounded-2xl">
+      <div className="bg-[#C8C8C8] p-4 border-2 border-black rounded-2xl mx-auto w-[1200px]">
         <ul className="">
-          <li className="flex justify-evenly items-center">
+          <li className="flex justify-around items-center">
             <Link 
               href="/components/Alcohols"
               className={`transition-colors ${
                 router.pathname === '/components/Alcohols' 
                   ? 'text-orange-500' 
-                  : 'text-black hover:text-slate-500'
+                  : 'text-black hover:text-slate-600'
               }`}
             >
-              <BiSolidDrink size={50} className='cursor-pointer'/>
+              <TfiMenu size={50} className='cursor-pointer'/>
             </Link>
             <Link 
-              href="/components/Partners"
+              href="/components/Others"
               className={`transition-colors ${
                 router.pathname === '/components/Others' 
                   ? 'text-orange-500' 
-                  : 'text-black hover:text-slate-500'
+                  : 'text-black hover:text-slate-600'
               }`}
             >
               <TfiMenuAlt size={50} className='cursor-pointer'/>

@@ -8,25 +8,25 @@ const NavbarDown = () => {
   const router = useRouter();
 
   return (
-    <div className="bg-[#C8C8C8] p-3 border-2 border-black absolute bottom-0 w-full rounded-2xl">
+    <div className="bg-[#C8C8C8] p-4 border-2 border-black relative top-56 rounded-2xl w-[1200px] mx-auto">
       <ul className="">
-        <li className="flex justify-evenly w-full">
+        <li className="flex justify-around w-full">
           <Link 
             href="/components/Informations"
             className={`transition-colors ${
               router.pathname === '/components/Informations' 
                 ? 'text-orange-500' 
-                : 'text-black hover:text-slate-500'
+                : 'text-black hover:text-slate-600'
             }`}
           >
             <FaInfo size={50} className='cursor-pointer'/>
           </Link>
           <Link 
-            href="/components/Others"
+            href="/components/Partners"
             className={`transition-colors ${
               router.pathname === '/components/Partners' 
                 ? 'text-orange-500' 
-                : 'text-black hover:text-slate-500'
+                : 'text-black hover:text-slate-600'
             }`}
           >
             <MdLocalParking size={50} className='cursor-pointer'/>
