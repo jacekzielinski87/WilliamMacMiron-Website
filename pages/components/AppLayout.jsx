@@ -2,22 +2,35 @@ import React from 'react';
 import Navbar from './Navbar';
 import NavbarDown from './NavbarDown';
 import WelcomeMessage from './WelcomeMessage';
+import AlcoholItem from './AlcoholItem';
 
 const AppLayout = ({ children }) => {
+  // Sample data for AlcoholItem
+  const sampleData = {
+    name: "Sample Whiskey",
+    rating: 85,
+    aroma: { score: 88, description: "Rich and complex" },
+    taste: { score: 86, description: "Smooth and balanced" },
+    finish: { score: 84, description: "Long lasting" },
+    ratingText: "Excellent",
+    intensity: 2
+  };
+
   return (
     <div className="min-h-screen">
       <Navbar />
-      <WelcomeMessage/>
+      <WelcomeMessage />
+      <AlcoholItem data={sampleData} /> {/* Added sample data */}
       <NavbarDown />
       
       <div className="flex items-center">
         {/* Left Sidebar */}
-        <aside className="w-[351px] min-h-screen bg-[#000000] fixed left-0 top-0 pt-[90px] ">
+        <aside className="w-48 min-h-screen bg-[#000000] fixed left-0 top-0 pt-[90px] opacity-45">
           {/* Add your sidebar content here */}
         </aside>
 
         {/* Right Sidebar */}
-        <aside className="w-[351px] min-h-screen bg-[#0a0a0a] fixed right-0 top-0 pt-[90px] ">
+        <aside className="w-48 min-h-screen bg-[#0a0a0a] fixed right-0 top-0 pt-[90px] opacity-45">
           {/* Add your sidebar content here */}
         </aside>
 

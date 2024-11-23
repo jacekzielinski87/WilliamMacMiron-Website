@@ -8,7 +8,7 @@ const NavbarDown = () => {
   const router = useRouter();
 
   return (
-    <div className="bg-[#C8C8C8] p-4 border-2 border-black relative top-56 rounded-2xl w-[1200px] mx-auto">
+    <div className="bg-[#C8C8C8] p-4 border-2 border-black fixed bottom-0 left-80 rounded-2xl w-[1200px]">
       <ul className="">
         <li className="flex justify-around w-full">
           <Link 
