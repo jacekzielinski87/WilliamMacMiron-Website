@@ -10,7 +10,7 @@ const NavBar = () => {
 
   return (
     <>
-      <div className="bg-[#C8C8C8] p-4 border-2 border-black rounded-2xl mx-auto w-[1200px] fixed top-0 left-80">
+      <div className="bg-[#C8C8C8] p-4 border-2 border-black rounded-b-2xl mx-auto w-[1200px] fixed top-0 left-80">
         <ul className="">
           <li className="flex justify-around items-center">
             <Link 
@@ -36,11 +36,7 @@ const NavBar = () => {
           </li>
         </ul>
       </div>
-      <div className='flex justify-center'>
-        <div className='absolute top-4 cursor-pointer'>
-          <SearchBar/>
-        </div>
-      </div>
+      <SearchBar />
     </>
   );
 };

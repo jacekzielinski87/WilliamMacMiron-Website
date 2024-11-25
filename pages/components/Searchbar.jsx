@@ -1,27 +1,24 @@
 import React, { useState } from 'react';
 
-function SearchBar({ onSearch }) {
+const SearchBar = () => {
   const [query, setQuery] = useState('');
 
   const handleInputChange = (e) => {
     setQuery(e.target.value);
   };
 
-  const handleSearch = () => {
-    onSearch(query);
-  };
-
   return (
-    <div className=' text-black flex justify-center items-center m-1'>
-      <input className='bg-[#FFFFFF] border-2 rounded-2xl border-black p-2 outline-none h-[40px] w-[500px] fixed top-6 left-auto'
+    <div className='flex justify-center items-center w-full'>
+      <input 
+        className='bg-[#FFFFFF] border-2 rounded-2xl border-black p-2 outline-none 
+                  h-[40px] w-[500px] fixed top-6 left-[920px] transform -translate-x-1/2'
         type="text"
         value={query}
         onChange={handleInputChange}
-        placeholder=""
+        placeholder="Search..."
       />
-      <button onClick={handleSearch} ></button>
     </div>
   );
-}
+};
 
 export default SearchBar;
