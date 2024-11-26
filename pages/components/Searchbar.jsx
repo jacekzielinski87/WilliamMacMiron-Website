@@ -11,7 +11,7 @@ const SearchBar = () => {
     <div className='flex justify-center items-center w-full'>
       <input 
         className='bg-[#FFFFFF] border-2 rounded-2xl border-black p-2 outline-none 
-                  h-[40px] w-[500px] fixed top-6 left-[920px] transform -translate-x-1/2'
+                  h-[30px] w-[500px] fixed top-7 left-[952px] transform -translate-x-1/2 z-10'
         type="text"
         value={query}
         onChange={handleInputChange}

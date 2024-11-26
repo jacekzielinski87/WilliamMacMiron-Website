@@ -50,7 +50,7 @@ const AlcoholItem = () => {
     <div className='flex flex-col gap-6 mx-auto my-24'>
       {mortlachData.map((whiskey, index) => (
         <div key={index} className='flex justify-center items-center m-1 p-2 w-1/2 mx-auto'>
-          <div className='bg-gray-300/90 w-[1200px] h-[360px] border-2 rounded-2xl border-black shadow-2xl shadow-slate-700 relative'>
+          <div className='bg-[#C8c8c8] w-[1200px] h-[360px] border-2 rounded-2xl border-black shadow-2xl shadow-slate-700 relative'>
             <ul className='list-none '>
               <li className='p-3 ml-3 font-serif text-sm font-bold'>
                 {whiskey.name}

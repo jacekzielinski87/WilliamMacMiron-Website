@@ -24,12 +24,12 @@ const AppLayout = ({ children }) => {
       
       <div className="flex items-center">
         {/* Left Sidebar */}
-        <aside className="w-48 min-h-screen bg-[#000000] fixed left-0 top-0 pt-[90px] opacity-45">
+        <aside className="w-80 min-h-screen bg-[#8d8d8d] fixed left-0 top-0 pt-[90px] ">
           {/* Add your sidebar content here */}
         </aside>
 
         {/* Right Sidebar */}
-        <aside className="w-48 min-h-screen bg-[#0a0a0a] fixed right-0 top-0 pt-[90px] opacity-45">
+        <aside className="w-80 min-h-screen bg-[#8d8d8d] fixed right-0 top-0 pt-[90px] ">
           {/* Add your sidebar content here */}
         </aside>
 
