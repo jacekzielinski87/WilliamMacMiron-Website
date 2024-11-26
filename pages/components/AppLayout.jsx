@@ -19,7 +19,6 @@ const AppLayout = ({ children }) => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <AlcoholItem data={sampleData} /> {/* Added sample data */}
       <NavbarDown />
       
       <div className="flex items-center">

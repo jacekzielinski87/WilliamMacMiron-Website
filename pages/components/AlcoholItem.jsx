@@ -4,7 +4,7 @@ import Mortlach75 from '../../public/assets/MORTLA2.PNG';
 import Raiting from '../../public/assets/Raiting1.png';
 import Image from 'next/image';
 
-const AlcoholItem = () => {
+const AlcoholItem = ({ searchQuery = '' }) => {
   const renderIntensityLevel = (level) => {
     return "•".repeat(level);
   };
@@ -46,9 +46,29 @@ const AlcoholItem = () => {
     }
   ];
 
+  const filteredData = searchQuery
+    ? mortlachData.filter(whiskey => {
+        const query = searchQuery.toLowerCase();
+        return (
+          whiskey.name.toLowerCase().includes(query) ||
+          whiskey.aroma.notes.toLowerCase().includes(query) ||
+          whiskey.taste.notes.toLowerCase().includes(query) ||
+          whiskey.finish.notes.toLowerCase().includes(query)
+        );
+      })
+    : mortlachData;
+
+  if (searchQuery && filteredData.length === 0) {
+    return (
+      <div className="text-center mt-24">
+        <p className="text-gray-500">No whiskies found matching your search.</p>
+      </div>
+    );
+  }
+
   return (
     <div className='flex flex-col gap-6 mx-auto my-24'>
-      {mortlachData.map((whiskey, index) => (
+      {filteredData.map((whiskey, index) => (
         <div key={index} className='flex justify-center items-center m-1 p-2 w-1/2 mx-auto'>
           <div className='bg-[#C8c8c8] w-[1200px] h-[360px] border-2 rounded-2xl border-black shadow-2xl shadow-slate-700 relative'>
             <ul className='list-none '>
@@ -62,7 +82,6 @@ const AlcoholItem = () => {
                 className='w-[200px] h-[200px] my-6 shadow-xl shadow-gray-900 ' 
                 alt={`Thumbnail of ${whiskey.name}`}
               />
-              {/* Rating Note */}
               <div className='absolute top-10 left-40'>
                 <Image 
                   src={Raiting}
@@ -73,11 +92,11 @@ const AlcoholItem = () => {
                   priority
                 />
                 <span className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-xl font-bold'>
-                  {whiskey.rating}
+                  {whiskey.aroma.score}
                 </span>
               </div>
               <ul className='grid gap-4 decoration-solid ml-6 p-6 font-serif text-sm font-bold'>
-                <li>Rating: {whiskey.rating}/100, (61-100)</li>
+                <li>Rating: {whiskey.aroma.score}/100, (61-100)</li>
                 <li>
                   Aroma: {whiskey.aroma.score}/100, {whiskey.aroma.notes}
                 </li>
