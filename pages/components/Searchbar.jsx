@@ -4,80 +4,108 @@ import Mortlach75 from '../../public/assets/MORTLA2.PNG';
 import Raiting from '../../public/assets/Raiting1.png';
 import Image from 'next/image';
 
+const mortlachData = [
+  {
+    name: "Mortlach 70 Year Old Generations '2656 (1938) (2008) (Gordon and MacPhail) (46.10% ABV)",
+    image: Mortlach70,
+    aroma: {
+      score: 91,
+      notes: "sweet², flowers³, tobacco², kiwi¹, orange¹, plum¹, black tea¹, aloe¹, clove¹, tangerine¹, nut¹"
+    },
+    taste: {
+      score: 90,
+      notes: "bitter¹, warming¹, smoky², walnut², black tea², clove¹, mandarin¹, butter¹, tobacco¹, salt¹, pear¹"
+    },
+    finish: {
+      score: 90,
+      notes: "long², bitter³, smoky², wood², unripe apple², cinnamon², black pepper¹, mushrooms¹, onion¹"
+    },
+    intensity: 2
+  },
+  {
+    name: "Mortlach 75 Year Old Generations '2475 (1939) (2015) (Gordon and MacPhail) (44.40% ABV)",
+    image: Mortlach75,
+    aroma: {
+      score: 95,
+      notes: "sweet², smoky², tangerine³, blueberry², oak², grass², cocoa¹, gooseberry¹, straw¹, earth¹, mint¹, pomegranate¹, bay leaf¹"
+    },
+    taste: {
+      score: 94,
+      notes: "sweet², bitter¹, slightly spicy², red grapefruit², mango², coconut¹, green pepper¹, mirabelle plum¹, tobacco¹, passion fruit¹"
+    },
+    finish: {
+      score: 95,
+      notes: "long³, sweet², slightly spicy², honey³, nut³, pineapple², plum¹, aloe¹, leather¹, vanilla¹, salt¹, wood¹, anise¹, coffee¹, yeast¹, bread¹, salt¹"
+    },
+    intensity: 3
+  }
+];
+
 const SearchBar = () => {
   const [query, setQuery] = useState('');
+  const [showSuggestions, setShowSuggestions] = useState(false);
   const [showResults, setShowResults] = useState(false);
+  const [selectedWhisky, setSelectedWhisky] = useState('');
 
   const handleInputChange = (e) => {
     const value = e.target.value;
     setQuery(value);
-    setShowResults(value.length > 0);
+    setShowSuggestions(value.length >= 1);
+    setShowResults(false);
+  };
+
+  const handleSuggestionClick = (suggestion) => {
+    setSelectedWhisky(suggestion);
+    setShowSuggestions(false);
+    setShowResults(true);
+    setQuery('');
+  };
+
+  const getSuggestions = () => {
+    if (query.length < 1) return [];
+    
+    return mortlachData.filter(whisky => 
+      whisky.name.toLowerCase().startsWith(query.toLowerCase())
+    ).map(whisky => whisky.name);
   };
 
   return (
     <>
-      <div className='flex justify-center items-center w-full'>
+      <div className='flex flex-col items-center w-full relative'>
         <input 
           className='bg-[#FFFFFF] border-2 rounded-2xl border-black p-2 outline-none 
                     h-[30px] w-[500px] fixed top-7 left-[952px] transform -translate-x-1/2 z-10'
           type="text"
           value={query}
           onChange={handleInputChange}
-          placeholder="Search whisky..."
+          placeholder="Type first letters of whisky name..."
         />
+        
+        {showSuggestions && query.length >= 1 && (
+          <div className='fixed top-16 left-[952px] transform -translate-x-1/2 w-[500px] 
+                         bg-white border border-gray-300 rounded-lg shadow-lg z-20'>
+            {getSuggestions().map((suggestion, index) => (
+              <div
+                key={index}
+                className='p-2 hover:bg-gray-100 cursor-pointer'
+                onClick={() => handleSuggestionClick(suggestion)}
+              >
+                {suggestion}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
-      {showResults && <SearchResults query={query} />}
+
+      {showResults && <SearchResults query={selectedWhisky} />}
     </>
   );
 };
 
 const SearchResults = ({ query }) => {
-  const mortlachData = [
-    {
-      name: "Mortlach 70 Year Old Generations '2656 (1938) (2008) (Gordon and MacPhail) (46.10% ABV)",
-      image: Mortlach70,
-      aroma: {
-        score: 91,
-        notes: "sweet², flowers³, tobacco², kiwi¹, orange¹, plum¹, black tea¹, aloe¹, clove¹, tangerine¹, nut¹"
-      },
-      taste: {
-        score: 90,
-        notes: "bitter¹, warming¹, smoky², walnut², black tea², clove¹, mandarin¹, butter¹, tobacco¹, salt¹, pear¹"
-      },
-      finish: {
-        score: 90,
-        notes: "long², bitter³, smoky², wood², unripe apple², cinnamon², black pepper¹, mushrooms¹, onion¹"
-      },
-      intensity: 2
-    },
-    {
-      name: "Mortlach 75 Year Old Generations '2475 (1939) (2015) (Gordon and MacPhail) (44.40% ABV)",
-      image: Mortlach75,
-      aroma: {
-        score: 95,
-        notes: "sweet², smoky², tangerine³, blueberry², oak², grass², cocoa¹, gooseberry¹, straw¹, earth¹, mint¹, pomegranate¹, bay leaf¹"
-      },
-      taste: {
-        score: 94,
-        notes: "sweet², bitter¹, slightly spicy², red grapefruit², mango², coconut¹, green pepper¹, mirabelle plum¹, tobacco¹, passion fruit¹"
-      },
-      finish: {
-        score: 95,
-        notes: "long³, sweet², slightly spicy², honey³, nut³, pineapple², plum¹, aloe¹, leather¹, vanilla¹, salt¹, wood¹, anise¹, coffee¹, yeast¹, bread¹, salt¹"
-      },
-      intensity: 3
-    }
-  ];
-
-  const filteredWhiskies = mortlachData.filter(whisky => {
-    const searchQuery = query.toLowerCase();
-    return (
-      whisky.name.toLowerCase().includes(searchQuery) ||
-      whisky.aroma.notes.toLowerCase().includes(searchQuery) ||
-      whisky.taste.notes.toLowerCase().includes(searchQuery) ||
-      whisky.finish.notes.toLowerCase().includes(searchQuery)
-    );
-  });
+  const filteredWhiskies = mortlachData.filter(whisky => 
+    whisky.name.toLowerCase().startsWith(query.toLowerCase())
+  );
 
   if (filteredWhiskies.length === 0) {
     return (
@@ -113,11 +141,10 @@ const SearchResults = ({ query }) => {
                   priority
                 />
                 <span className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-xl font-bold'>
-                  {whiskey.rating}
                 </span>
               </div>
               <ul className='grid gap-4 decoration-solid ml-6 p-6 font-serif text-sm font-bold'>
-                <li>Rating: {whiskey.rating}/100, (61-100)</li>
+                <li>Rating: {whiskey.aroma.score}/100, (61-100)</li>
                 <li>
                   Aroma: {whiskey.aroma.score}/100, {whiskey.aroma.notes}
                 </li>

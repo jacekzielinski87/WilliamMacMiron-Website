@@ -1,8 +1,9 @@
 import React from 'react';
 import Navbar from './Navbar';
-import NavbarDown from './NavbarDown';
+import NavbarLeft from './NavbarLeft';
+import NavbarRight from './NavbarRight';
 import WelcomeMessage from './WelcomeMessage';
-import AlcoholItem from './AlcoholItem';
+
 
 const AppLayout = ({ children }) => {
   // Sample data for AlcoholItem
@@ -19,7 +20,9 @@ const AppLayout = ({ children }) => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <NavbarDown />
+      <WelcomeMessage/>
+      <NavbarLeft />
+      <NavbarRight />
       
       <div className="flex items-center">
         {/* Left Sidebar */}

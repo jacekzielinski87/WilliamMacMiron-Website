@@ -1,9 +1,12 @@
 import React from 'react';
 import Logo from '../../public/assets/partners.jpg';
 import Image from 'next/image';
+import BackButton from './BackButton';
 
 const Partners = () => {
   return (
+    <>
+    <BackButton />
     <div className='flex flex-col items-center m-8'>
       <h1 className='text-4xl font-serif text-black mb-6 text-center'>
         <b>Our Partners</b>
@@ -33,6 +36,7 @@ const Partners = () => {
         </p>
       </div>
     </div>
+    </>
   );
 };
 

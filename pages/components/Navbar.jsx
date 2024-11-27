@@ -10,7 +10,7 @@ const NavBar = () => {
 
   return (
     <>
-      <div className="bg-[#C8c8c8] p-4 border-2 border-black rounded-b-3xl mx-auto w-[1264px] fixed top-0 left-80 z-10">
+      <div className="bg-[#C8c8c8] p-4 border-2 border-black rounded-b-3xl mx-auto w-[1280px] fixed top-0 left-80 z-10 shadow-xl">
         <ul className="">
           <li className="flex justify-around items-center">
             <Link 

@@ -1,4 +1,5 @@
 import React from 'react';
+import BackButton from './BackButton';
 
 const Alcohols = () => {
   const whiskeyTypes = [
@@ -29,6 +30,8 @@ const Alcohols = () => {
   ];
 
   return (
+    <>
+    <BackButton />
     <div className='flex flex-col items-center m-8'>
       <h1 className='text-4xl font-serif text-black mb-6 text-center'>
         Whiskey Types Guide
@@ -86,6 +89,7 @@ const Alcohols = () => {
         </p>
       </div>
     </div>
+    </>
   );
 };
 

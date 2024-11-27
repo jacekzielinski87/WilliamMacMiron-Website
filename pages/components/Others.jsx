@@ -1,7 +1,10 @@
 import React from 'react';
+import BackButton from './BackButton';
 
 const Others = () => {
   return (
+    <>
+    <BackButton />
     <div className='flex flex-col items-center m-8'>
       <h1 className='text-4xl font-serif text-black mb-6 text-center'>
         <b>Additional Services & Information</b>
@@ -76,6 +79,7 @@ const Others = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

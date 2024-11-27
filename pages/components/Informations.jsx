@@ -1,7 +1,10 @@
 import React from 'react';
+import BackButton from './BackButton';
 
 const Informations = () => {
   return (
+    <>
+    <BackButton />
     <div className='flex flex-col items-center m-8'>
       <h1 className='text-4xl font-serif text-black mb-6 text-center'>
         <b>Information Center</b>
@@ -56,6 +59,7 @@ const Informations = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
