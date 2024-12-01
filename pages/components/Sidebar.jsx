@@ -1,30 +1,28 @@
-import Link from "next/link";
+// components/Sidebar.js
+import React from "react";
 
-const Sidebar = () => {
+const Sidebar = ({ onMenuClick }) => {
   const menuItems = [
-    { name: "Dashboard", href: "/admin" },
-    { name: "Users", href: "/admin/users" },
-    { name: "Settings", href: "/admin/settings" },
-    // Add more items as needed
+    { name: "Dashboard", href: "dashboard" },
+    { name: "Users", href: "users" },
+    { name: "Settings", href: "settings" },
   ];
 
   return (
-    <div className="h-screen w-20 bg-gray-800 text-white flex flex-col">
-      <div className="p-4 text-lg font-bold border-b border-gray-700">
+    <div className="h-screen w-64 bg-[#c8c8c8] text-white flex flex-col">
+      <div className="p-4 text-lg font-bold border-b border-gray-400 text-black">
         Admin Panel
       </div>
-      <nav className="mt-4 flex flex-col space-y-2">
-        {menuItems
-          .filter((item) => item.href) // Skip invalid items
-          .map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className="px-4 py-2 hover:bg-gray-700 rounded"
-            >
-              {item.name}
-            </Link>
-          ))}
+      <nav className="mt-4 flex flex-col space-y-2 text-black">
+        {menuItems.map((item) => (
+          <button
+            key={item.name}
+            onClick={() => onMenuClick(item.href)}
+            className="text-left px-4 py-2 hover:bg-gray-700 rounded"
+          >
+            {item.name}
+          </button>
+        ))}
       </nav>
     </div>
   );
