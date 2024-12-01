@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Mortlach70 from '../../public/assets/MORTLA1.PNG';
 import Mortlach75 from '../../public/assets/MORTLA2.PNG';
-import Raiting from '../../public/assets/Raiting1.png';
+import Raiting1 from '../../public/assets/Raiting1.png';
+import Raiting2 from '../../public/assets/Raiting2.png';
 import Image from 'next/image';
 
 const mortlachData = [
@@ -46,6 +47,23 @@ const SearchBar = () => {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [showResults, setShowResults] = useState(false);
   const [selectedWhisky, setSelectedWhisky] = useState('');
+  const [placeholder, setPlaceholder] = useState("Type first letters of whisky name...");
+
+  const getSuggestions = () => {
+    return mortlachData
+      .map(whisky => whisky.name)
+      .filter(name => 
+        name.toLowerCase().includes(query.toLowerCase())
+      );
+  };
+
+  const handleSuggestionClick = (suggestion) => {
+    setSelectedWhisky(suggestion);
+    setShowSuggestions(false);
+    setShowResults(true);
+    setQuery('');
+    setPlaceholder("Type first letters of whisky name...");
+  };
 
   const handleInputChange = (e) => {
     const value = e.target.value;
@@ -54,31 +72,30 @@ const SearchBar = () => {
     setShowResults(false);
   };
 
-  const handleSuggestionClick = (suggestion) => {
-    setSelectedWhisky(suggestion);
-    setShowSuggestions(false);
-    setShowResults(true);
-    setQuery('');
+  const handleInputFocus = () => {
+    setPlaceholder('');
   };
 
-  const getSuggestions = () => {
-    if (query.length < 1) return [];
-    
-    return mortlachData.filter(whisky => 
-      whisky.name.toLowerCase().startsWith(query.toLowerCase())
-    ).map(whisky => whisky.name);
+  const handleInputBlur = () => {
+    if (!query) {
+      setPlaceholder("Type first letters of whisky name...");
+    }
   };
 
   return (
     <>
-      <div className='flex flex-col items-center w-full relative'>
+      <div className='flex flex-col items-center justify-center w-full relative'>
         <input 
           className='bg-[#FFFFFF] border-2 rounded-2xl border-black p-2 outline-none 
-                    h-[30px] w-[500px] fixed top-7 left-[952px] transform -translate-x-1/2 z-10'
+                    h-[30px] w-[350px] fixed top-2 left-[960px] transform -translate-x-1/2 z-10 font-serif
+                    placeholder:text-black text-black'
           type="text"
           value={query}
           onChange={handleInputChange}
-          placeholder="Type first letters of whisky name..."
+          onFocus={handleInputFocus}
+          onBlur={handleInputBlur}
+          placeholder={placeholder}
+          autoComplete="off"
         />
         
         {showSuggestions && query.length >= 1 && (
@@ -107,6 +124,10 @@ const SearchResults = ({ query }) => {
     whisky.name.toLowerCase().startsWith(query.toLowerCase())
   );
 
+  const getRatingImage = (score) => {
+    return score >= 95 ? Raiting1 : Raiting2;
+  };
+
   if (filteredWhiskies.length === 0) {
     return (
       <div className="text-center mt-24">
@@ -119,7 +140,7 @@ const SearchResults = ({ query }) => {
     <div className='flex flex-col gap-6 mx-auto my-24'>
       {filteredWhiskies.map((whiskey, index) => (
         <div key={index} className='flex justify-center items-center m-1 p-2 w-1/2 mx-auto'>
-          <div className='bg-[#C8c8c8] w-[1200px] h-[360px] border-2 rounded-2xl border-black shadow-2xl shadow-slate-700 relative'>
+          <div className='bg-[#C8c8c8] w-[1200px] h-[360px] border-2 rounded-2xl border-black shadow-2xl shadow-slate-700 relative m-12'>
             <ul className='list-none'>
               <li className='p-3 ml-3 font-serif text-sm font-bold'>
                 {whiskey.name}
@@ -133,15 +154,13 @@ const SearchResults = ({ query }) => {
               />
               <div className='absolute top-10 left-40'>
                 <Image 
-                  src={Raiting}
+                  src={getRatingImage(whiskey.aroma.score)}
                   width={80}
                   height={80}
                   className='object-contain'
                   alt="Rating Note"
                   priority
                 />
-                <span className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-xl font-bold'>
-                </span>
               </div>
               <ul className='grid gap-4 decoration-solid ml-6 p-6 font-serif text-sm font-bold'>
                 <li>Rating: {whiskey.aroma.score}/100, (61-100)</li>

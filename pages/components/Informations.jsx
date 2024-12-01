@@ -1,12 +1,36 @@
 import React from 'react';
 import BackButton from './BackButton';
+import NavBar from './Navbar';
+import NavbarLeft from './NavbarLeft';
+import NavbarRight from './NavbarRight';
 
 const Informations = () => {
   return (
     <>
     <BackButton />
+    <NavBar/>
+    <NavbarLeft/>
+    <NavbarRight/>
+    <div className="flex items-center">
+        {/* Left Sidebar */}
+        <aside className="w-80 min-h-screen bg-[#8d8d8d] fixed left-0 top-0 pt-[90px] ">
+          {/* Add your sidebar content here */}
+        </aside>
+
+        {/* Right Sidebar */}
+        <aside className="w-80 min-h-screen bg-[#8d8d8d] fixed right-0 top-0 pt-[90px] ">
+          {/* Add your sidebar content here */}
+        </aside>
+    </div>
     <div className='flex flex-col items-center m-8'>
-      <h1 className='text-4xl font-serif text-black mb-6 text-center'>
+    <div className='w-[950px] bg-amber-300 p-4 mb-8 rounded-lg border border-amber-500 absolute bottom-12 flex justify-center'>
+        <p className='text-sm text-red-800 text-center font-serif opacity-80 w-[800px] relative bottom-0'>
+          <span className='font-bold'>Age Restriction Notice:<br/> </span>
+          The content on this page is intended for individuals of legal drinking age (21+ in the US, 18+ in most other countries).
+          Please consume alcohol responsibly.
+        </p>
+      </div>
+      <h1 className='text-4xl font-serif text-black mb-6 text-center m-14'>
         <b>Information Center</b>
       </h1>
       

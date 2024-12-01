@@ -3,13 +3,13 @@ import React from 'react';
 const WelcomeMessage = () => {
   return (
     <div className='flex flex-col items-center justify-center 
-                    bg-slate-100 rounded-xl shadow-lg shadow-slate-700
-                    p-8 mx-auto my-24 max-w-4xl'>
-      <h1 className='text-5xl font-serif text-black mb-6 text-center m-6'>
+                    bg-slate-100 rounded-xl shadow-xl shadow-slate-500
+                    p-6 m-16 mx-auto max-w-4xl w-[750px] h-[650px]'>
+      <h1 className='text-4xl font-serif text-black mb-6 text-center shadow-xl shadow-slate-300'>
         William Mc Miron
       </h1>
       
-      <p className='text-xl text-black font-serif text-center leading-relaxed '>
+      <p className=' text-black font-serif text-center leading-relaxed '>
         Welcome to <b>William McMiron</b>, where whiskey isn't just a drink—it’s a journey.
         <br className='hidden md:block' />
         Explore the world of fine whiskey with us, from rich,<br/> smoky single malts to smooth, caramel-kissed bourbons. <br/>Whether you’re a seasoned connoisseur or just beginning your journey, our carefully curated selection, expert insights, and tasting guides are here to help you savor every drop.

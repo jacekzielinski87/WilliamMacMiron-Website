@@ -1,12 +1,29 @@
 import React from 'react';
 import BackButton from './BackButton';
+import NavBar from './Navbar';
+import NavbarLeft from './NavbarLeft';
+import NavbarRight from './NavbarRight';
 
 const Others = () => {
   return (
     <>
     <BackButton />
+    <NavBar/>
+    <NavbarLeft/>
+    <NavbarRight/>
+    <div className="flex items-center">
+        {/* Left Sidebar */}
+        <aside className="w-1/4 min-h-screen bg-[#8d8d8d] fixed left-0 top-0 pt-[90px] ">
+          {/* Add your sidebar content here */}
+        </aside>
+
+        {/* Right Sidebar */}
+        <aside className="w-1/4 min-h-screen bg-[#8d8d8d] fixed right-0 top-0 pt-[90px] ">
+          {/* Add your sidebar content here */}
+        </aside>
+    </div>
     <div className='flex flex-col items-center m-8'>
-      <h1 className='text-4xl font-serif text-black mb-6 text-center'>
+      <h1 className='text-4xl font-serif text-black mb-6 text-center m-14'>
         <b>Additional Services & Information</b>
       </h1>
       

@@ -2,6 +2,7 @@ import React from 'react';
 import Mortlach70 from '../../public/assets/MORTLA1.PNG';
 import Mortlach75 from '../../public/assets/MORTLA2.PNG';
 import Raiting from '../../public/assets/Raiting1.png';
+import Raiting from '../../public/assets/Raiting2.png';
 import Image from 'next/image';
 
 const AlcoholItem = ({ searchQuery = '' }) => {
@@ -95,7 +96,7 @@ const AlcoholItem = ({ searchQuery = '' }) => {
                   {whiskey.aroma.score}
                 </span>
               </div>
-              <ul className='grid gap-4 decoration-solid ml-6 p-6 font-serif text-sm font-bold'>
+              <ul className='grid gap-4 decoration-solid ml-6 p-6 font-serif text-sm font-bold '>
                 <li>Rating: {whiskey.aroma.score}/100, (61-100)</li>
                 <li>
                   Aroma: {whiskey.aroma.score}/100, {whiskey.aroma.notes}

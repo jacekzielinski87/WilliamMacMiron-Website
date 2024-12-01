@@ -1,27 +1,39 @@
 import React from 'react';
-import { FaInfo } from "react-icons/fa6";
+import Info from '../../public/assets/i.png';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
+import Logo from "../../public/assets/logo.png";
 
 const NavbarLeft = () => {
   const router = useRouter();
 
   return (
-    <div className="bg-[#C8C8C8] h-16 border-2 border-black rounded-t-3xl fixed bottom-0 left-80 w-[640px]">
+    <div className="bg-[#C8C8C8] h-[50px] border-2 border-black rounded-r-none rounded-t-3xl fixed bottom-0 right-2/4 w-[480px]">
+      {/* Changed left-80 to left-96 to match the new aside width */}
       <ul className="h-full">
-        <li className="flex justify-center items-center h-full">
+        <li className="flex justify-around items-center h-full">
           <Link 
             href="/components/Informations"
             className={`transition-colors ${
               router.pathname === '/components/Informations' 
-                ? 'text-orange-500' 
+                ? 'text-black' 
                 : 'text-black hover:text-slate-600'
             }`}
           >
-            <FaInfo size={50} className='cursor-pointer'/>
+            <Image src={Info} className='cursor-pointer'/>
           </Link>
         </li>
       </ul>
+      <Link href="/" className="absolute -bottom-6 -right-[70px]">
+            <Image
+              src={Logo}
+              alt="Logo"
+              width={70}
+              height={40}
+              className="cursor-pointer hover:scale-110 transition-transform border-2 border-black rounded-t-2xl m-4"
+            />
+        </Link>
     </div>
   );
 };
