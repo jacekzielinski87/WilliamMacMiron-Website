@@ -14,8 +14,8 @@ const NavBar = () => {
       <div className="bg-[#C8c8c8] p-4 border-2 border-black rounded-b-3xl 
         w-full mx-4 md:mx-0 
         md:w-[640px] lg:w-[840px] 
-        h-[50px] shadow-xl">
-        <ul className="flex justify-center">
+        h-[50px] shadow-2xl shadow-slate-500">
+        <ul className="flex justify-around">
           <li className="flex items-center gap-96"> {/* Changed space-x-4 to gap-16 */}
             <Link 
               href="/components/Alcohols"

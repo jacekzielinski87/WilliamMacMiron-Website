@@ -3,14 +3,14 @@ import Info from '../../public/assets/i.png';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import Logo from "../../public/assets/logo.png";
+
 
 const NavbarLeft = () => {
   const router = useRouter();
 
   return (
     <div className="bg-[#C8C8C8] h-[50px] border-2 border-black rounded-r-none rounded-t-3xl fixed bottom-0 right-1/2 w-[420px] flex items-center justify-center">
-      <ul className="h-full w-full">
+      <ul className="h-full w-full justify-center">
         <li className="flex justify-center items-center h-full">
           <Link 
             href="/components/Informations"
@@ -33,14 +33,6 @@ const NavbarLeft = () => {
         className="absolute -bottom-6 
           -right-[70px] hidden md:block"
       >
-        <Image
-          //src={Logo}
-          //alt="Logo"
-          //width={70}
-          //height={40}
-          //className="cursor-pointer hover:scale-110 transition-transform 
-            //border-2 border-black rounded-t-2xl m-4"
-        />
       </Link>
     </div>
   );

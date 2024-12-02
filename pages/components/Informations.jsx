@@ -1,16 +1,16 @@
 import React from 'react';
-import BackButton from './BackButton';
 import NavBar from './Navbar';
 import NavbarLeft from './NavbarLeft';
 import NavbarRight from './NavbarRight';
+import Logo from './Logo';
 
 const Informations = () => {
   return (
     <>
-    <BackButton />
     <NavBar/>
     <NavbarLeft/>
     <NavbarRight/>
+    <Logo/>
     <div className="flex items-center">
         {/* Left Sidebar */}
         <aside className="w-80 min-h-screen bg-[#8d8d8d] fixed left-0 top-0 pt-[90px] ">

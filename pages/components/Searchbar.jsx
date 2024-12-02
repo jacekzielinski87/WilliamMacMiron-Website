@@ -87,7 +87,7 @@ const SearchBar = () => {
       <div className='flex flex-col items-center justify-center w-full relative'>
         <input 
           className='bg-[#FFFFFF] border-2 rounded-2xl border-black p-2 outline-none 
-                    h-[35px] w-[350px] fixed top-2 left-[953px] transform -translate-x-1/2 z-10 font-serif placeholder:text-black text-black'
+                    h-[35px] w-[350px] fixed top-2 left-[960px] transform -translate-x-1/2 z-10 font-serif placeholder:text-black text-black'
           type="text"
           value={query}
           onChange={handleInputChange}

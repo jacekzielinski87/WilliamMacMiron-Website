@@ -14,7 +14,7 @@ const NavbarRight = () => {
       left-1/2 transform -translate-x-1/1 
       rounded-b-none
       flex items-center justify-around px-12 z-50">
-      <ul className="h-full w-full">
+      <ul className="h-full w-full justify-center">
         <li className="flex justify-evenly items-center h-full relative">
           <Link
             href="/components/Partners"
