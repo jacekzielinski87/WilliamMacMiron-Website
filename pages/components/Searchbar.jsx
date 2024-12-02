@@ -87,8 +87,7 @@ const SearchBar = () => {
       <div className='flex flex-col items-center justify-center w-full relative'>
         <input 
           className='bg-[#FFFFFF] border-2 rounded-2xl border-black p-2 outline-none 
-                    h-[35px] w-[350px] fixed top-2 left-[953px] transform -translate-x-1/2 z-10 font-serif
-                    placeholder:text-black text-black'
+                    h-[35px] w-[350px] fixed top-2 left-[953px] transform -translate-x-1/2 z-10 font-serif placeholder:text-black text-black'
           type="text"
           value={query}
           onChange={handleInputChange}
@@ -98,13 +97,13 @@ const SearchBar = () => {
           autoComplete="off"
         />
         
-        {showSuggestions && query.length >= 1 && (
+        {showSuggestions && query.length >= 3 && (
           <div className='fixed top-16 left-[952px] transform -translate-x-1/2 w-[500px] 
-                         bg-white border border-gray-300 rounded-lg shadow-lg z-20'>
+                         bg-[#c8c8c8] border-2 border-black rounded-lg shadow-lg z-20 font-serif font-bold'>
             {getSuggestions().map((suggestion, index) => (
               <div
                 key={index}
-                className='p-2 hover:bg-gray-100 cursor-pointer'
+                className='p-2 m-2 hover:bg-slate-100 rounded-sm cursor-pointer'
                 onClick={() => handleSuggestionClick(suggestion)}
               >
                 {suggestion}
@@ -137,16 +136,16 @@ const SearchResults = ({ query }) => {
   }
 
   return (
-    <div className='flex flex-col gap-6 mx-auto my-24'>
+    <div className='p-4'>
       {filteredWhiskies.map((whiskey, index) => (
-        <div key={index} className='flex justify-center items-center m-1 p-2 w-1/2 mx-auto'>
-          <div className='bg-[#C8c8c8] w-[1200px] h-[360px] border-2 rounded-2xl border-black shadow-2xl shadow-slate-700 relative m-12'>
+        <div key={index} className='flex justify-center items-center m-1 p-2 mx-auto'>
+          <div className='bg-[#C8c8c8] w-[1000px] h-[400px] border-2 rounded-2xl border-black shadow-3xl shadow-slate-900 relative'>
             <ul className='list-none'>
               <li className='p-3 ml-3 font-serif text-sm font-bold'>
                 {whiskey.name}
               </li>
             </ul>
-            <div className='flex justify-start ml-4'>
+            <div className='flex justify-center ml-4'>
               <Image 
                 src={whiskey.image}
                 className='w-[200px] h-[200px] my-6 shadow-xl shadow-gray-900' 
