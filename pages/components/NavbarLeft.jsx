@@ -9,10 +9,9 @@ const NavbarLeft = () => {
   const router = useRouter();
 
   return (
-    <div className="bg-[#C8C8C8] h-[50px] border-2 border-black rounded-r-none rounded-t-3xl fixed bottom-0 right-2/4 w-[480px]">
-      {/* Changed left-80 to left-96 to match the new aside width */}
-      <ul className="h-full">
-        <li className="flex justify-around items-center h-full">
+    <div className="bg-[#C8C8C8] h-[50px] border-2 border-black rounded-r-none rounded-t-3xl fixed bottom-0 right-1/2 w-[420px] flex items-center justify-center">
+      <ul className="h-full w-full">
+        <li className="flex justify-center items-center h-full">
           <Link 
             href="/components/Informations"
             className={`transition-colors ${
@@ -21,21 +20,31 @@ const NavbarLeft = () => {
                 : 'text-black hover:text-slate-600'
             }`}
           >
-            <Image src={Info} className='cursor-pointer'/>
+            <Image 
+              src={Info} 
+              className='cursor-pointer w-auto h-auto'
+              alt="Information"
+            />
           </Link>
         </li>
       </ul>
-      <Link href="/" className="absolute -bottom-6 -right-[70px]">
-            <Image
-              src={Logo}
-              alt="Logo"
-              width={70}
-              height={40}
-              className="cursor-pointer hover:scale-110 transition-transform border-2 border-black rounded-t-2xl m-4"
-            />
-        </Link>
+      <Link 
+        href="/" 
+        className="absolute -bottom-6 
+          -right-[70px] hidden md:block"
+      >
+        <Image
+          //src={Logo}
+          //alt="Logo"
+          //width={70}
+          //height={40}
+          //className="cursor-pointer hover:scale-110 transition-transform 
+            //border-2 border-black rounded-t-2xl m-4"
+        />
+      </Link>
     </div>
   );
 };
+      
 
 export default NavbarLeft;

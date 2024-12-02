@@ -3,6 +3,7 @@ import Navbar from './Navbar';
 import NavbarLeft from './NavbarLeft';
 import NavbarRight from './NavbarRight';
 import Admin from './Admin';
+import Logo from './Logo';
 
 const AppLayout = ({ children }) => {
   const sampleData = {
@@ -21,15 +22,15 @@ const AppLayout = ({ children }) => {
       <Navbar />
       <NavbarLeft />
       <NavbarRight />
-      
+      <Logo/>
       <div className="flex items-center">
         {/* Left Sidebar */}
-        <aside className=" min-h-screen bg-[#8d8d8d] fixed left-0 top-0 pt-[90px]">
+        <aside className=" w-[532px] min-h-screen bg-[#8d8d8d] fixed left-0 top-0 pt-[90px]">
           {/* Add your sidebar content here */}
         </aside>
 
         {/* Right Sidebar */}
-        <aside className=" min-h-screen bg-[#8d8d8d] fixed right-0 top-0 pt-[90px]">
+        <aside className=" w-[532px] min-h-screen bg-[#8d8d8d] fixed right-0 top-0 pt-[90px]">
           {/* Add your sidebar content here */}
         </aside>
 

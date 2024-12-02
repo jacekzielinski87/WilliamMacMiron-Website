@@ -4,17 +4,18 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
-
 const NavbarRight = () => {
   const router = useRouter();
 
   return (
-    <div className="bg-[#C8C8C8] h-[50px] border-2 rounded-l-none border-black rounded-t-3xl fixed bottom-0 right-1/4 w-[440px]">
-      {/* Changed right-80 to right-96 to match the new aside width */}
-      <ul className="h-full">
-        <li className="flex justify-around items-center h-full relative">
-         
-
+    <div className="bg-[#C8C8C8] h-[50px] border-2 border-black rounded-t-3xl 
+      fixed bottom-0 
+      w-[420px]
+      left-1/2 transform -translate-x-1/1 
+      rounded-b-none
+      flex items-center justify-around px-12 z-50">
+      <ul className="h-full w-full">
+        <li className="flex justify-evenly items-center h-full relative">
           <Link
             href="/components/Partners"
             className={`transition-colors ${
@@ -25,12 +26,12 @@ const NavbarRight = () => {
           >
             <Image
               src={LetterP}
-              className="cursor-pointer font-semibold hover:text-slate-600"
+              className="cursor-pointer font-semibold hover:text-slate-600 w-auto h-auto"
+              alt="Partners"
             />
           </Link>
         </li>
       </ul>
-      
     </div>
   );
 };

@@ -1,19 +1,22 @@
 import React from 'react';
-import SearchBar from './Searchbar';
-import MenuA  from "../../public/assets/menu1.png";
+import MenuA from "../../public/assets/menu1.png";
 import MenuB from "../../public/assets/menu2.png";
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
+import SearchBar from './Searchbar';
 
 const NavBar = () => {
   const router = useRouter();
 
   return (
-    <>
-      <div className="bg-[#C8c8c8] p-4 border-2 border-black rounded-b-3xl mx-auto w-[952px] fixed top-0 left-1/4 z-10 shadow-xl h-[50px]">
-        <ul className="">
-          <li className="flex justify-around items-center">
+    <div className="fixed top-0 left-0 right-0 flex justify-center w-full z-10">
+      <div className="bg-[#C8c8c8] p-4 border-2 border-black rounded-b-3xl 
+        w-full mx-4 md:mx-0 
+        md:w-[640px] lg:w-[840px] 
+        h-[50px] shadow-xl">
+        <ul className="flex justify-center">
+          <li className="flex items-center gap-96"> {/* Changed space-x-4 to gap-16 */}
             <Link 
               href="/components/Alcohols"
               className={`transition-colors ${
@@ -22,7 +25,11 @@ const NavBar = () => {
                   : 'text-black hover:text-slate-600'
               }`}
             >
-              <Image src={MenuA} className='cursor-pointer relative bottom-3'/>
+              <Image 
+                src={MenuA} 
+                className='cursor-pointer relative bottom-3 w-auto h-auto'
+                alt="Alcohols Menu"
+              />
             </Link>
             <Link 
               href="/components/Others"
@@ -32,13 +39,17 @@ const NavBar = () => {
                   : 'text-black hover:text-slate-600'
               }`}
             >
-              <Image src={MenuB} className='cursor-pointer relative bottom-3'/>
+              <Image 
+                src={MenuB} 
+                className='cursor-pointer relative bottom-3 w-auto h-auto'
+                alt="Others Menu"
+              />
             </Link>
           </li>
         </ul>
+        <SearchBar/>
       </div>
-      <SearchBar />
-    </>
+    </div>
   );
 };
 
