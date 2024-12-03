@@ -13,10 +13,10 @@ const NavBar = () => {
     <div className="fixed top-0 left-0 right-0 flex justify-center w-full z-10">
       <div className="bg-[#C8c8c8] p-4 border-2 border-black rounded-b-3xl 
         w-full mx-4 md:mx-0 
-        md:w-[640px] lg:w-[840px] 
+        md:w-[640px] lg:w-[1280px] 
         h-[50px] shadow-2xl shadow-slate-500">
-        <ul className="flex justify-around">
-          <li className="flex items-center gap-96"> {/* Changed space-x-4 to gap-16 */}
+        <ul className="">
+          <li className="flex justify-around gap-20"> {/* Changed space-x-4 to gap-16 */}
             <Link 
               href="/components/Alcohols"
               className={`transition-colors ${

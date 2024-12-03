@@ -47,7 +47,7 @@ const SearchBar = () => {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [showResults, setShowResults] = useState(false);
   const [selectedWhisky, setSelectedWhisky] = useState('');
-  const [placeholder, setPlaceholder] = useState("Type first letters of whisky name...");
+  const [placeholder, setPlaceholder] = useState("");
 
   const getSuggestions = () => {
     return mortlachData
@@ -62,7 +62,7 @@ const SearchBar = () => {
     setShowSuggestions(false);
     setShowResults(true);
     setQuery('');
-    setPlaceholder("Type first letters of whisky name...");
+    setPlaceholder("");
   };
 
   const handleInputChange = (e) => {
@@ -78,7 +78,7 @@ const SearchBar = () => {
 
   const handleInputBlur = () => {
     if (!query) {
-      setPlaceholder("Type first letters of whisky name...");
+      setPlaceholder("");
     }
   };
 
