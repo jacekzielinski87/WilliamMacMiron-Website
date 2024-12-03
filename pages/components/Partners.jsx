@@ -4,7 +4,7 @@ import Image from 'next/image';
 import NavBar from './Navbar';
 import NavbarLeft from './NavbarLeft';
 import NavbarRight from './NavbarRight';
-import Logo from './Logo';
+
 
 const Partners = () => {
   return (
