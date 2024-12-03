@@ -139,7 +139,7 @@ const SearchResults = ({ query }) => {
     <div className='p-4'>
       {filteredWhiskies.map((whiskey, index) => (
         <div key={index} className='flex justify-center items-center m-1 p-2 mx-auto'>
-          <div className='bg-[#C8c8c8] w-[1000px] h-[400px] border-2 rounded-2xl border-black shadow-3xl shadow-slate-900 relative'>
+          <div className='bg-[#C8c8c8] w-[1000px] h-[400px] border-2 rounded-3xl border-black shadow-3xl shadow-slate-900 relative'>
             <ul className='list-none'>
               <li className='p-3 ml-3 font-serif text-sm font-bold'>
                 {whiskey.name}
