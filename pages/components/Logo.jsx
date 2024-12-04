@@ -8,9 +8,9 @@ const Logo = () => {
         <Image
           src="/assets/logoo.png"
           alt="Logo"
-          width={75}
-          height={50}
-          className="cursor-pointer border-2 border-black rounded-t-3xl hover:scale-100 transition-transform p-1"
+          width={45}
+          height={125}
+          className="cursor-pointer border-2 border-black rounded-t-3xl hover:scale-100 transition-transform p-1 mx-auto"
           priority
         />
       </Link>
