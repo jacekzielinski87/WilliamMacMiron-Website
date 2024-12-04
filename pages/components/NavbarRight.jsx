@@ -8,12 +8,12 @@ const NavbarRight = () => {
   const router = useRouter();
 
   return (
-    <div className="bg-[#C8C8C8] h-[50px] border-2 border-black rounded-t-3xl 
+    <div className="bg-[#C8C8C8] h-[40px] border-2 border-black rounded-t-3xl 
       fixed bottom-0 
-      w-[616px]
+      w-[444px]
       left-1/2 transform -translate-x-1/1 
       rounded-b-none
-      flex items-center justify-around px-12 z-50 ml-6">
+      flex items-center justify-around px-12 z-50 ml-9">
       <ul className="h-full w-full justify-center">
         <li className="flex justify-evenly items-center h-full relative">
           <Link
@@ -26,7 +26,7 @@ const NavbarRight = () => {
           >
             <Image
               src={LetterP}
-              className="cursor-pointer font-semibold hover:text-slate-600 w-auto h-auto"
+              className="cursor-pointer font-semibold hover:text-slate-600 w-auto h-[25px]"
               alt="Partners"
             />
           </Link>

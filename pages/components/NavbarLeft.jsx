@@ -9,7 +9,7 @@ const NavbarLeft = () => {
   const router = useRouter();
 
   return (
-    <div className="bg-[#C8C8C8] h-[50px] border-2 border-black rounded-r-none rounded-t-3xl fixed bottom-0 right-1/2 w-[616px] flex items-center justify-center mr-6">
+    <div className="bg-[#C8C8C8] h-[40px] border-2 border-black rounded-r-none rounded-t-3xl fixed bottom-0 right-1/2 w-[444px] flex items-center justify-center mr-9">
       <ul className="h-full w-full justify-center">
         <li className="flex justify-center items-center h-full">
           <Link 
@@ -22,7 +22,7 @@ const NavbarLeft = () => {
           >
             <Image 
               src={Info} 
-              className='cursor-pointer w-auto h-auto'
+              className='cursor-pointer w-auto h-[25px]'
               alt="Information"
             />
           </Link>

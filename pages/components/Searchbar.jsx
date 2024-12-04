@@ -87,7 +87,7 @@ const SearchBar = () => {
       <div className='flex flex-col items-center justify-center w-full relative'>
         <input 
           className='bg-[#FFFFFF] border-2 rounded-2xl border-black p-2 outline-none 
-                    h-[35px] w-[350px] fixed top-2 left-[960px] transform -translate-x-1/2 z-10 font-serif placeholder:text-black text-black'
+                    h-[25px] w-[450px] fixed top-2 left-[960px] transform -translate-x-1/2 z-10 font-serif placeholder:text-black text-black'
           type="text"
           value={query}
           onChange={handleInputChange}
@@ -139,7 +139,7 @@ const SearchResults = ({ query }) => {
     <div className='p-4'>
       {filteredWhiskies.map((whiskey, index) => (
         <div key={index} className='flex justify-center items-center m-1 p-2 mx-auto'>
-          <div className='bg-[#C8c8c8] w-[1000px] h-[400px] border-2 rounded-3xl border-black shadow-3xl shadow-slate-900 relative'>
+          <div className='bg-[#C8c8c8] w-[1000px] h-[320px] border-2 rounded-3xl border-black shadow-3xl shadow-slate-900 relative'>
             <ul className='list-none'>
               <li className='p-3 ml-3 font-serif text-sm font-bold'>
                 {whiskey.name}
@@ -148,7 +148,7 @@ const SearchResults = ({ query }) => {
             <div className='flex justify-center ml-4'>
               <Image 
                 src={whiskey.image}
-                className='w-[200px] h-[200px] my-6 shadow-xl shadow-gray-900' 
+                className='w-[200px] h-[200px] my-6 shadow-xl shadow-gray-900 border-2 border-black rounded-3xl' 
                 alt={`Thumbnail of ${whiskey.name}`}
               />
               <div className='absolute top-10 left-40'>
