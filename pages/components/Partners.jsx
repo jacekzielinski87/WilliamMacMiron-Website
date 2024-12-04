@@ -1,9 +1,10 @@
 import React from 'react';
-import Logo from '../../public/assets/partners.jpg';
+import Partnership from '../../public/assets/partners.jpg';
 import Image from 'next/image';
 import NavBar from './Navbar';
 import NavbarLeft from './NavbarLeft';
 import NavbarRight from './NavbarRight';
+import LogoComponent from './Logo'
 
 
 const Partners = () => {
@@ -12,15 +13,15 @@ const Partners = () => {
     <NavBar/>
     <NavbarLeft/>
     <NavbarRight/>
-    <Logo/>
+    <LogoComponent/>
     <div className="flex items-center">
         {/* Left Sidebar */}
-        <aside className="w-80 min-h-screen bg-[#8d8d8d] fixed left-0 top-0 pt-[90px] ">
+        <aside className="w-1/4 min-h-screen bg-[#8d8d8d] fixed left-0 top-0 pt-[90px] ">
           {/* Add your sidebar content here */}
         </aside>
 
         {/* Right Sidebar */}
-        <aside className="w-80 min-h-screen bg-[#8d8d8d] fixed right-0 top-0 pt-[90px] ">
+        <aside className="w-1/4 min-h-screen bg-[#8d8d8d] fixed right-0 top-0 pt-[90px] ">
           {/* Add your sidebar content here */}
         </aside>
     </div>
@@ -36,7 +37,7 @@ const Partners = () => {
 
       <div className='shadow-2xl shadow-slate-800 rounded-xl overflow-hidden'>
         <Image 
-          src={Logo} 
+          src={Partnership} 
           alt="Our Trusted Partners"
           className='w-full h-auto'
           priority

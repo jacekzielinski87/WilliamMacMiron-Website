@@ -27,7 +27,7 @@ const NavBar = () => {
             >
               <Image 
                 src={MenuA} 
-                className='cursor-pointer relative bottom-2 w-auto h-[25px]'
+                className='cursor-pointer relative bottom-2 w-auto h-[20px]'
                 alt="Alcohols Menu"
               />
             </Link>
@@ -41,7 +41,7 @@ const NavBar = () => {
             >
               <Image 
                 src={MenuB} 
-                className='cursor-pointer relative bottom-2 w-auto h-[25px]'
+                className='cursor-pointer relative bottom-2 w-auto h-[20px]'
                 alt="Others Menu"
               />
             </Link>

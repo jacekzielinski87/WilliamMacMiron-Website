@@ -22,7 +22,7 @@ const NavbarLeft = () => {
           >
             <Image 
               src={Info} 
-              className='cursor-pointer w-auto h-[25px]'
+              className='cursor-pointer w-auto h-[20px]'
               alt="Information"
             />
           </Link>

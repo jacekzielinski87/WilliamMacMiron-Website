@@ -26,7 +26,7 @@ const NavbarRight = () => {
           >
             <Image
               src={LetterP}
-              className="cursor-pointer font-semibold hover:text-slate-600 w-auto h-[25px]"
+              className="cursor-pointer font-semibold hover:text-slate-600 w-auto h-[20px]"
               alt="Partners"
             />
           </Link>

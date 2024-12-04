@@ -40,12 +40,12 @@ const Alcohols = () => {
     <Logo/>
     <div className="flex items-center">
         {/* Left Sidebar */}
-        <aside className="w-80 min-h-screen bg-[#8d8d8d] fixed left-0 top-0 pt-[90px] ">
+        <aside className="w-1/4 min-h-screen bg-[#8d8d8d] fixed left-0 top-0 pt-[90px] ">
           {/* Add your sidebar content here */}
         </aside>
 
         {/* Right Sidebar */}
-        <aside className="w-80 min-h-screen bg-[#8d8d8d] fixed right-0 top-0 pt-[90px] ">
+        <aside className="w-1/4 min-h-screen bg-[#8d8d8d] fixed right-0 top-0 pt-[90px] ">
           {/* Add your sidebar content here */}
         </aside>
     </div>

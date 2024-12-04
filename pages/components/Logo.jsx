@@ -3,14 +3,14 @@ import Link from "next/link";
 
 const Logo = () => {
   return (
-    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-50">
+    <div className="fixed bottom-0 left-1/2 -translate-x-1/2 z-50 overflow-visible">
       <Link href="/" replace> {/* Added replace to replace current route in history */}
         <Image
           src="/assets/logoo.png"
           alt="Logo"
           width={75}
-          height={100}
-          className="cursor-pointer border-2 border-black rounded-t-3xl hover:scale-110 transition-transform"
+          height={50}
+          className="cursor-pointer border-2 border-black rounded-t-3xl hover:scale-100 transition-transform p-1"
           priority
         />
       </Link>
