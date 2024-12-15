@@ -15,6 +15,51 @@ const partnersData = [
     specialties: ["Single Malt", "Aged Whiskey"],
     established: 1779
   },
+  {
+    id: 2,
+    name: "Dalwhinne",
+    image: "/assets/Dalwhinnie.jpg",
+    description: "The Dalwhinnie distillery, situated in the Highland village of Dalwhinnie in Scotland, produces single malt Scotch whisky. The Dalwhinnie distillery is located in the Badenoch and Strathspey ward of the Highland Council and therefore is in the Speyside region.",
+    location: "Scotland",
+    specialties: ["Single Malt", "Aged Whiskey"],
+    established: 1897
+  },
+  {
+    id: 3,
+    name: "Absolut",
+    image: "/assets/absolut.jpg",
+    description: "Clean and complex on the nose, with subtle cereal notes. Smooth and mellow to taste with a distinct character of peppery grain, followed by a hint of dried fruit and sourdough bread. All Absolut Vodka is made from winter wheat, which is distilled on four story high column stills to a supremely high quality.",
+    location: "Sweden",
+    specialties: ["Vodka"],
+    established: 1917
+  },
+  {
+    id: 4,
+    name: "Heineken",
+    image: "/assets/heineken.jpg",
+    description: "Heineken is a lager style of beer so it is heavier than other types. It has more of a stronger taste to it. Heineken is a 5% ABV beer made without any additives. The yeast and barley make the beer thicker to have a great taste when you drink it.",
+    location: "Netherlands",
+    specialties: ["Beer"],
+    established: 1864
+  },
+  {
+    id: 5,
+    name: "Dalwhinne",
+    image: "/assets/Dalwhinnie.jpg",
+    description: "The Dalwhinnie distillery, situated in the Highland village of Dalwhinnie in Scotland, produces single malt Scotch whisky. The Dalwhinnie distillery is located in the Badenoch and Strathspey ward of the Highland Council and therefore is in the Speyside region.",
+    location: "Scotland",
+    specialties: ["Single Malt", "Aged Whiskey"],
+    established: 1897
+  },
+  {
+    id: 6,
+    name: "Dalwhinne",
+    image: "/assets/Dalwhinnie.jpg",
+    description: "The Dalwhinnie distillery, situated in the Highland village of Dalwhinnie in Scotland, produces single malt Scotch whisky. The Dalwhinnie distillery is located in the Badenoch and Strathspey ward of the Highland Council and therefore is in the Speyside region.",
+    location: "Scotland",
+    specialties: ["Single Malt", "Aged Whiskey"],
+    established: 1897
+  },
   // Add more partners
 ];
 
@@ -41,17 +86,17 @@ const Partners = () => {
       <div className='flex flex-col items-center mx-auto w-1/2 pt-[90px]'>
         {!selectedPartner && (
           <>
-            <h1 className='text-4xl font-serif text-black mb-6 text-center'>
+            <h1 className='text-3xl font-serif text-black mb-6 text-center'>
               <b>Our Partners</b>
             </h1>
 
             {/* Partner List - only shown when no partner is selected */}
-            <div className='flex flex-wrap justify-center gap-4 mb-8'>
+            <div className='grid gap-6 grid-cols-1 w-[200px] font-serif text-xl '>
               {partnersData.map((partner) => (
                 <button
                   key={partner.id}
                   onClick={() => handlePartnerClick(partner)}
-                  className='px-6 py-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-all'
+                  className='px-6 py-2 rounded-full bg-[#c8c8c8] hover:bg-gray-400 transition-all'
                 >
                   {partner.name}
                 </button>
@@ -62,13 +107,13 @@ const Partners = () => {
 
         {/* Partner Details */}
         {selectedPartner ? (
-          <div className='bg-white p-6 rounded-lg shadow-lg w-full'>
+          <div className='bg-[#c8c8c8] p-6 rounded-lg shadow-lg w-full'>
             {/* Add a back button */}
             <button 
               onClick={() => setSelectedPartner(null)}
-              className='mb-4 px-4 py-2 text-sm rounded-full bg-gray-200 hover:bg-gray-300 transition-all'
+              className='mb-4 px-6 text-xl rounded-full bg-[#c8c8c8] border-2 hover:bg-gray-300 transition-all'
             >
-              ← Back to partners
+              ← 
             </button>
             
             {/* Rest of the partner details remain the same */}
@@ -77,7 +122,7 @@ const Partners = () => {
                 src={selectedPartner.image}
                 alt={selectedPartner.name}
                 fill
-                className='object-cover rounded-lg'
+                className='object-cover rounded-2xl'
                 priority
               />
             </div>
