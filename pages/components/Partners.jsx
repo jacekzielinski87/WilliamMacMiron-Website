@@ -107,17 +107,12 @@ const Partners = () => {
 
         {/* Partner Details */}
         {selectedPartner ? (
-          <div className='bg-[#c8c8c8] p-2 rounded-3xl shadow-lg w-[900px] h-[340px] border-2 border-black'>
-            {/* Add a back button */}
-            <button 
-              onClick={() => setSelectedPartner(null)}
-              className='mb-6 px-6 text-xl rounded-full bg-[#c8c8c8] border-2 border-black hover:bg-gray-300 transition-all'
-            >
-              ← 
-            </button>
-            <div className='flex flex-row gap-6'>
+          <div className='bg-[#c8c8c8] p-2 rounded-3xl shadow-lg w-[880px] h-[320px] border-2 border-black'>
+            
+            
+            <div className='flex flex-row gap-4'>
             {/* Rest of the partner details remain the same */}
-            <div className='relative h-[250px] w-[250px] border-2 border-black rounded-lg flex shrink-0 '>
+            <div className='relative h-[200px] w-[200px] border-2 border-black rounded-lg flex shrink-0 my-20 '>
               <Image
                 src={selectedPartner.image}
                 alt={selectedPartner.name}
@@ -128,19 +123,19 @@ const Partners = () => {
             </div>
             
             <div className='flex flex-col'>
-            <h2 className='text-3xl font-serif mb-6'>{selectedPartner.name}</h2>
-            <p className='text-lg mb-6 font-bold'>{selectedPartner.description}</p>
-            <div className='grid grid-cols-4 gap-6'>
+            <h2 className='text-2xl font-serif mb-10 my-4 font-bold relative right-44 top-4 '>{selectedPartner.name}</h2>
+            <p className='text-sm mb-6 font-bold p-2'>{selectedPartner.description}</p>
+            <div className='flex justify-start gap-8 ml-2 '>
               <div>
-                <h4 className='font-bold mb-2'>Location</h4>
+                <h4 className='font-bold text-sm'>Location</h4>
                 <p>{selectedPartner.location}</p>
               </div>
               <div className='text-center'>
-                <h4 className='font-bold mb-2'>Established</h4>
+                <h4 className='font-bold text-sm'>Established</h4>
                 <p>{selectedPartner.established}</p>
               </div>
-              <div className='col-span-2'>
-                <h4 className='font-bold mb-2'>Specialties</h4>
+              <div className=''>
+                <h4 className='font-bold text-sm'>Specialties</h4>
                 <ul className='flex gap-4'>
                   {selectedPartner.specialties.map((specialty, index) => (
                     <li key={index}>{specialty}</li>

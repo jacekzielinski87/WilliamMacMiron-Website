@@ -13,7 +13,7 @@ const NavBar = () => {
     <div className="fixed top-0 left-0 right-0 flex justify-center w-full z-10">
       <div className="bg-[#C8c8c8] p-4 border-2 border-black rounded-b-3xl 
         w-full mx-4 md:mx-0 
-        md:w-[640px] lg:w-[960px] 
+        md:w-[640px] lg:w-[952px] 
         h-[40px] shadow-2xl shadow-slate-500">
         <ul className="">
           <li className="flex justify-around gap-40"> {/* Changed space-x-4 to gap-16 */}
