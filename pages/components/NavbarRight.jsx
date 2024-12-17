@@ -10,7 +10,7 @@ const NavbarRight = () => {
   return (
     <div className="bg-[#C8C8C8] h-[40px] border-2 border-black rounded-t-3xl 
       fixed bottom-0 
-      w-[444px]
+      w-[448px]
       left-1/2 transform -translate-x-1/1 
       rounded-b-none
       flex items-center justify-around px-12 z-50 ml-8">
