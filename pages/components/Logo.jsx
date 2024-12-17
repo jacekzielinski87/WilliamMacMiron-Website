@@ -8,8 +8,8 @@ const Logo = () => {
         <Image
           src="/assets/logoo.png"
           alt="Logo"
-          width={60}
-          height={100}
+          width={20}
+          height={20}
           className="cursor-pointer border-2 border-black rounded-t-3xl hover:scale-100 transition-transform p-2 w-[65px] h-[45px]  "
           priority
         />
