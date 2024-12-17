@@ -35,12 +35,12 @@ const Alcohols = () => {
         </aside>
 
         {/* Main Content */}
-        <div className='flex-1 ml-[25%] mr-[25%] m-8'>
-          <div className='flex flex-col items-center m-8'>
+        <div className='flex-1 ml-[25%] mr-[25%] '>
+          <div className='flex flex-col items-center m-16'>
               {alcoholCategories.map((category, index) => (
-                  <div key={index} className=' p-4 flex items-center'>
+                  <div key={index} className=' p-4 m-2 flex items-center justify-center bg-[#C8c8c8] w-[200px] h-[40px] border-2 rounded-3xl border-black shadow-3xl shadow-slate-900  hover:bg-slate-300'>
                     <div>
-                      <h3 className='cursor-pointer text-2xl font-serif text-black hover:bg-slate-300'>{category}</h3>
+                      <h3 className='cursor-pointer text-2xl font-serif text-black'>{category}</h3>
                     </div>
                   </div>
                 ))}

@@ -9,15 +9,7 @@ const Others = () => {
     const OthersStuff = [
       "Pizza",
       "Perfume",
-      "Toys",
-      "Cars",
-      "Pizza",
-      "Perfume",
-      "Toys",
-      "Cards",
-      "Another",
-      "Shit",
-      "Who knows"
+      "Toys"
     ];
 
 
@@ -27,7 +19,7 @@ const Others = () => {
     <NavbarLeft/>
     <NavbarRight/>
     <Logo/>
-    <div className="flex items-center">
+    <div className="flex justify-center">
         {/* Left Sidebar */}
         <aside className="w-1/4 min-h-screen bg-[#8d8d8d] fixed left-0 top-0 pt-[90px] ">
           {/* Add your sidebar content here */}
@@ -38,10 +30,10 @@ const Others = () => {
           {/* Add your sidebar content here */}
         </aside>
     </div>
-    <div className="flex justify-center items-center">
-      <div className="cursor-pointer text-2xl font-serif text-black hover:bg-slate-300">
+    <div className=" flex justify-center p-12 flex-1 ml-[25%] mr-[25%]  ">
+      <div className="cursor-pointer text-2xl font-serif text-black ">
         {OthersStuff.map((item, index) => (
-          <ul key={index} className=' p-4 flex items-center'>{item}</ul>
+          <ul key={index} className=' p-6 m-2 items-center hover:bg-slate-300 bg-[#C8c8c8] w-[150px] h-[50px] border-2 flex justify-center border-black shadow-3xl shadow-slate-900 rounded-3xl'>{item}</ul>
         ))}
       </div>
     </div>
