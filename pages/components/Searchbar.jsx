@@ -5,6 +5,7 @@ import Raiting1 from '../../public/assets/Raiting1.png';
 import Raiting2 from '../../public/assets/Raiting2.png';
 import Image from 'next/image';
 
+
 const mortlachData = [
   {
     name: "Mortlach 70 Year Old Generations '2656 (1938) (2008) (Gordon and MacPhail) (46.10% ABV)",
@@ -21,7 +22,7 @@ const mortlachData = [
       score: 90,
       notes: "long², bitter³, smoky², wood², unripe apple², cinnamon², black pepper¹, mushrooms¹, onion¹"
     },
-    intensity: 2
+    intensity: '1-2'
   },
   {
     name: "Mortlach 75 Year Old Generations '2475 (1939) (2015) (Gordon and MacPhail) (44.40% ABV)",
@@ -38,7 +39,7 @@ const mortlachData = [
       score: 95,
       notes: "long³, sweet², slightly spicy², honey³, nut³, pineapple², plum¹, aloe¹, leather¹, vanilla¹, salt¹, wood¹, anise¹, coffee¹, yeast¹, bread¹, salt¹"
     },
-    intensity: 3
+    intensity:'1-3'  
   }
 ];
 
@@ -83,11 +84,13 @@ const SearchBar = () => {
   };
 
   return (
+    
     <>
-      <div className='flex flex-col items-center justify-center w-full relative'>
+      <div className={`flex flex-col items-center justify-center w-full relative ${showResults ? 'z-50' : ''}`}>
         <input 
-          className='bg-[#FFFFFF] border-2 rounded-2xl border-black p-2 outline-none 
-                    h-[25px] w-[450px] fixed top-2 left-[960px] transform -translate-x-1/2 z-10 font-serif placeholder:text-black text-black'
+          className={`bg-[#FFFFFF] border-2 rounded-2xl border-black p-2 outline-none 
+                    h-[25px] w-[450px] fixed top-2 left-[960px] transform -translate-x-1/2 z-10 
+                    font-serif placeholder:text-black text-black ${showResults ? 'z-50' : ''}`}
           type="text"
           value={query}
           onChange={handleInputChange}
@@ -99,7 +102,7 @@ const SearchBar = () => {
         
         {showSuggestions && query.length >= 3 && (
           <div className='fixed top-16 left-[952px] transform -translate-x-1/2 w-[500px] 
-                         bg-[#c8c8c8] border-2 border-black rounded-lg shadow-lg z-20 font-serif font-bold'>
+                         bg-[#c8c8c8] border-2 border-black rounded-lg shadow-lg z-50 font-serif font-bold'>
             {getSuggestions().map((suggestion, index) => (
               <div
                 key={index}
@@ -113,7 +116,13 @@ const SearchBar = () => {
         )}
       </div>
 
-      {showResults && <SearchResults query={selectedWhisky} />}
+      {showResults && (
+        <div className="fixed inset-0 bg-white z-40">
+          <div className="w-full h-full overflow-y-auto pt-16">
+            <SearchResults query={selectedWhisky} />
+          </div>
+        </div>
+      )}
     </>
   );
 };
@@ -129,7 +138,7 @@ const SearchResults = ({ query }) => {
 
   if (filteredWhiskies.length === 0) {
     return (
-      <div className="text-center mt-24">
+      <div className="text-center mt-24 x-30">
         <p className="text-gray-500">No whiskies found matching your search.</p>
       </div>
     );
@@ -138,8 +147,8 @@ const SearchResults = ({ query }) => {
   return (
     <div className='p-4'>
       {filteredWhiskies.map((whiskey, index) => (
-        <div key={index} className='flex justify-center items-center m-1 p-2 mx-auto'>
-          <div className='bg-[#C8c8c8] w-[1000px] h-[320px] border-2 rounded-3xl border-black shadow-3xl shadow-slate-900 relative top-96'>
+        <div key={index} className='flex justify-center items-center mx-auto my-32'>
+          <div className='bg-[#C8c8c8] w-[880px] h-[320px] border-2 rounded-3xl border-black shadow-3xl shadow-slate-900 relative'>
             <ul className='list-none'>
               <li className='p-3 ml-3 font-serif text-sm font-bold'>
                 {whiskey.name}
@@ -172,7 +181,7 @@ const SearchResults = ({ query }) => {
                 <li>
                   Finish: {whiskey.finish.score}/100, {whiskey.finish.notes}
                 </li>
-                <li>Intensity: {"•".repeat(whiskey.intensity)}</li>
+                <li>Intensity: {(whiskey.intensity)}</li>
               </ul>
             </div>
           </div>

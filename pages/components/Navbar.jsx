@@ -10,7 +10,7 @@ const NavBar = () => {
   const router = useRouter();
 
   return (
-    <div className="fixed top-0 left-0 right-0 flex justify-center w-full z-10">
+    <div className="fixed top-0 left-0 right-0 flex justify-center w-full">
       <div className="bg-[#C8c8c8] p-4 border-2 border-black rounded-b-3xl 
         w-full mx-4 md:mx-0 
         md:w-[640px] lg:w-[960px] 
@@ -47,7 +47,9 @@ const NavBar = () => {
             </Link>
           </li>
         </ul>
+        <div className='relative'>
         <SearchBar/>
+        </div>
       </div>
     </div>
   );

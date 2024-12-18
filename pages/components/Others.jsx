@@ -30,10 +30,10 @@ const Others = () => {
           {/* Add your sidebar content here */}
         </aside>
     </div>
-    <div className=" flex justify-center p-12 flex-1 ml-[25%] mr-[25%]  ">
+    <div className="flex justify-center my-12 flex-1 ml-[25%] mr-[25%]">
       <div className="cursor-pointer text-2xl font-serif text-black ">
         {OthersStuff.map((item, index) => (
-          <ul key={index} className=' p-6 m-2 items-center hover:bg-slate-300 bg-[#C8c8c8] w-[150px] h-[50px] border-2 flex justify-center border-black shadow-3xl shadow-slate-900 rounded-3xl'>{item}</ul>
+          <ul key={index} className=' p-2 m-4 items-center hover:bg-slate-300 bg-[#C8c8c8] w-[880px] h-[40px] border-2 flex justify-center border-black shadow-3xl shadow-slate-900 rounded-3xl'>{item}</ul>
         ))}
       </div>
     </div>
