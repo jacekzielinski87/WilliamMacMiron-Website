@@ -144,6 +144,9 @@ const SearchResults = ({ query }) => {
     );
   }
 
+  //Navbar znika po wyszukaniu !!!
+  //Button powrotu nie działa po wyszukaniu !!!
+
   return (
     <div className='p-4'>
       {filteredWhiskies.map((whiskey, index) => (
