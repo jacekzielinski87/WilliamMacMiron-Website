@@ -3,6 +3,8 @@ import Navbar from './Navbar';
 import NavbarLeft from './NavbarLeft';
 import NavbarRight from './NavbarRight';
 import Logo from './Logo';
+import AddWhiskyForm from './AddWhiskyForm';
+import AdminLayout from './AdminLayout';
 
 
 
@@ -19,6 +21,7 @@ const AppLayout = ({ children }) => {
 
   return (
     <div className="min-h-screen">
+      <AddWhiskyForm/>
       <Navbar />
       <NavbarLeft />
       <NavbarRight />
