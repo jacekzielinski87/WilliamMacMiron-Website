@@ -3,9 +3,9 @@ import React from 'react';
 const WelcomeMessage = () => {
   return (
     <div className='flex flex-col items-center justify-center 
-                    bg-slate-100 rounded-xl shadow-xl shadow-slate-500
-                    p-6 m-16 mx-auto max-w-4xl w-[750px] h-[650px]'>
-      <h1 className='text-4xl font-serif text-black mb-6 text-center shadow-xl shadow-slate-300'>
+                    bg-slate-100 rounded-xl shadow-2xl shadow-slate-800
+                    p-6 m-32 mx-auto max-w-4xl w-[750px] h-[650px]'>
+      <h1 className='text-4xl font-serif text-black mb-6 text-center '>
         William Mc Miron
       </h1>
       

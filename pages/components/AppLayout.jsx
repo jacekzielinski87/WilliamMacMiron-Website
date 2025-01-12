@@ -4,8 +4,9 @@ import NavbarLeft from './NavbarLeft';
 import NavbarRight from './NavbarRight';
 import Logo from './Logo';
 import WelcomeMessage from './WelcomeMessage';
-import AdminDashboard from './AdminDashboard';
-import TestLogin from './Tests files/AdminLogin';
+
+
+
 
 
 
@@ -24,6 +25,7 @@ const AppLayout = ({ children }) => {
 
   return (
     <div className="min-h-screen">
+      <WelcomeMessage/>
       <Navbar />
       <NavbarLeft />
       <NavbarRight />

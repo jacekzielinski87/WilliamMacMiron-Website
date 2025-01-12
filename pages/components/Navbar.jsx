@@ -14,7 +14,7 @@ const NavBar = () => {
       <div className="bg-[#C8c8c8] p-4 border-2 border-black rounded-b-3xl 
         w-full mx-4 md:mx-0 
         md:w-[640px] lg:w-[960px] 
-        h-[40px] shadow-2xl shadow-slate-500">
+        h-[40px] shadow-xl shadow-slate-300">
         <ul className="">
           <li className="flex justify-around gap-40"> {/* Changed space-x-4 to gap-16 */}
             <Link 

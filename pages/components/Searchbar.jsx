@@ -86,7 +86,7 @@ const SearchBar = () => {
   return (
     
     <>
-      <div className={`flex flex-col items-center justify-center w-full relative ${showResults ? 'z-50' : ''}`}>
+      <div className={`flex flex-col items-center justify-center w-full relative ${showResults ? 'z-40' : ''}`}>
         <input 
           className={`bg-[#FFFFFF] border-2 rounded-2xl border-black p-2 outline-none 
                     h-[25px] w-[450px] fixed top-2 left-[960px] transform -translate-x-1/2 z-10 
@@ -117,8 +117,8 @@ const SearchBar = () => {
       </div>
 
       {showResults && (
-        <div className="fixed inset-0 bg-white z-40">
-          <div className="w-full h-full overflow-y-auto pt-16">
+        <div className="fixed inset-0 bg-white z-30 top-[64px]">
+          <div className="w-full h-full overflow-y-auto">
             <SearchResults query={selectedWhisky} />
           </div>
         </div>
