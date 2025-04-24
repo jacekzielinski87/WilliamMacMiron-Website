@@ -4,13 +4,7 @@ import NavbarLeft from './NavbarLeft';
 import NavbarRight from './NavbarRight';
 import Logo from './Logo';
 import WelcomeMessage from './WelcomeMessage';
-
-
-
-
-
-
-
+import AddWhiskyForm from './AddWhiskyForm';
 
 const AppLayout = ({ children }) => {
   const sampleData = {
@@ -25,11 +19,13 @@ const AppLayout = ({ children }) => {
 
   return (
     <div className="min-h-screen">
+      <AddWhiskyForm/>
       <WelcomeMessage/>
       <Navbar />
       <NavbarLeft />
       <NavbarRight />
       <Logo/>
+      
       
       <div className="flex items-center">
         {/* Left Sidebar */}
