@@ -1,32 +1,20 @@
-import React from 'react';
-import Navbar from './Navbar';
-import NavbarLeft from './NavbarLeft';
-import NavbarRight from './NavbarRight';
-import Logo from './Logo';
-import WelcomeMessage from './WelcomeMessage';
-import AddWhiskyForm from './AddWhiskyForm';
+import React from "react";
+import Navbar from "./Navbar";
+import NavbarLeft from "./NavbarLeft";
+import NavbarRight from "./NavbarRight";
+import Logo from "./Logo";
+import WelcomeMessage from "./WelcomeMessage";
+
 
 const AppLayout = ({ children }) => {
-  const sampleData = {
-    name: "Sample Whiskey",
-    rating: 85,
-    aroma: { score: 88, description: "Rich and complex" },
-    taste: { score: 86, description: "Smooth and balanced" },
-    finish: { score: 84, description: "Long lasting" },
-    ratingText: "Excellent",
-    intensity: 2
-  };
-
   return (
     <div className="min-h-screen">
-      <AddWhiskyForm/>
-      <WelcomeMessage/>
+      <WelcomeMessage />
       <Navbar />
       <NavbarLeft />
       <NavbarRight />
-      <Logo/>
-      
-      
+      <Logo />
+
       <div className="flex items-center">
         {/* Left Sidebar */}
         <aside className="w-1/4 min-h-screen bg-[#8d8d8d] fixed left-0 top-0 pt-[90px]">
