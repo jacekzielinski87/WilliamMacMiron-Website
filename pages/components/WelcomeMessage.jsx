@@ -4,7 +4,7 @@ const WelcomeMessage = () => {
   return (
     <div className='flex flex-col items-center justify-center 
                     bg-slate-100 rounded-xl shadow-2xl shadow-slate-800
-                    p-6 m-32 mx-auto max-w-4xl w-[750px] h-[650px]'>
+                    p-6 m-32 mx-auto max-w-4xl w-[700px] h-[475px]'>
       <h1 className='text-4xl font-serif text-black mb-6 text-center '>
         William Mc Miron
       </h1>

@@ -4,32 +4,30 @@ import NavbarLeft from "./NavbarLeft";
 import NavbarRight from "./NavbarRight";
 import Logo from "./Logo";
 import WelcomeMessage from "./WelcomeMessage";
-
+import LoginPanel from "./LoginPanel";
 
 const AppLayout = ({ children }) => {
   return (
-    <div className="min-h-screen">
-      <WelcomeMessage />
+    <div className="min-h-screen overflow-x-hidden">
+      <LoginPanel/>
       <Navbar />
       <NavbarLeft />
       <NavbarRight />
       <Logo />
 
-      <div className="flex items-center">
+      <div className="">
         {/* Left Sidebar */}
-        <aside className="w-1/4 min-h-screen bg-[#8d8d8d] fixed left-0 top-0 pt-[90px]">
+        <aside className="w-1/4 h-screen bg-[#8d8d8d] fixed  left-0 top-0">
           {/* Add your sidebar content here */}
         </aside>
 
         {/* Right Sidebar */}
-        <aside className="w-1/4 min-h-screen bg-[#8d8d8d] fixed right-0 top-0 pt-[90px]">
+        <aside className="w-1/4 h-screen bg-[#8d8d8d] fixed right-0 top-0">
           {/* Add your sidebar content here */}
         </aside>
 
         {/* Main Content - Increased margins */}
-        <main className="flex-1 ml-[400px] mr-[400px] pt-[90px]">
-          {children}
-        </main>
+        <main className="">{children}</main>
       </div>
     </div>
   );
