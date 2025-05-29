@@ -3,6 +3,8 @@ import Navbar from '../Layout/Navbar';
 import NavbarLeft from '../Layout/NavbarLeft';
 import NavbarRight from '../Layout/NavbarRight'
 import Logo from '../Ui/Logo';
+
+
 const AppLayout = ({ children }) => {
   return (
     <div className="min-h-screen overflow-x-hidden">

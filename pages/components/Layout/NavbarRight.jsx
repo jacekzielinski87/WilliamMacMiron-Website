@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
+
 const NavbarRight = () => {
   const router = useRouter();
 
@@ -17,9 +18,9 @@ const NavbarRight = () => {
       <ul className="h-full w-full justify-center">
         <li className="flex justify-evenly items-center h-full relative">
           <Link
-            href="/components/Partners"
+            href="/Partners/Partners"
             className={`transition-colors ${
-              router.pathname === "/components/Partners"
+              router.pathname === "/Partners/Partners"
                 ? "text-black"
                 : "text-black hover:text-slate-600"
             }`}

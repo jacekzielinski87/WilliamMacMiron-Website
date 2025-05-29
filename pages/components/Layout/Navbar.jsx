@@ -1,6 +1,6 @@
 import React from "react";
-import MenuA from '../../../public/assets/menu1.png';
-import MenuB from '../../../public/assets/menu2.png';
+import MenuA from "../../../public/assets/menu1.png";
+import MenuB from "../../../public/assets/menu2.png";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
@@ -22,9 +22,9 @@ const NavBar = () => {
             {" "}
             {/* Changed space-x-4 to gap-16 */}
             <Link
-              href="/components/Alcohols"
+              href="/components/Alcohols/Alcohols"
               className={`transition-colors ${
-                router.pathname === "/components/Alcohols"
+                router.pathname === "/Alcohols/Alcohols"
                   ? "text-black"
                   : "text-black hover:text-slate-600"
               }`}
@@ -36,9 +36,9 @@ const NavBar = () => {
               />
             </Link>
             <Link
-              href="/components/Others"
+              href="/Others/Others"
               className={`transition-colors ${
-                router.pathname === "/components/Others"
+                router.pathname === "/Others/Others"
                   ? "text-black"
                   : "text-black hover:text-slate-600"
               }`}
