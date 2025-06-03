@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Logo = () => {
   return (
-    <div className="fixed bottom-0 left-1/2 -translate-x-1/2 z-[9999] overflow-visible h-[40px] pointer-events-auto">
+    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-[9999] overflow-visible h-[40px] pointer-events-auto mt-auto">
       <Link href="/" replace>
         <Image
           src="/assets/logoo.png"

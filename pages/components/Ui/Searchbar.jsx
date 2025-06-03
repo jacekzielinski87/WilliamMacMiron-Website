@@ -164,7 +164,7 @@ const SearchResults = ({ query }) => {
           key={index}
           className="flex justify-center items-center mx-auto my-32"
         >
-          <div className="bg-[#C8c8c8] w-[880px] h-[320px] border-2 rounded-3xl border-black shadow-3xl shadow-slate-900 relative">
+          <div className="w-[880px] h-[320px] border-2 bg-[url(/assets/corkTable.png)] shadow-3xl shadow-slate-900 relative">
             <ul className="list-none">
               <li className="p-3 ml-3 font-serif text-sm font-bold">
                 {whiskey.name}
@@ -173,7 +173,7 @@ const SearchResults = ({ query }) => {
             <div className="flex justify-center ml-4">
               <Image
                 src={whiskey.image}
-                className="w-[200px] h-[200px] my-6 shadow-xl shadow-gray-900 border-2 border-black rounded-3xl"
+                className="w-[200px] h-[200px] my-6 shadow-xl shadow-gray-900 border-2 rounded-3xl"
                 alt={`Thumbnail of ${whiskey.name}`}
               />
               <div className="absolute top-10 left-40">

@@ -1,31 +1,24 @@
 import React from "react";
-import Navbar from '../Layout/Navbar';
-import NavbarLeft from '../Layout/NavbarLeft';
-import NavbarRight from '../Layout/NavbarRight'
-import Logo from '../Ui/Logo';
-
+import Navbar from "../Layout/Navbar";
+import Logo from "../Ui/Logo";
+import NavbarLeft from "./NavbarLeft";
+import NavbarRight from "./NavbarRight";
 
 const AppLayout = ({ children }) => {
   return (
-    <div className="min-h-screen overflow-x-hidden">
+    <div className="h-screen overflow-x-hidden bg-[url(/assets/bg.png)]">
       <Navbar />
       <NavbarLeft />
       <NavbarRight />
       <Logo />
 
-      <div className="">
-        {/* Left Sidebar */}
-        <aside className="w-1/4 h-screen bg-[#8d8d8d] fixed  left-0 top-0">
-          {/* Add your sidebar content here */}
-        </aside>
+      <div className="relative">
+        
 
-        {/* Right Sidebar */}
-        <aside className="w-1/4 h-screen bg-[#8d8d8d] fixed right-0 top-0">
-          {/* Add your sidebar content here */}
-        </aside>
-
-        {/* Main Content - Increased margins */}
-        <main className="">{children}</main>
+        {/* Main Content */}
+        <main className="pt-16 px-4 md:px-8 lg:px-16 relative z-0">
+          {children}
+        </main>
       </div>
     </div>
   );
