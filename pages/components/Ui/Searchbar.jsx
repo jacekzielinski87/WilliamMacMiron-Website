@@ -94,8 +94,8 @@ const SearchBar = () => {
         }`}
       >
         <input
-          className={`bg-[#FFFFFF] border-2 rounded-2xl border-black p-2 outline-none 
-                    h-[25px] w-[450px] fixed top-2 left-[960px] transform -translate-x-1/2 z-10 
+          className={`bg-[#FFFFFF] p-2 outline-none 
+                    h-[22px] w-[824px] fixed top-2 left-[960px] transform -translate-x-1/2 z-10 
                     font-serif placeholder:text-black text-black ${
                       showResults ? "z-50" : ""
                     }`}
@@ -164,7 +164,7 @@ const SearchResults = ({ query }) => {
           key={index}
           className="flex justify-center items-center mx-auto my-32"
         >
-          <div className="w-[880px] h-[320px] border-2 bg-[url(/assets/corkTable.png)] shadow-3xl shadow-slate-900 relative">
+          <div className=" bg-[url(/assets/corkTable.png)] shadow-3xl shadow-slate-900 relative">
             <ul className="list-none">
               <li className="p-3 ml-3 font-serif text-sm font-bold">
                 {whiskey.name}

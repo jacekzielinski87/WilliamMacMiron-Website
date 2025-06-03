@@ -1,9 +1,6 @@
 import React from "react";
-import MenuA from "../../../public/assets/menu1.png";
-import MenuB from "../../../public/assets/menu2.png";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import Image from "next/image";
 import SearchBar from "../Ui/Searchbar";
 
 const NavBar = () => {
@@ -12,10 +9,10 @@ const NavBar = () => {
   return (
     <div className="fixed top-0 left-0 right-0 flex justify-center w-full z-50">
       <div
-        className="bg-[#C8C8C8] p-4 border-2 border-black rounded-b-3xl 
+        className="bg-[url(/assets/corkTable.png)] p-4
         w-full mx-4 md:mx-0 
-        md:w-[640px] lg:w-[960px] 
-        h-[40px] shadow-xl
+        md:w-[640px] lg:w-[1024px]
+        h-[40px]
         bg-[url('/assets/cork-texture.png')] bg-repeat"
       >
         <ul className="relative z-50">
@@ -29,11 +26,7 @@ const NavBar = () => {
               }`}
             >
               <div className="relative z-50">
-                <Image
-                  src={MenuA}
-                  className="cursor-pointer relative bottom-2 w-auto h-[20px]"
-                  alt="Alcohols Menu"
-                />
+                
               </div>
             </Link>
             <Link
@@ -45,11 +38,7 @@ const NavBar = () => {
               }`}
             >
               <div className="relative z-50">
-                <Image
-                  src={MenuB}
-                  className="cursor-pointer relative bottom-2 w-auto h-[20px]"
-                  alt="Others Menu"
-                />
+                
               </div>
             </Link>
           </li>
