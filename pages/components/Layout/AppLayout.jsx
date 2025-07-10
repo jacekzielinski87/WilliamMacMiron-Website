@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../Layout/Navbar";
 import NavbarDown from '../Layout/NavbarDown';
-import Logo from "../Ui/Logo";
+
 
 
 const AppLayout = ({ children }) => {

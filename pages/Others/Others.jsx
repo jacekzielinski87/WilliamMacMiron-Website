@@ -1,8 +1,5 @@
 import React from "react";
 import NavBar from "../components/Layout/Navbar";
-import NavbarLeft from "../components/Layout/NavbarLeft";
-import NavbarRight from "../components/Layout/NavbarRight";
-import Logo from "../components/Ui/Logo";
 
 const Others = () => {
   const OthersStuff = ["Pizza", "Perfume", "Toys"];
@@ -10,21 +7,7 @@ const Others = () => {
   return (
     <>
       <NavBar />
-      <NavbarLeft />
-      <NavbarRight />
-      <Logo />
-      <div className="flex justify-center">
-        {/* Left Sidebar */}
-        <aside className="w-1/4 min-h-screen bg-[#8d8d8d] fixed left-0 top-0 pt-[90px] ">
-          {/* Add your sidebar content here */}
-        </aside>
-
-        {/* Right Sidebar */}
-        <aside className="w-1/4 min-h-screen bg-[#8d8d8d] fixed right-0 top-0 pt-[90px] ">
-          {/* Add your sidebar content here */}
-        </aside>
-      </div>
-      <div className="flex justify-center my-12 flex-1 ml-[25%] mr-[25%]">
+      <div className="flex justify-center my-12 flex-1 ml-[25%] m-[25%]">
         <div className="cursor-pointer text-2xl font-serif text-black ">
           {OthersStuff.map((item, index) => (
             <ul

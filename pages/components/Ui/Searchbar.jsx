@@ -4,6 +4,7 @@ import Mortlach75 from "../../../public/assets/MORTLA2.PNG";
 import Raiting1 from "../../../public/assets/Raiting1.png";
 import Raiting2 from "../../../public/assets/Raiting2.png";
 import Image from "next/image";
+import Frame from "../../../public/assets/foto.png";
 
 const mortlachData = [
   {
@@ -95,7 +96,7 @@ const SearchBar = () => {
       >
         <input
           className={`bg-[#FFFFFF] p-2 outline-none 
-                    h-[22px] w-[824px] fixed top-2 left-[960px] transform -translate-x-1/2 z-10 
+                    h-[31px] w-[524px] fixed top-2 left-[960px] transform -translate-x-1/2 z-10 
                     font-serif placeholder:text-black text-black ${
                       showResults ? "z-50" : ""
                     }`}
@@ -108,6 +109,7 @@ const SearchBar = () => {
           autoComplete="off"
         />
 
+        <div className="absolute bottom-0 right-60 w-6 h-6 pointer-events-none shadow-xl"></div>
         {showSuggestions && query.length >= 3 && (
           <div
             className="fixed top-16 left-[952px] transform -translate-x-1/2 w-[500px] 
@@ -127,7 +129,7 @@ const SearchBar = () => {
       </div>
 
       {showResults && (
-        <div className="fixed inset-0 bg-white z-30 top-[64px]">
+        <div className="fixed left-0 right-0 bg-white z-50 top-[56px]">
           <div className="w-full h-full overflow-y-auto">
             <SearchResults query={selectedWhisky} />
           </div>
@@ -158,47 +160,49 @@ const SearchResults = ({ query }) => {
   //Button powrotu nie działa po wyszukaniu !!!
 
   return (
-    <div className="p-4">
+    <div className="">
       {filteredWhiskies.map((whiskey, index) => (
         <div
           key={index}
-          className="flex justify-center items-center mx-auto my-32"
+          className="flex justify-center items-center mx-auto w-1/2"
         >
-          <div className=" bg-[url(/assets/corkTable.png)] shadow-3xl shadow-slate-900 relative">
-            <ul className="list-none">
-              <li className="p-3 ml-3 font-serif text-sm font-bold">
-                {whiskey.name}
-              </li>
-            </ul>
-            <div className="flex justify-center ml-4">
-              <Image
-                src={whiskey.image}
-                className="w-[200px] h-[200px] my-6 shadow-xl shadow-gray-900 border-2 rounded-3xl"
-                alt={`Thumbnail of ${whiskey.name}`}
-              />
-              <div className="absolute top-10 left-40">
-                <Image
-                  src={getRatingImage(whiskey.aroma.score)}
-                  width={80}
-                  height={80}
-                  className="object-contain"
-                  alt="Rating Note"
-                  priority
-                />
+          <div className=" bg-[url(/assets/corkTable.png)] shadow-3xl shadow-slate-900 relative m-6 border-8 border-opacity-35 border-black p-2">
+            <div className="flex flex-col items-center">
+              <div className="flex flex-col p-2">
+                <div className="font-bold bg-white p-2 w-full">
+                  {whiskey.name}
+                </div>
+                <div className="flex">
+                  <Image
+                    src={Frame}
+                    className="w-[275px] h-[275px] shadow-xl shadow-zinc-900 m-2"
+                    alt={`Thumbnail of ${whiskey.name}`}
+                  />
+                  <div className="absolute top-14 left-52">
+                    <Image
+                      src={getRatingImage(whiskey.aroma.score)}
+                      width={70}
+                      height={70}
+                      className="object-contain"
+                      alt="Rating Note"
+                      priority
+                    />
+                  </div>
+                  <ul className="list-disc m-2 decoration-solid font-serif font-bold bg-white p-2 w-full h-[275px]">
+                    <li>Rating: {whiskey.aroma.score}/100, (61-100)</li>
+                    <li>
+                      Aroma: {whiskey.aroma.score}/100, {whiskey.aroma.notes}
+                    </li>
+                    <li>
+                      Taste: {whiskey.taste.score}/100, {whiskey.taste.notes}
+                    </li>
+                    <li>
+                      Finish: {whiskey.finish.score}/100, {whiskey.finish.notes}
+                    </li>
+                    <li>Intensity: {whiskey.intensity}</li>
+                  </ul>
+                </div>
               </div>
-              <ul className="grid gap-4 decoration-solid ml-6 p-6 font-serif text-sm font-bold">
-                <li>Rating: {whiskey.aroma.score}/100, (61-100)</li>
-                <li>
-                  Aroma: {whiskey.aroma.score}/100, {whiskey.aroma.notes}
-                </li>
-                <li>
-                  Taste: {whiskey.taste.score}/100, {whiskey.taste.notes}
-                </li>
-                <li>
-                  Finish: {whiskey.finish.score}/100, {whiskey.finish.notes}
-                </li>
-                <li>Intensity: {whiskey.intensity}</li>
-              </ul>
             </div>
           </div>
         </div>

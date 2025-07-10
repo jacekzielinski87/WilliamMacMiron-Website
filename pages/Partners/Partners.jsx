@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import NavBar from "../components/Layout/Navbar";
-import NavbarLeft from "../components/Layout/NavbarLeft";
-import NavbarRight from "../components/Layout/NavbarRight";
-import LogoComponent from "../components/Ui/Logo";
+
+
 
 const partnersData = [
   {
@@ -81,13 +80,7 @@ const Partners = () => {
   return (
     <>
       <NavBar />
-      <NavbarLeft />
-      <NavbarRight />
-      <LogoComponent />
-      <div className="flex items-center">
-        <aside className="w-1/4 min-h-screen bg-[#8d8d8d] fixed left-0 top-0 pt-[90px]" />
-        <aside className="w-1/4 min-h-screen bg-[#8d8d8d] fixed right-0 top-0 pt-[90px]" />
-      </div>
+    
 
       <div className="flex flex-col items-center mx-auto w-1/2 pt-[90px]">
         {!selectedPartner && (
@@ -102,7 +95,7 @@ const Partners = () => {
                 <button
                   key={partner.id}
                   onClick={() => handlePartnerClick(partner)}
-                  className="px-6 py-2 rounded-full bg-[#c8c8c8] hover:bg-gray-400 transition-all"
+                  className="px-6 py-2 rounded-full bg-[#ffffff] hover:bg-gray-400 transition-all"
                 >
                   {partner.name}
                 </button>
