@@ -1,0 +1,6 @@
+//Stan na 24.08.2025//
+
+Aktualnie widok działa poprawnie, aczkolwiek do poprawy:
+-po wyszukaniu danego elementu, zasłana on wybrane menu (menu zostaje "pod spodem, podczas gdy element jest wyświetlany").
+
+-w sekcji "Informacje", informacja odnośnie wieku i spożywania alkoholu musi być przeniesiona na samą górę.

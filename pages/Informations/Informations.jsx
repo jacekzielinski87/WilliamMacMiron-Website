@@ -36,7 +36,7 @@ const Informations = () => {
         </p>
 
         <div
-          className="bg-yellow-300 p-4 rounded border-4 border-black"
+          className="bg-yellow-300 p-4 rounded border-4 border-black "
           role="alert"
         >
           <p className="font-bold text-red-600 flex justify-center items-center shadow-2xl shadow-slate-900 text-2xl">Responsible Enjoyment:</p>
