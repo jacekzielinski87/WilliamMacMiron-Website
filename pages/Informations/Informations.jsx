@@ -17,11 +17,11 @@ const Informations = () => {
       <Navbar />
       <NavbarDown />
       <section className="p-6 max-w-3xl mx-auto my-36 bg-[url(/assets/corkTable.png)] border-8 border-black border-opacity-35">
-        <h1 className="text-3xl font-bold mb-4 bg-white flex justify-center items-center border-4 border-black border-opacity-80">
+        <h1 className="text-4xl font-bold mb-4 bg-white flex justify-center items-center border-4 border-black border-opacity-80">
           About William MacMiron
         </h1>
         <div
-          className="bg-yellow-300 p-4 rounded border-4 border-black "
+          className="bg-yellow-300 p-4 rounded border-4 border-black mb-4"
           role="alert"
         >
         <p className="font-bold text-red-600 flex justify-center items-center 
