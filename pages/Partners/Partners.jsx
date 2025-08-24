@@ -66,6 +66,16 @@ const partnersData = [
     specialties: ["Single Malt", "Aged Whiskey"],
     established: 1897,
   },
+  {
+    id: 3,
+    name: "Absolut",
+    image: "/assets/absolut.jpg",
+    description:
+      "Clean and complex on the nose, with subtle cereal notes. Smooth and mellow to taste with a distinct character of peppery grain, followed by a hint of dried fruit and sourdough bread. All Absolut Vodka is made from winter wheat, which is distilled on four story high column stills to a supremely high quality.",
+    location: "Sweden",
+    specialties: ["Vodka"],
+    established: 1917,
+  },
   // Add more partners
 ];
 
