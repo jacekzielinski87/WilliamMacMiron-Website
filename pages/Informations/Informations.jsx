@@ -24,17 +24,17 @@ const Informations = () => {
           className="bg-yellow-300 p-4 rounded border-4 border-black mb-4"
           role="alert"
         >
+          
         <p className="font-bold text-red-600 flex justify-center items-center 
-                    shadow-2xl 
-                    shadow-slate-900  
-                    text-2xl">Responsible Enjoyment:</p>
+            shadow-slate-900 text-2xl">Responsible Enjoyment:</p>
+
           <p className="text-red-700 font-bold">
             This website contains content related to alcoholic beverages.You
             must be 18 years or older to access this site. Please drink
             mindfully and responsibly.
           </p>
         </div>
-        <p className="mb-4 p-4 text-zinc-900 bg-white font-bold border-4 border-black border-opacity-80">
+        <p className="mb-4 p-4 text-zinc-900 bg-white font-bold border-4 border-black">
           William MacMiron is the founder and creative mind behind this
           whisky-focused website. With over a decade of experience in the world
           of fine spirits, William works professionally as a certified whisky
