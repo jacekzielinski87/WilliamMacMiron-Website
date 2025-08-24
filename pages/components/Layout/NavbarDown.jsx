@@ -20,9 +20,9 @@ const NavBar = () => {
         <div className="flex items-center justify-between w-full">
           <div className="flex-1 flex justify-center">
             <Link
-              href="/Others"
+              href="/Informations/Informations"
               className={`transition-colors relative z-50 ${
-                router.pathname === "/Others"
+                router.pathname === "/Informations/Informations"
                   ? "text-[#5c3d1e]"
                   : "text-[#5c3d1e] hover:text-[#8b6b43]"
               }`}
@@ -45,9 +45,9 @@ const NavBar = () => {
           </div>
           <div className="flex-1 flex justify-center">
             <Link
-              href="/Partners"
+              href="/Partners/Partners"
               className={`transition-colors relative z-50 ${
-                router.pathname === "/Partners"
+                router.pathname === "/Partners/Partners"
                   ? "text-[#5c3d1e]"
                   : "text-[#5c3d1e] hover:text-[#8b6b43]"
               }`}
@@ -63,6 +63,18 @@ const NavBar = () => {
               </div>
             </Link>
           </div>
+        </div>
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 my-1">
+          <Link href="/" replace>
+            <Image
+              src="/assets/logoo.png"
+              alt="Logo"
+              width={100}
+              height={100}
+              className="cursor-pointer hover:scale-100 transition-transform p-4 w-[70px] h-[65px]"
+              priority
+            />
+          </Link>
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import NavBar from "../components/Layout/Navbar";
+import NavbarDown from "../components/Layout/NavbarDown";
 
 
 
@@ -80,8 +81,7 @@ const Partners = () => {
   return (
     <>
       <NavBar />
-    
-
+      <NavbarDown/>
       <div className="flex flex-col items-center mx-auto w-1/2 pt-[90px]">
         {!selectedPartner && (
           <>

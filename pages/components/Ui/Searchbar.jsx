@@ -53,7 +53,7 @@ const SearchBar = () => {
   const [query, setQuery] = useState("");
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [showResults, setShowResults] = useState(false);
-  const [selectedWhisky, setSelectedWhisky] = useState("");
+  const [selectedWhisky, setSelectedWhisky] = useState(null);
   const [placeholder, setPlaceholder] = useState("");
 
   const getSuggestions = () => {
@@ -65,7 +65,6 @@ const SearchBar = () => {
   const handleSuggestionClick = (suggestion) => {
     setSelectedWhisky(suggestion);
     setShowSuggestions(false);
-    setShowResults(true);
     setQuery("");
     setPlaceholder("");
   };
@@ -113,12 +112,12 @@ const SearchBar = () => {
         {showSuggestions && query.length >= 3 && (
           <div
             className="fixed top-16 left-[952px] transform -translate-x-1/2 w-[500px] 
-                         bg-[#c8c8c8] border-2 border-black rounded-lg shadow-lg z-50 font-serif font-bold"
+                         bg-[url(/assets/corkTable.png)] border-2 border-black rounded-lg shadow-lg z-50 font-serif font-bold"
           >
             {getSuggestions().map((suggestion, index) => (
               <div
                 key={index}
-                className="p-2 m-2 hover:bg-slate-100 rounded-sm cursor-pointer"
+                className="p-2 m-2 hover:bg-slate-200 hover:opacity-85 rounded-sm cursor-pointer text-zinc-900"
                 onClick={() => handleSuggestionClick(suggestion)}
               >
                 {suggestion}
@@ -128,8 +127,8 @@ const SearchBar = () => {
         )}
       </div>
 
-      {showResults && (
-        <div className="fixed left-0 right-0 bg-white z-50 top-[56px]">
+      {selectedWhisky && (
+        <div className="fixed left-0 right-0 bg-white z-50 top-[88px]">
           <div className="w-full h-full overflow-y-auto">
             <SearchResults query={selectedWhisky} />
           </div>
@@ -156,8 +155,6 @@ const SearchResults = ({ query }) => {
     );
   }
 
-  //Navbar znika po wyszukaniu !!!
-  //Button powrotu nie działa po wyszukaniu !!!
 
   return (
     <div className="">
@@ -166,7 +163,7 @@ const SearchResults = ({ query }) => {
           key={index}
           className="flex justify-center items-center mx-auto w-1/2"
         >
-          <div className=" bg-[url(/assets/corkTable.png)] shadow-3xl shadow-slate-900 relative m-6 border-8 border-opacity-35 border-black p-2">
+          <div className=" bg-[url(/assets/corkTable.png)] shadow-2xl shadow-slate-900 relative m-6 border-8 border-opacity-35 border-black p-2">
             <div className="flex flex-col items-center">
               <div className="flex flex-col p-2">
                 <div className="font-bold bg-white p-2 w-full">
@@ -188,7 +185,7 @@ const SearchResults = ({ query }) => {
                       priority
                     />
                   </div>
-                  <ul className="list-disc m-2 decoration-solid font-serif font-bold bg-white p-2 w-full h-[275px]">
+                  <ul className="list-disc m-2 font-serif font-bold bg-white p-6 w-full h-[275px]">
                     <li>Rating: {whiskey.aroma.score}/100, (61-100)</li>
                     <li>
                       Aroma: {whiskey.aroma.score}/100, {whiskey.aroma.notes}
