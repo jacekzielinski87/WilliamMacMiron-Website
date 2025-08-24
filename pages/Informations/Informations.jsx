@@ -24,7 +24,7 @@ const Informations = () => {
           className="bg-yellow-300 p-4 rounded border-4 border-black mb-4"
           role="alert"
         >
-          
+
         <p className="font-bold text-red-600 flex justify-center items-center 
             shadow-slate-900 text-2xl">Responsible Enjoyment:</p>
 

@@ -38,7 +38,7 @@ const NavBar = () => {
               </div>
             </Link>
           </div>
-          <div className="flex-1 flex justify-center">
+          <div className="flex-1 flex justify-center relative">
             <div className="relative z-50">
               <SearchBar />
             </div>

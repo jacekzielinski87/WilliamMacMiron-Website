@@ -95,7 +95,7 @@ const SearchBar = () => {
       >
         <input
           className={`bg-[#FFFFFF] p-2 outline-none 
-                    h-[31px] w-[524px] fixed top-2 left-[960px] transform -translate-x-1/2 z-10 
+                    h-[31px] w-[600px] fixed top-2 left-[960px] transform -translate-x-1/2
                     font-serif placeholder:text-black text-black ${
                       showResults ? "z-50" : ""
                     }`}
@@ -112,7 +112,7 @@ const SearchBar = () => {
         {showSuggestions && query.length >= 3 && (
           <div
             className="fixed top-16 left-[952px] transform -translate-x-1/2 w-[500px] 
-                         bg-[url(/assets/corkTable.png)] border-2 border-black rounded-lg shadow-lg z-50 font-serif font-bold"
+                         bg-[url(/assets/corkTable.png)] border-2 border-black rounded-lg shadow-lg font-serif font-bold"
           >
             {getSuggestions().map((suggestion, index) => (
               <div
@@ -128,7 +128,7 @@ const SearchBar = () => {
       </div>
 
       {selectedWhisky && (
-        <div className="fixed left-0 right-0 bg-white z-50 top-[88px]">
+        <div className="fixed left-0 right-0 bg-white top-[125px]">
           <div className="w-full h-full overflow-y-auto">
             <SearchResults query={selectedWhisky} />
           </div>
@@ -154,7 +154,6 @@ const SearchResults = ({ query }) => {
       </div>
     );
   }
-
 
   return (
     <div className="">
@@ -185,7 +184,7 @@ const SearchResults = ({ query }) => {
                       priority
                     />
                   </div>
-                  <ul className="list-disc m-2 font-serif font-bold bg-white p-6 w-full h-[275px]">
+                  <ul className="list-disc m-2 font-serif font-bold bg-white pl-5 p-2 w-full h-[276px]">
                     <li>Rating: {whiskey.aroma.score}/100, (61-100)</li>
                     <li>
                       Aroma: {whiskey.aroma.score}/100, {whiskey.aroma.notes}
