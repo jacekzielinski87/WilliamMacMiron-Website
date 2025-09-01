@@ -54,7 +54,7 @@ const SearchBar = () => {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [showResults, setShowResults] = useState(false);
   const [selectedWhisky, setSelectedWhisky] = useState(null);
-  const [placeholder, setPlaceholder] = useState("");
+  const [placeholder, setPlaceholder] = useState("Search Whiskies...");
 
   const getSuggestions = () => {
     return mortlachData
@@ -128,8 +128,8 @@ const SearchBar = () => {
       </div>
 
       {selectedWhisky && (
-        <div className="fixed left-0 right-0 bg-white top-[125px]">
-          <div className="w-full h-full overflow-y-auto">
+        <div className="fixed inset-0 z-50 overflow-y-auto bottom-16 left-0 right-0 bg-white top-[125px]">
+          <div className="">
             <SearchResults query={selectedWhisky} />
           </div>
         </div>
@@ -140,7 +140,7 @@ const SearchBar = () => {
 
 const SearchResults = ({ query }) => {
   const filteredWhiskies = mortlachData.filter((whisky) =>
-    whisky.name.toLowerCase().startsWith(query.toLowerCase())
+    whisky.name.toLowerCase().includes(query.toLowerCase())
   );
 
   const getRatingImage = (score) => {

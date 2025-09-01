@@ -8,7 +8,7 @@ const NavBar = () => {
   const router = useRouter();
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 flex justify-center w-full z-[100]">
+    <div className="fixed bottom-0 left-0 right-0 flex justify-center w-full z-60">
       <div
         className="bg-[url(/assets/corkTable.png)] p-4
         w-full mx-4 md:mx-0 
@@ -21,13 +21,13 @@ const NavBar = () => {
           <div className="flex-1 flex justify-center">
             <Link
               href="/Informations/Informations"
-              className={`transition-colors relative z-50 ${
+              className={`transition-colors relative z-60 ${
                 router.pathname === "/Informations/Informations"
                   ? "text-[#5c3d1e]"
                   : "text-[#5c3d1e] hover:text-[#8b6b43]"
               }`}
             >
-              <div className="relative z-50 flex items-center justify-center bg-white">
+              <div className="relative z-10 flex items-center justify-center bg-white">
                 <Image
                   src="/assets/i.png"
                   alt="Menu 1"
@@ -39,20 +39,20 @@ const NavBar = () => {
             </Link>
           </div>
           <div className="flex-1 flex justify-center">
-            <div className="relative z-50">
+            <div className="relative z-60">
               <SearchBar />
             </div>
           </div>
           <div className="flex-1 flex justify-center">
             <Link
               href="/Partners/Partners"
-              className={`transition-colors relative z-50 ${
+              className={`transition-colors relative z-60 ${
                 router.pathname === "/Partners/Partners"
                   ? "text-[#5c3d1e]"
                   : "text-[#5c3d1e] hover:text-[#8b6b43]"
               }`}
             >
-              <div className="relative z-50 flex items-center justify-center bg-white">
+              <div className="relative z-10 flex items-center justify-center bg-white">
                 <Image
                   src="/assets/p.png"
                   alt="Menu 2"
@@ -64,7 +64,7 @@ const NavBar = () => {
             </Link>
           </div>
         </div>
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 my-1">
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 my-1">
           <Link href="/" replace>
             <Image
               src="/assets/logoo.png"
