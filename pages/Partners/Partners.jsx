@@ -92,7 +92,7 @@ const Partners = () => {
     <>
       <NavBar />
       <NavbarDown/>
-      <div className="flex flex-col items-center mx-auto w-1/2 pt-[90px]">
+      <div className="flex flex-col items-center mx-auto w-1/2 h-1/2 my-48">
         {!selectedPartner && (
           <>
             <h1 className="text-3xl font-serif text-black mb-6 text-center">

@@ -64,7 +64,7 @@ const NavBar = () => {
             </Link>
           </div>
         </div>
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 my-1">
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 my-1 z-[70]">
           <Link href="/" replace>
             <Image
               src="/assets/logoo.png"

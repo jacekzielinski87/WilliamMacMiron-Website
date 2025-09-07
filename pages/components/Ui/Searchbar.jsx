@@ -54,7 +54,7 @@ const SearchBar = () => {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [showResults, setShowResults] = useState(false);
   const [selectedWhisky, setSelectedWhisky] = useState(null);
-  const [placeholder, setPlaceholder] = useState("Search Whiskies...");
+  const [placeholder, setPlaceholder] = useState("");
 
   const getSuggestions = () => {
     return mortlachData
@@ -65,6 +65,7 @@ const SearchBar = () => {
   const handleSuggestionClick = (suggestion) => {
     setSelectedWhisky(suggestion);
     setShowSuggestions(false);
+    setShowResults(true);
     setQuery("");
     setPlaceholder("");
   };
@@ -90,14 +91,14 @@ const SearchBar = () => {
     <>
       <div
         className={`flex flex-col items-center justify-center w-full relative ${
-          showResults ? "z-40" : ""
+          showResults ? "" : ""
         }`}
       >
         <input
           className={`bg-[#FFFFFF] p-2 outline-none 
                     h-[31px] w-[600px] fixed top-2 left-[960px] transform -translate-x-1/2
                     font-serif placeholder:text-black text-black ${
-                      showResults ? "z-50" : ""
+                      showResults ? "" : ""
                     }`}
           type="text"
           value={query}
@@ -111,7 +112,7 @@ const SearchBar = () => {
         <div className="absolute bottom-0 right-60 w-6 h-6 pointer-events-none shadow-xl"></div>
         {showSuggestions && query.length >= 3 && (
           <div
-            className="fixed top-16 left-[952px] transform -translate-x-1/2 w-[500px] 
+            className="fixed top-16 left-[952px] transform -translate-x-1/2 w-[500px] z-20
                          bg-[url(/assets/corkTable.png)] border-2 border-black rounded-lg shadow-lg font-serif font-bold"
           >
             {getSuggestions().map((suggestion, index) => (
@@ -127,8 +128,8 @@ const SearchBar = () => {
         )}
       </div>
 
-      {selectedWhisky && (
-        <div className="fixed inset-0 z-50 overflow-y-auto bottom-16 left-0 right-0 bg-white top-[125px]">
+      {SearchResults && selectedWhisky && (
+        <div className="fixed bottom-[90px] left-0 right-0 bg-white top-[125px]">
           <div className="">
             <SearchResults query={selectedWhisky} />
           </div>
