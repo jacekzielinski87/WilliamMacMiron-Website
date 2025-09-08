@@ -3,7 +3,7 @@ import NavBar from "../components/Layout/Navbar";
 import NavbarDown from "../components/Layout/NavbarDown";
 
 const Others = () => {
-  const OthersStuff = ["Pizza", "Toys", "Cards" , "Perfme"];
+  const OthersStuff = ["Pizza", "Toys", "Cards" , "Perfume"];
 
   return (
     <>

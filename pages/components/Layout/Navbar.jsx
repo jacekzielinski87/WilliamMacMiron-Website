@@ -17,8 +17,8 @@ const NavBar = () => {
         flex items-center
         bg-[url('/assets/cork-texture.png')] bg-repeat border-r-8 border-black border-opacity-35 border-b-8 border-black border-opacity-35 border-l-8 border-black border-opacity-35"
       >
-        <div className="flex items-center justify-between w-full">
-          <div className="flex-1 flex justify-center">
+        <div className="flex items-center justify-between w-full gap-60">
+          <div className="flex-1 flex justify-around">
             <Link
               href="/Alcohols/Alcohols"
               className={`transition-colors relative z-50 ${
@@ -27,7 +27,7 @@ const NavBar = () => {
                   : "text-[#5c3d1e] hover:text-[#8b6b43]"
               }`}
             >
-              <div className="relative z-50 flex items-center justify-center bg-white">
+              <div className="relative z-50 flex items-center justify-center bg-white h-[32px]">
                 <Image
                   src="/assets/Menu 1.png"
                   alt="Menu 1"
@@ -52,7 +52,7 @@ const NavBar = () => {
                   : "text-[#5c3d1e] hover:text-[#8b6b43]"
               }`}
             >
-              <div className="relative z-50 flex items-center justify-center bg-white">
+              <div className="relative z-50 flex items-center justify-center bg-white h-[32px]">
                 <Image
                   src="/assets/Menu 2.png"
                   alt="Menu 2"

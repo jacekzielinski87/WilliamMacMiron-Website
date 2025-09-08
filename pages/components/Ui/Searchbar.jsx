@@ -90,13 +90,13 @@ const SearchBar = () => {
   return (
     <>
       <div
-        className={`flex flex-col items-center justify-center w-full relative ${
+        className={`flex flex-col items-center justify-center relative ${
           showResults ? "" : ""
         }`}
       >
         <input
           className={`bg-[#FFFFFF] p-2 outline-none 
-                    h-[31px] w-[600px] fixed top-2 left-[960px] transform -translate-x-1/2
+                    h-[33px] w-[600px] fixed top-2 left-[960px] transform -translate-x-1/2
                     font-serif placeholder:text-black text-black ${
                       showResults ? "" : ""
                     }`}
@@ -175,7 +175,7 @@ const SearchResults = ({ query }) => {
                     className="w-[275px] h-[275px] shadow-xl shadow-zinc-900 m-2"
                     alt={`Thumbnail of ${whiskey.name}`}
                   />
-                  <div className="absolute top-14 left-52">
+                  <div className="absolute top-14 left-60">
                     <Image
                       src={getRatingImage(whiskey.aroma.score)}
                       width={70}
@@ -185,7 +185,7 @@ const SearchResults = ({ query }) => {
                       priority
                     />
                   </div>
-                  <ul className="list-disc m-2 font-serif font-bold bg-white pl-5 p-2 w-full h-[276px]">
+                  <ul className="list-disc m-2 font-serif font-bold bg-white pl-8 p-2 w-full h-[276px]">
                     <li>Rating: {whiskey.aroma.score}/100, (61-100)</li>
                     <li>
                       Aroma: {whiskey.aroma.score}/100, {whiskey.aroma.notes}

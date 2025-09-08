@@ -1,6 +1,34 @@
-//Stan na 24.08.2025//
+//Stan na 09.09.2025//
 
-Aktualnie widok działa poprawnie, aczkolwiek do poprawy:
--po wyszukaniu danego elementu, zasłana on wybrane menu (menu zostaje "pod spodem, podczas gdy element jest wyświetlany").
+- Gdy wyszukany element jest wyświetlany, po wciśnięciu menu powinno wracać na główną stronę, a tak się nie dzieje
 
--w sekcji "Informacje", informacja odnośnie wieku i spożywania alkoholu musi być przeniesiona na samą górę.
+
+
+Poprawki od Przemka:
+
+- Cienie do zdjęć i menu i wyszukiwarki
+- Napis whisky wyjeżdża - zmiejszyć szerokość
+- Dół nawigacji - belka i pośrodku logo (napis ma być William McMiron)
+
+
+Welcome Message - ma być jak okno alkoholu.
+
+W Navbar na dole belka dolna, z napisem jak na fotce.
+Logo na szerokość korka na dole navbar.
+
+Sekcja alkoholi - belki wg wyglądu
+Alkohole alfabetycznie, po prawej stronie liczba pozycji.
+Wchodząc w alkhole, będą marki i destylarnie.
+
+Wszędzie od dołu cienie.
+Wszyskie korki dookoła cienie.
+
+Others belki jak wszędzie.
+Partnerzy również.
+
+Informacje robimy jak inne sekcje - belki.
+
+Zagięcie kartki zrobić - opacity pokombinować.
+
+Każda ocena będzie do danego alkoholu.
+Ocena musi być .

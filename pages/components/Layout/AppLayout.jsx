@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../Layout/Navbar";
 import NavbarDown from "../Layout/NavbarDown";
 
+
 const AppLayout = ({ children }) => {
   return (
     <div className="h-screen overflow-x-hidden bg-gray-100">
