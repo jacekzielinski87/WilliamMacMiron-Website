@@ -64,17 +64,10 @@ const NavBar = () => {
             </Link>
           </div>
         </div>
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 my-1 z-[70] bg-white h-[50px]">
-          <Link href="/" replace>
-            <Image
-              src="/assets/wm.png"
-              alt="Logo"
-              width={100}
-              height={100}
-              className="cursor-pointer hover:scale-100 transition-transform p-4 w-[70px] h-[65px]"
-              priority
-            />
-          </Link>
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 my-1 z-[70] w-[600px] h-[33px]">
+          <p className="text-black bg-white pl-10 font-rouge text-3xl ">
+            Testing Notes
+          </p>
         </div>
       </div>
     </div>

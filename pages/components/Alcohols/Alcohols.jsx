@@ -4,10 +4,31 @@ import Navbar from "../Layout/Navbar";
 import NavbarDown from "../Layout/NavbarDown";
 
 const alcohols = [
-  { name: "Absinthe", image: "/assets/products/glen.jpg" },
-  { name: "Akvavit/Aquavit", image: "/assets/products/auchangie.png" },
-  { name: "Архи/Archi", image: "/assets/products/glen.jpg" },
-  { name: "Beer", image: "/assets/products/glen.jpg" },
+  { name: "Absinthe" },
+  { name: "Akvavit/Aquavit" },
+  { name: "Архи/Archi" },
+  { name: "Beer" },
+  { name: "Brandy" },
+  { name: "Cachaça" },
+  { name: "Cider" },
+  { name: "Gin" },
+  { name: "Kımız" },
+  { name: "Mead" },
+  { name: "(Mezcal" },
+  { name: "New Make / White Dog / Moonshine" },
+  { name: "Non-alcoholic beverages" },
+  { name: "Okowita" },
+  { name: "Ouzo" },
+  { name: "Rum" },
+  { name: "Sake" },
+  { name: "Soju" },
+  { name: "Slivovitz / Śliwowica" },
+  { name: "Tequila" },
+  { name: "Tincture" },
+  { name: "(Vodka" },
+  { name: "Whisky / Whiskey / Bourbon / Aged Spirit" },
+  { name: "Whisky / Whiskey / Bourbon - not yet" },
+  { name: "Wine" },
 ];
 
 const Alcohols = () => {
@@ -15,17 +36,14 @@ const Alcohols = () => {
     <>
       <Navbar />
       <NavbarDown />
-      <div className="max-w-2xl mx-auto my-12 py-12 px-4">
-        <h1 className="text-2xl font-serif text-black text-center m-6">
-          <b className="">Our Alcohols Selection</b>
-        </h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+      <div className="max-w-xl w-full mx-auto my-12 py-12 px-4 flex justify-center">
+        <div className="grid grid-cols-1 gap-6 justify-items-center w-full">
           {alcohols.map((alcohol) => (
             <div
-              key={alcohol.name}
-              className="rounded-xl shadow-lg p-4 flex flex-col items-center hover:scale-105 transition-transform border-2 border-zinc-800 bg-[url('/assets/corkTable.png')] bg-cover bg-center"
+              key={alcohol.index}
+              className="shadow-xl shadow-slate-900 p-4 flex justify-center items-center transition-transform bg-[url('/assets/corkTable.png')] bg-cover bg-center border-8 border-black border-opacity-35 w-[800px] h-[70px]"
             >
-            <span className="text-lg font-serif text-black mt-2">
+              <span className="text-lg font-serif text-black bg-white w-[750px]  h-[33px] flex items-center justify-center">
                 {alcohol.name}
               </span>
             </div>
