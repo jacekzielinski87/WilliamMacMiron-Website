@@ -16,40 +16,42 @@ const Informations = () => {
     <>
       <Navbar />
       <NavbarDown />
-      <section className="p-6 max-w-3xl mx-auto my-36 bg-[url(/assets/corkTable.png)] border-8 border-black border-opacity-35">
-        <h1 className="text-4xl font-bold mb-4 bg-white flex justify-center items-center border-4 border-black border-opacity-80">
-          About William MacMiron
-        </h1>
+
+      <section className="mx-auto my-20 gap-6">
         <div
-          className="bg-yellow-300 p-4 rounded border-4 border-black mb-4"
+          className="w-[800px] h-[120px] mx-auto my-6 flex justify-center items-center shadow-xl shadow-slate-900 transition-transform bg-[url('/assets/corkTable.png')] bg-cover bg-center border-8 border-black border-opacity-35"
           role="alert"
         >
-
-        <p className="font-bold text-red-600 flex justify-center items-center 
-            shadow-slate-900 text-2xl">Responsible Enjoyment:</p>
-
-          <p className="text-red-700 font-bold">
-            This website contains content related to alcoholic beverages.You
-            must be 18 years or older to access this site. Please drink
-            mindfully and responsibly.
+          <div className="bg-white flex flex-col items-center justify-center w-[750px] h-[85px] text-center p-2">
+            <p className="text-lg font-serif text-black">
+              Responsible Enjoyment:
+            </p>
+            <p className="text-lg font-serif text-black">
+              This website contains content related to alcoholic beverages. You
+              must be 18 years or older to access this site. Please drink
+              mindfully and responsibly.
+            </p>
+          </div>
+        </div>
+        <div className="w-[800px] h-[120px] mx-auto my-6 flex justify-center items-center shadow-xl shadow-slate-900 transition-transform bg-[url('/assets/corkTable.png')] bg-cover bg-center border-8 border-black border-opacity-35">
+          <p className="bg-white flex items-center justify-center w-[750px] h-[100px] font-serif text-black text-center text-lg">
+            William MacMiron is the founder and creative mind behind this
+            whisky-focused website. With over a decade of experience in the
+            world of fine spirits, William works professionally as a certified
+            whisky sommelier. His deep appreciation for tradition,
+            craftsmanship, and the art of distillation is at the heart of this
+            platform.
           </p>
         </div>
-        <p className="mb-4 p-4 text-zinc-900 bg-white font-bold border-4 border-black">
-          William MacMiron is the founder and creative mind behind this
-          whisky-focused website. With over a decade of experience in the world
-          of fine spirits, William works professionally as a certified whisky
-          sommelier. His deep appreciation for tradition, craftsmanship, and the
-          art of distillation is at the heart of this platform.
-        </p>
-        <p className="mb-4 p-4 text-zinc-900 bg-white font-bold border-4 border-black border-opacity-80">
-          Through this site, William shares his personal insights, tasting
-          notes, and recommendations—whether you're a seasoned connoisseur or
-          just beginning your whisky journey. His goal is to create a welcoming
-          space where education and passion meet, celebrating the rich heritage
-          and diversity of whisky from around the world.
-        </p>
-
-        
+        <div className="w-[800px] h-[120px] mx-auto flex justify-center items-center shadow-xl shadow-slate-900 transition-transform bg-[url('/assets/corkTable.png')] bg-cover bg-center border-8 border-black border-opacity-35">
+          <p className="bg-white flex items-center justify-center w-[750px] h-[85px] text-lg font-serif text-black text-center">
+            Through this site, William shares his personal insights, tasting
+            notes, and recommendations—whether you're a seasoned connoisseur or
+            just beginning your whisky journey. His goal is to create a
+            welcoming space where education and passion meet, celebrating the
+            rich heritage and diversity of whisky from around the world.
+          </p>
+        </div>
       </section>
     </>
   );

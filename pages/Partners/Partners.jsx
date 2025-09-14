@@ -92,22 +92,24 @@ const Partners = () => {
     <>
       <NavBar />
       <NavbarDown/>
-      <div className="flex flex-col items-center mx-auto w-1/2 h-1/2 my-48">
+      <div className="max-w-xl w-full mx-auto my-6 py-12 px-4 flex justify-center">
         {!selectedPartner && (
           <>
-            <h1 className="text-3xl font-serif text-black mb-6 text-center">
-              <b>Our Partners</b>
-            </h1>
+            
 
             {/* Partner List - only shown when no partner is selected */}
-            <div className="grid gap-6 grid-cols-1 w-[200px] font-serif text-xl ">
+            <div className="grid grid-cols-1 justify-items-center w-full gap-6">
               {partnersData.map((partner) => (
                 <button
                   key={partner.id}
                   onClick={() => handlePartnerClick(partner)}
-                  className="px-6 py-2 rounded-full bg-[#ffffff] hover:bg-gray-400 transition-all"
+                  className="bg-[url('/assets/corkTable.png')] bg-cover bg-center  items-center hover:opacity-90 hover:scale-105 shadow-xl shadow-slate-900 flex justify-center items-center transition-transform bg-[url('/assets/corkTable.png')] bg-cover bg-center border-8 border-black border-opacity-35 w-[800px] h-[75px]"
                 >
+                  <span className="bg-white flex justify-center items-center w-[750px] h-[40px] text-black text-lg font-serif">
+                
+              
                   {partner.name}
+                  </span>
                 </button>
               ))}
             </div>

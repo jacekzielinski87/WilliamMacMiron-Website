@@ -14,7 +14,7 @@ const alcohols = [
   { name: "Gin" },
   { name: "Kımız" },
   { name: "Mead" },
-  { name: "(Mezcal" },
+  { name: "Mezcal" },
   { name: "New Make / White Dog / Moonshine" },
   { name: "Non-alcoholic beverages" },
   { name: "Okowita" },
@@ -36,14 +36,14 @@ const Alcohols = () => {
     <>
       <Navbar />
       <NavbarDown />
-      <div className="max-w-xl w-full mx-auto my-12 py-12 px-4 flex justify-center">
+      <div className="max-w-xl w-full mx-auto my-6 py-12 px-4 flex justify-center">
         <div className="grid grid-cols-1 gap-6 justify-items-center w-full">
           {alcohols.map((alcohol) => (
             <div
               key={alcohol.index}
-              className="shadow-xl shadow-slate-900 p-4 flex justify-center items-center transition-transform bg-[url('/assets/corkTable.png')] bg-cover bg-center border-8 border-black border-opacity-35 w-[800px] h-[70px]"
+              className="shadow-xl shadow-slate-900 p-4 flex justify-center items-center transition-transform bg-[url('/assets/corkTable.png')] bg-cover bg-center border-8 border-black border-opacity-35 w-[800px] h-[75px] hover:opacity-90 hover:scale-105"
             >
-              <span className="text-lg font-serif text-black bg-white w-[750px]  h-[33px] flex items-center justify-center">
+              <span className="text-lg font-serif text-black bg-white w-[750px]  h-[40px] flex items-center justify-center">
                 {alcohol.name}
               </span>
             </div>
