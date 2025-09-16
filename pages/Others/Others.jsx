@@ -16,7 +16,7 @@ const Others = () => {
               key={index}
               className="bg-[url('/assets/corkTable.png')] bg-cover bg-center  items-center hover:opacity-90 hover:scale-105 shadow-xl shadow-slate-900 flex justify-center items-center transition-transform bg-[url('/assets/corkTable.png')] bg-cover bg-center border-8 border-black border-opacity-35 w-[800px] h-[75px]"
             >
-              <span className="bg-white flex justify-center items-center w-[750px] h-[40px] text-black text-lg font-serif">
+              <span className="bg-white flex justify-start items-center w-[750px] h-[40px] text-black text-lg font-serif p-4">
                 {item}
               </span>
             </ul>
