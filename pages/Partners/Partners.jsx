@@ -89,22 +89,20 @@ const Partners = () => {
   return (
     <>
       <NavBar />
-      <NavbarDown/>
+      <NavbarDown />
       <div className="max-w-xl w-full mx-auto my-6 py-12 px-4 flex justify-center">
         {!selectedPartner && (
           <>
-            
-
             {/* Partner List - only shown when no partner is selected */}
             <div className="grid grid-cols-1 justify-items-center w-full gap-6">
               {partnersData.map((partner) => (
                 <button
                   key={partner.id}
                   onClick={() => handlePartnerClick(partner)}
-                  className="bg-[url('/assets/corkTable.png')] bg-cover bg-center  items-center hover:opacity-90 hover:scale-105 shadow-xl shadow-slate-900 flex justify-center items-center transition-transform bg-[url('/assets/corkTable.png')] bg-cover bg-center border-8 border-black border-opacity-35 w-[800px] h-[75px]"
+                  className="bg-[url('/assets/corkTable.png')] bg-cover bg-center  items-center hover:opacity-90 hover:scale-105 shadow-lg shadow-slate-400 flex justify-center items-center transition-transform bg-[url('/assets/corkTable.png')] bg-cover bg-center border-8 border-black border-opacity-35 w-[800px] h-[75px]"
                 >
                   <span className="bg-white flex justify-start p-4 items-center w-[750px] h-[40px] text-black text-lg font-serif">
-                {partner.name}
+                    {partner.name}
                   </span>
                 </button>
               ))}

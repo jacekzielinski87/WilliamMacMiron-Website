@@ -19,7 +19,7 @@ const Informations = () => {
 
       <section className="mx-auto my-24">
         <div
-          className="w-[800px] h-full mx-auto my-6 flex justify-center items-center shadow-xl shadow-slate-900 transition-transform bg-[url('/assets/corkTable.png')] bg-cover bg-center border-8 border-black border-opacity-35"
+          className="w-[800px] h-full mx-auto my-6 flex justify-center items-center shadow-lg shadow-slate-400 transition-transform bg-[url('/assets/corkTable.png')] bg-cover bg-center border-8 border-black border-opacity-35"
           role="alert"
         >
           <div className="bg-white flex flex-col items-center justify-center w-[800px] h-[120px] text-center p-4 m-2">
@@ -33,7 +33,7 @@ const Informations = () => {
             </p>
           </div>
         </div>
-        <div className="w-[800px] h-full mx-auto my-6 flex justify-center items-center shadow-xl shadow-slate-900 transition-transform bg-[url('/assets/corkTable.png')] bg-cover bg-center border-8 border-black border-opacity-35">
+        <div className="w-[800px] h-full mx-auto my-6 flex justify-center items-center shadow-lg shadow-slate-400 transition-transform bg-[url('/assets/corkTable.png')] bg-cover bg-center border-8 border-black border-opacity-35">
           <p className="bg-white flex items-center justify-center w-[800px] h-[120px] font-serif text-black text-center text-lg p-4 m-2">
             William MacMiron is the founder and creative mind behind this
             whisky-focused website. With over a decade of experience in the

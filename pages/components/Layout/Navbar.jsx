@@ -15,7 +15,7 @@ const NavBar = () => {
         md:w-[640px] lg:w-[1028px]
         h-[58px]
         flex items-center
-        bg-[url('/assets/cork-texture.png')] bg-repeat border-r-8 border-black border-opacity-35 border-b-8 border-black border-opacity-35 border-l-8 border-black border-opacity-35 shadow-2xl shadow-slate-900"
+        bg-[url('/assets/cork-texture.png')] bg-repeat border-r-8 border-black border-opacity-35 border-b-8 border-black border-opacity-35 border-l-8 border-black border-opacity-35 shadow-lg shadow-slate-700"
       >
         <div className="flex items-center justify-between w-full gap-60">
           <div className="flex-1 flex justify-around">
