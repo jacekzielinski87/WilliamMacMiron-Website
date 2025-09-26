@@ -129,7 +129,7 @@ const SearchBar = () => {
       </div>
 
       {SearchResults && selectedWhisky && (
-        <div className="fixed bottom-[90px] left-0 right-0 bg-white top-[125px]">
+        <div className="fixed bottom-[90px] left-0 right-0 bg-white top-[100px]">
           <div className="">
             <SearchResults query={selectedWhisky} />
           </div>
@@ -150,7 +150,7 @@ const SearchResults = ({ query }) => {
 
   if (filteredWhiskies.length === 0) {
     return (
-      <div className="text-center mt-24 x-30">
+      <div className="text-center mt-24">
         <p className="text-gray-500">No whiskies found matching your search.</p>
       </div>
     );
@@ -161,21 +161,21 @@ const SearchResults = ({ query }) => {
       {filteredWhiskies.map((whiskey, index) => (
         <div
           key={index}
-          className="flex justify-center items-center mx-auto w-1/2"
+          className="flex justify-center items-center mx-auto w-[1024px]"
         >
-          <div className=" bg-[url(/assets/corkTable.png)] shadow-2xl shadow-slate-900 relative m-6 border-8 border-opacity-35 border-black p-2">
+          <div className=" bg-[url(/assets/corkTable.png)] shadow-2xl shadow-slate-900 relative border-8 border-opacity-35 border-black">
             <div className="flex flex-col items-center">
               <div className="flex flex-col p-2">
-                <div className="font-bold bg-white p-2 w-full">
+                <div className="font-bold bg-white text-center w-full break-words whitespace-normal">
                   {whiskey.name}
                 </div>
                 <div className="flex">
                   <Image
                     src={Frame}
-                    className="w-[275px] h-[275px] shadow-xl shadow-zinc-900 m-2"
+                    className="w-[275px] h-[275px] shadow-xl shadow-zinc-900 mr-2 mt-2"
                     alt={`Thumbnail of ${whiskey.name}`}
                   />
-                  <div className="absolute top-14 left-60">
+                  <div className="absolute top-8 left-60">
                     <Image
                       src={getRatingImage(whiskey.aroma.score)}
                       width={70}
@@ -185,7 +185,7 @@ const SearchResults = ({ query }) => {
                       priority
                     />
                   </div>
-                  <ul className="list-disc m-2 font-serif font-bold bg-white pl-8 p-2 w-full h-[276px]">
+                  <ul className="list-disc font-serif font-bold bg-white pl-10 p-2 mt-2 w-full h-[276px]">
                     <li>Rating: {whiskey.aroma.score}/100, (61-100)</li>
                     <li>
                       Aroma: {whiskey.aroma.score}/100, {whiskey.aroma.notes}
