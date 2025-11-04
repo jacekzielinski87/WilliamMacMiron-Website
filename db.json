@@ -1,0 +1,41 @@
+{
+    "whiskies": [
+      {
+        "id": 1,
+        "name": "Mortlach 70 Year Old Generations '2656 (1938) (2008) (Gordon and MacPhail) (46.10% ABV)",
+        "image": "/assets/MORTLA1.PNG",
+        "aroma": {
+          "score": 91,
+          "notes": "sweet², flowers³, tobacco², kiwi¹, orange¹, plum¹, black tea¹, aloe¹, clove¹, tangerine¹, nut¹"
+        },
+        "taste": {
+          "score": 90,
+          "notes": "bitter¹, warming¹, smoky², walnut², black tea², clove¹, mandarin¹, butter¹, tobacco¹, salt¹, pear¹"
+        },
+        "finish": {
+          "score": 90,
+          "notes": "long², bitter³, smoky², wood², unripe apple², cinnamon², black pepper¹, mushrooms¹, onion¹"
+        },
+        "intensity": "1-2"
+      },
+      {
+        "id": 2,
+        "name": "Mortlach 75 Year Old Generations '2475 (1939) (2015) (Gordon and MacPhail) (44.40% ABV)",
+        "image": "/assets/MORTLA2.PNG",
+        "aroma": {
+          "score": 95,
+          "notes": "sweet², smoky², tangerine³, blueberry², oak², grass², cocoa¹, gooseberry¹, straw¹, earth¹, mint¹, pomegranate¹, bay leaf¹"
+        },
+        "taste": {
+          "score": 94,
+          "notes": "sweet², bitter¹, slightly spicy², red grapefruit², mango², coconut¹, green pepper¹, mirabelle plum¹, tobacco¹, passion fruit¹"
+        },
+        "finish": {
+          "score": 95,
+          "notes": "long³, sweet², slightly spicy², honey³, nut³, pineapple², plum¹, aloe¹, leather¹, vanilla¹, salt¹, wood¹, anise¹, coffee¹, yeast¹, bread¹, salt¹"
+        },
+        "intensity": "1-3"
+      }
+    ]
+  }
+  

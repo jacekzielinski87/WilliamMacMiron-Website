@@ -47,6 +47,164 @@ const mortlachData = [
     },
     intensity: "1-3",
   },
+  {
+    name: "Johnie Walker 70 Year Old Generations '2656 (1938) (2008) (Gordon and MacPhail) (46.10% ABV)",
+    image: Mortlach70,
+    aroma: {
+      score: 91,
+      notes:
+        "sweet², flowers³, tobacco², kiwi¹, orange¹, plum¹, black tea¹, aloe¹, clove¹, tangerine¹, nut¹",
+    },
+    taste: {
+      score: 90,
+      notes:
+        "bitter¹, warming¹, smoky², walnut², black tea², clove¹, mandarin¹, butter¹, tobacco¹, salt¹, pear¹",
+    },
+    finish: {
+      score: 90,
+      notes:
+        "long², bitter³, smoky², wood², unripe apple², cinnamon², black pepper¹, mushrooms¹, onion¹",
+    },
+    intensity: "1-2",
+  },
+  {
+    name: "Campari 70 Year Old Generations '2656 (1938) (2008) (Gordon and MacPhail) (46.10% ABV)",
+    image: Mortlach70,
+    aroma: {
+      score: 91,
+      notes:
+        "sweet², flowers³, tobacco², kiwi¹, orange¹, plum¹, black tea¹, aloe¹, clove¹, tangerine¹, nut¹",
+    },
+    taste: {
+      score: 90,
+      notes:
+        "bitter¹, warming¹, smoky², walnut², black tea², clove¹, mandarin¹, butter¹, tobacco¹, salt¹, pear¹",
+    },
+    finish: {
+      score: 90,
+      notes:
+        "long², bitter³, smoky², wood², unripe apple², cinnamon², black pepper¹, mushrooms¹, onion¹",
+    },
+    intensity: "1-2",
+  },{
+    name: "Brown Forman 70 Year Old Generations '2656 (1938) (2008) (Gordon and MacPhail) (46.10% ABV)",
+    image: Mortlach70,
+    aroma: {
+      score: 91,
+      notes:
+        "sweet², flowers³, tobacco², kiwi¹, orange¹, plum¹, black tea¹, aloe¹, clove¹, tangerine¹, nut¹",
+    },
+    taste: {
+      score: 90,
+      notes:
+        "bitter¹, warming¹, smoky², walnut², black tea², clove¹, mandarin¹, butter¹, tobacco¹, salt¹, pear¹",
+    },
+    finish: {
+      score: 90,
+      notes:
+        "long², bitter³, smoky², wood², unripe apple², cinnamon², black pepper¹, mushrooms¹, onion¹",
+    },
+    intensity: "1-2",
+  },
+  {
+    name: "Johnie Walker 70 Year Old Generations '2656 (1938) (2008) (Gordon and MacPhail) (46.10% ABV)",
+    image: Mortlach70,
+    aroma: {
+      score: 91,
+      notes:
+        "sweet², flowers³, tobacco², kiwi¹, orange¹, plum¹, black tea¹, aloe¹, clove¹, tangerine¹, nut¹",
+    },
+    taste: {
+      score: 90,
+      notes:
+        "bitter¹, warming¹, smoky², walnut², black tea², clove¹, mandarin¹, butter¹, tobacco¹, salt¹, pear¹",
+    },
+    finish: {
+      score: 90,
+      notes:
+        "long², bitter³, smoky², wood², unripe apple², cinnamon², black pepper¹, mushrooms¹, onion¹",
+    },
+    intensity: "1-2",
+  },{
+    name: "Campari 70 Year Old Generations '2656 (1938) (2008) (Gordon and MacPhail) (46.10% ABV)",
+    image: Mortlach70,
+    aroma: {
+      score: 91,
+      notes:
+        "sweet², flowers³, tobacco², kiwi¹, orange¹, plum¹, black tea¹, aloe¹, clove¹, tangerine¹, nut¹",
+    },
+    taste: {
+      score: 90,
+      notes:
+        "bitter¹, warming¹, smoky², walnut², black tea², clove¹, mandarin¹, butter¹, tobacco¹, salt¹, pear¹",
+    },
+    finish: {
+      score: 90,
+      notes:
+        "long², bitter³, smoky², wood², unripe apple², cinnamon², black pepper¹, mushrooms¹, onion¹",
+    },
+    intensity: "1-2",
+  },
+  {
+    name: "Brown Forman 70 Year Old Generations '2656 (1938) (2008) (Gordon and MacPhail) (46.10% ABV)",
+    image: Mortlach70,
+    aroma: {
+      score: 91,
+      notes:
+        "sweet², flowers³, tobacco², kiwi¹, orange¹, plum¹, black tea¹, aloe¹, clove¹, tangerine¹, nut¹",
+    },
+    taste: {
+      score: 90,
+      notes:
+        "bitter¹, warming¹, smoky², walnut², black tea², clove¹, mandarin¹, butter¹, tobacco¹, salt¹, pear¹",
+    },
+    finish: {
+      score: 90,
+      notes:
+        "long², bitter³, smoky², wood², unripe apple², cinnamon², black pepper¹, mushrooms¹, onion¹",
+    },
+    intensity: "1-2",
+  },
+  {
+    name: "Heaven Hill's 70 Year Old Generations '2656 (1938) (2008) (Gordon and MacPhail) (46.10% ABV)",
+    image: Mortlach70,
+    aroma: {
+      score: 91,
+      notes:
+        "sweet², flowers³, tobacco², kiwi¹, orange¹, plum¹, black tea¹, aloe¹, clove¹, tangerine¹, nut¹",
+    },
+    taste: {
+      score: 90,
+      notes:
+        "bitter¹, warming¹, smoky², walnut², black tea², clove¹, mandarin¹, butter¹, tobacco¹, salt¹, pear¹",
+    },
+    finish: {
+      score: 90,
+      notes:
+        "long², bitter³, smoky², wood², unripe apple², cinnamon², black pepper¹, mushrooms¹, onion¹",
+    },
+    intensity: "1-2",
+  },
+  {
+    name: "Diageo's 70 Year Old Generations '2656 (1938) (2008) (Gordon and MacPhail) (46.10% ABV)",
+    image: Mortlach70,
+    aroma: {
+      score: 91,
+      notes:
+        "sweet², flowers³, tobacco², kiwi¹, orange¹, plum¹, black tea¹, aloe¹, clove¹, tangerine¹, nut¹",
+    },
+    taste: {
+      score: 90,
+      notes:
+        "bitter¹, warming¹, smoky², walnut², black tea², clove¹, mandarin¹, butter¹, tobacco¹, salt¹, pear¹",
+    },
+    finish: {
+      score: 90,
+      notes:
+        "long², bitter³, smoky², wood², unripe apple², cinnamon², black pepper¹, mushrooms¹, onion¹",
+    },
+    intensity: "1-2",
+  },
 ];
 
 const SearchBar = () => {
@@ -110,7 +268,7 @@ const SearchBar = () => {
         />
 
         <div className="absolute bottom-0 right-60 w-6 h-6 pointer-events-none shadow-xl"></div>
-        {showSuggestions && query.length >= 3 && (
+        {showSuggestions && query.length >= 2 && (
           <div
             className="fixed top-16 left-[952px] transform -translate-x-1/2 w-[500px] z-20
                          bg-[url(/assets/corkTable.png)] border-2 border-black rounded-lg shadow-lg font-serif font-bold"
