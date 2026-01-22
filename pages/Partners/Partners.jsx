@@ -90,7 +90,7 @@ const Partners = () => {
     <>
       <NavBar />
       <NavbarDown />
-      <div className="max-w-xl w-full mx-auto my-6 py-12 px-4 flex justify-center">
+      <div className="max-w-xl w-full mx-auto py-16 px-4 flex justify-center">
         {!selectedPartner && (
           <>
             {/* Partner List - only shown when no partner is selected */}
