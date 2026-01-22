@@ -8,7 +8,7 @@ const NavBar = () => {
   const router = useRouter();
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 flex justify-center w-full z-60">
+    <div className="absolute bottom-0 left-0 right-0 flex justify-center">
       <div
         className="bg-[url(/assets/corkTable.png)] p-4
         w-full mx-4 md:mx-0 

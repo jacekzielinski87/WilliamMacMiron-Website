@@ -254,8 +254,7 @@ const SearchBar = () => {
       >
         <input
           className={`bg-[#FFFFFF] p-2 outline-none 
-                    h-[33px] w-[600px] fixed top-2 left-[960px] transform -translate-x-1/2
-                    font-serif placeholder:text-black text-black ${
+                    h-[33px] w-[600px] absolute bottom--10 left-1/2 -translate-x-1/2 transform -translate-x-1/2font-serif placeholder:text-black text-black ${
                       showResults ? "" : ""
                     }`}
           type="text"
@@ -270,7 +269,7 @@ const SearchBar = () => {
         <div className="absolute bottom-0 right-60 w-6 h-6 pointer-events-none shadow-xl"></div>
         {showSuggestions && query.length >= 2 && (
           <div
-            className="fixed top-16 left-[952px] transform -translate-x-1/2 w-[500px] z-20
+            className="top-16 left-[952px] transform -translate-x-1/2 w-[500px] z-20
                          bg-[url(/assets/corkTable.png)] border-2 border-black rounded-lg shadow-lg font-serif font-bold"
           >
             {getSuggestions().map((suggestion, index) => (
@@ -287,8 +286,8 @@ const SearchBar = () => {
       </div>
 
       {SearchResults && selectedWhisky && (
-        <div className="fixed bottom-[90px] left-0 right-0 bg-white top-[100px]">
-          <div className="">
+        <div className="bottom-[90px] left-0 right-0 bg-white top-[100px] z">
+          <div className>
             <SearchResults query={selectedWhisky} />
           </div>
         </div>
@@ -321,7 +320,7 @@ const SearchResults = ({ query }) => {
           key={index}
           className="flex justify-center items-center mx-auto w-[1024px]"
         >
-          <div className=" bg-[url(/assets/corkTable.png)] shadow-2xl shadow-slate-900 relative border-8 border-opacity-35 border-black">
+          <div className="bg-[url(/assets/corkTable.png)] shadow-2xl shadow-slate-900 relative border-8 border-opacity-35 border-black">
             <div className="flex flex-col items-center">
               <div className="flex flex-col p-2">
                 <div className="font-bold bg-white text-center w-full break-words whitespace-normal">
@@ -343,7 +342,7 @@ const SearchResults = ({ query }) => {
                       priority
                     />
                   </div>
-                  <ul className="list-disc font-serif font-bold bg-white pl-10 p-2 mt-2 w-full h-[276px]">
+                  <ul className="list-disc font-serif font-bold bg-white pl-10 p-2 mt-2 w-full h-[275px]">
                     <li>Rating: {whiskey.aroma.score}/100, (61-100)</li>
                     <li>
                       Aroma: {whiskey.aroma.score}/100, {whiskey.aroma.notes}

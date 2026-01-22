@@ -36,14 +36,14 @@ const Alcohols = () => {
     <>
       <Navbar />
       <NavbarDown />
-      <div className="max-w-xl w-full mx-auto my-6 py-12 px-4 flex justify-center">
-        <div className="grid grid-cols-1 gap-6 justify-items-center w-full">
+      <div className="mx-auto my-6 py-12 flex justify-center">
+        <div className="grid grid-cols-1 gap-6 justify-items-center">
           {alcohols.map((alcohol) => (
             <div
               key={alcohol.index}
               className="shadow-lg shadow-slate-400 p-4 flex justify-center items-center transition-transform bg-[url('/assets/corkTable.png')] bg-cover bg-center border-8 border-black border-opacity-35 w-[800px] h-[75px] hover:opacity-90 hover:scale-105 "
             >
-              <span className="text-lg font-serif text-black bg-white w-[750px]  h-[40px] flex items-center justify-between p-4">
+              <span className="text-lg font-serif text-black bg-white w-[750px] h-[40px] flex items-center justify-between p-4">
                 {alcohol.name}
                 <span className=" text-lg text-black relative right-20">{alcohol.count}</span>
               </span>
