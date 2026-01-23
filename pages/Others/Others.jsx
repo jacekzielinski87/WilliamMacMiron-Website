@@ -18,7 +18,7 @@ const Others = () => {
     <>
       <NavBar />
       <NavbarDown />
-      <div className="max-w-xl w-full mx-auto my-6 py-2 px-4 flex justify-center">
+      <div className="max-w-xl w-full mx-auto my-20 px-4 flex justify-center">
         <div className="grid grid-cols-1 justify-items-center w-full gap-6">
           {OthersStuff.map((item, index) => (
             <ul

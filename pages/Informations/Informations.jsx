@@ -17,7 +17,7 @@ const Informations = () => {
       <Navbar />
       <NavbarDown />
 
-      <section className="mx-auto my-8">
+      <section className="mx-auto my-24">
         <div
           className="w-[800px] h-full mx-auto flex justify-center items-center shadow-xl shadow-slate-900 transition-transform bg-[url('/assets/corkTable.png')] bg-cover bg-center border-8 border-black border-opacity-35"
           role="alert"

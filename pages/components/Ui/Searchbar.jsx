@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Bowmore from "../../../public/assets/Bowmore.jpg"
 import Mortlach70 from "../../../public/assets/MORTLA1.PNG";
 import Mortlach75 from "../../../public/assets/MORTLA2.PNG";
 import Raiting1 from "../../../public/assets/Raiting1.png";

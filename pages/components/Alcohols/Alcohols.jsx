@@ -8,16 +8,9 @@ const alcohols = [
   { name: "Архи/Archi", count: 3 },
   { name: "Beer", count: 45 },
   { name: "Brandy", count: 18 },
-  { name: "Cachaça", count: 7 },
-  { name: "Cider", count: 10 },
-  { name: "Gin", count: 23 },
-  { name: "Kımız", count: 4 },
-  { name: "Mead", count: 6 },
-  { name: "Mezcal", count: 8 },
-  { name: "New Make / White Dog / Moonshine", count: 2 },
-  { name: "Non-alcoholic beverages", count: 14 },
-  { name: "Okowita", count: 9 },
-  
+  { name: "Absinthe", count: 12 },
+  { name: "Akvavit/Aquavit", count: 5 },
+  { name: "Akvavit/Aquavit", count: 5 },
 ];
 
 const Alcohols = () => {
@@ -25,7 +18,7 @@ const Alcohols = () => {
     <>
       <Navbar />
       <NavbarDown />
-      <div className="mx-auto pt-24 pb-24 flex justify-center z-10">
+      <div className="mx-auto my-20 flex justify-center z-10">
         <div className="grid grid-cols-1 gap-6 justify-items-center">
           {alcohols.map((alcohol) => (
             <div
