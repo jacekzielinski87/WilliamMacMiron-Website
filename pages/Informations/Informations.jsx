@@ -17,24 +17,24 @@ const Informations = () => {
       <Navbar />
       <NavbarDown />
 
-      <section className="lg:flex flex-col justify-center items-center gap-8 m-24">
+      <section className="lg:flex flex-col justify-center items-center gap-8 m-24 ">
         <div
-          className="w-[800px] mx-auto my-6 flex justify-center items-center shadow-xl shadow-slate-900 transition-transform bg-[url('/assets/corkTable.png')] bg-cover bg-center border-8 border-black border-opacity-35"
+          className="w-[800px] mx-auto my-6 flex justify-center items-center shadow-xl shadow-slate-900 transition-transform bg-[url('/assets/corkTable.png')] bg-cover bg-center border-8 border-black border-opacity-35 md:max-w-[400px] md:max-h-[200px]"
           role="alert"
         >
-          <div className="bg-white flex flex-col items-center justify-center w-[800px] h-[150px] text-center p-4 m-2">
-            <p className="text-red-600 text-lg font-serif text-black">
+          <div className="bg-white flex flex-col items-center justify-center w-[800px] h-[150px] text-center p-4 m-2 md:max-h-[100px]">
+            <p className="text-red-600 text-lg font-serif text-black md:text-sm">
               Responsible Enjoyment:
             </p>
-            <p className="text-lg font-serif text-black">
+            <p className="text-lg font-serif text-black md:text-xs">
               This website contains content related to alcoholic beverages. You
               must be 18 years or older to access this site. Please drink
               mindfully and responsibly.
             </p>
           </div>
         </div>
-        <div className="w-[800px] mx-auto my-6 flex justify-center items-center shadow-xl shadow-slate-900 transition-transform bg-[url('/assets/corkTable.png')] bg-cover bg-center border-8 border-black border-opacity-35">
-          <p className="bg-white flex items-center justify-center w-[800px] h-[150px] font-serif text-black text-center text-lg p-4 m-2">
+        <div className="md:max-w-[400px] md:max-h-[200px] w-[800px] mx-auto my-6 flex justify-center items-center shadow-xl shadow-slate-900 transition-transform bg-[url('/assets/corkTable.png')] bg-cover bg-center border-8 border-black border-opacity-35">
+          <p className="bg-white flex items-center justify-center w-[800px] h-[150px] font-serif text-black text-center text-lg p-4 m-2 md:text-xs md:max-h-[100px]">
             William MacMiron is the founder and creative mind behind this
             whisky-focused website. With over a decade of experience in the
             world of fine spirits, William works professionally as a certified
@@ -43,8 +43,8 @@ const Informations = () => {
             platform.
           </p>
         </div>
-        <div className="w-[800px] mx-auto flex justify-center items-center shadow-xl shadow-slate-900 transition-transform bg-[url('/assets/corkTable.png')] bg-cover bg-center border-8 border-black border-opacity-35">
-          <p className="bg-white flex items-center justify-center w-[800px] h-[150px] text-lg font-serif text-black text-center p-4 m-2">
+        <div className="w-[800px] mx-auto flex justify-center items-center shadow-xl shadow-slate-900 transition-transform bg-[url('/assets/corkTable.png')] bg-cover bg-center border-8 border-black border-opacity-35 md:max-w-[400px] md:max-h-[200px]">
+          <p className="bg-white flex items-center justify-center w-[800px] h-[150px] text-lg font-serif text-black text-center p-4 m-2 md:text-xs md:max-h-[100px]">
             Through this site, William shares his personal insights, tasting
             notes, and recommendations—whether you're a seasoned connoisseur or
             just beginning your whisky journey. His goal is to create a

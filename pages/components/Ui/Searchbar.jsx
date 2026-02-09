@@ -250,13 +250,13 @@ const SearchBar = () => {
   return (
     <>
       <div
-        className={`flex flex-col items-center justify-center relative ${
+        className={`flex flex-col items-center justify-center ${
           showResults ? "" : ""
         }`}
       >
         <input
           className={`bg-[#FFFFFF] p-2 outline-none 
-                    h-[33px] w-[600px] absolute bottom--10 left-1/2 -translate-x-1/2 transform -translate-x-1/2font-serif placeholder:text-black text-black ${
+                    h-[33px] w-[600px] fixed left-1/2 -translate-x-1/2 transform -translate-x-1/2 font-serif placeholder:text-black text-black ${
                       showResults ? "" : ""
                     }`}
           type="text"
@@ -268,7 +268,7 @@ const SearchBar = () => {
           autoComplete="off"
         />
 
-        <div className="absolute bottom-0 right-60 w-6 h-6 pointer-events-none shadow-lg"></div>
+        <div className="fixed bottom-0 right-60 w-6 h-6 pointer-events-none shadow-lg"></div>
         {showSuggestions && query.length >= 2 && !showResults && (
           <div
             className="fixed top-12 left-1/2 transform -translate-x-1/2 w-[450px] h-[125px] font-bold
@@ -309,7 +309,7 @@ const SearchResults = ({ query }) => {
 
   if (filteredWhiskies.length === 0) {
     return (
-      <div className="text-center mt-24">
+      <div className="text-center">
         <p className="text-gray-500">No whiskies found matching your search.</p>
       </div>
     );
@@ -320,18 +320,18 @@ const SearchResults = ({ query }) => {
       {filteredWhiskies.map((whiskey, index) => (
         <div
           key={index}
-          className="absolute flex justify-center items-center my-12 left-1/2 -translate-x-1/2 w-[1024px]"
+          className="fixed left-1/2 -translate-x-1/2 w-[1024px]"
         >
           <div className="bg-[url(/assets/corkTable.png)] shadow-2xl shadow-slate-900 relative border-8 border-opacity-35 border-black">
-            <div className="flex-col">
-              <div className="flex-col p-2">
-                <div className="font-bold bg-white text-center break-words whitespace-normal">
+            <div className="">
+              <div className="">
+                <div className="font-bold bg-white text-center break-words whitespace-normal shadow-2xl">
                   {whiskey.name}
                 </div>
-                <div className="flex">
+                <div className="flex justify-start items-end gap-2">
                   <Image
                     src={Frame}
-                    className="w-[275px] h-[275px] shadow-xl shadow-zinc-900 mr-2 mt-2"
+                    className="w-[275px] h-[275px] shadow-2xl shadow-zinc-900"
                     alt={`Thumbnail of ${whiskey.name}`}
                   />
                   <div className="absolute top-8 left-60">

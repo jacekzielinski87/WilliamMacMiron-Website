@@ -27,23 +27,23 @@ const NavBar = () => {
                   : "text-[#5c3d1e] hover:text-[#8b6b43]"
               }`}
             >
-              <div className="bg-white h-[28px] w-[28px] md:h-[32px] md:w-[32px] flex items-center justify-center">
+              <div className=" shadow-xl shadow-zinc-900 bg-white h-[30px] w-[30px] flex items-center justify-center">
                 <Image
                   src="/assets/Menu 1.png"
                   alt="Menu 1"
-                  width={20}
-                  height={20}
+                  width={25}
+                  height={25}
                   className="object-contain"
                 />
               </div>
             </Link>
           </div>
           <div className="flex justify-center items-center w-full">
-            <div className="">
+            <div className="shadow-xl shadow-zinc-900">
               <SearchBar />
             </div>
           </div>
-          <div className="">
+          <div className="shadow-xl shadow-zinc-900">
             <Link
               href="/Others/Others"
               className={`transition-colors relative z-50 ${
@@ -52,12 +52,12 @@ const NavBar = () => {
                   : "text-[#5c3d1e] hover:text-[#8b6b43]"
               }`}
             >
-              <div className="bg-white h-[28px] w-[28px] md:h-[32px] md:w-[32px] flex items-center justify-center">
+              <div className="bg-white h-[30px] w-[30px] flex items-center justify-center">
                 <Image
                   src="/assets/Menu 2.png"
                   alt="Menu 2"
-                  width={20}
-                  height={20}
+                  width={25}
+                  height={25}
                   className="object-contain"
                 />
               </div>

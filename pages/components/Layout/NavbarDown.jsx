@@ -15,10 +15,10 @@ const NavBar = () => {
         md:w-[640px] lg:w-[1028px]
         h-[64px] md:h-[58px]
         flex items-center
-        bg-[url('/assets/cork-texture.png')] bg-repeat border-r-8 border-black border-opacity-35 border-l-8 border-black border-opacity-35 border-t-8 border-black border-opacity-35 shadow-lg shadow-slate-700"
+        bg-[url('/assets/cork-texture.png')] bg-repeat border-r-8 border-black border-opacity-35 border-l-8 border-black border-opacity-35 border-t-8 border-black border-opacity-35"
       >
         <div className="flex w-full px-32">
-        <div className="">
+        <div className=" shadow-xl shadow-zinc-900">
             <Link
               href="/Informations/Informations"
               className={`transition-colors relative ${
@@ -27,19 +27,19 @@ const NavBar = () => {
                   : "text-[#5c3d1e] hover:text-[#8b6b43]"
               }`}
             >
-              <div className="bg-white h-[28px] w-[28px] md:h-[32px] md:w-[32px] flex items-center justify-center">
+              <div className="bg-white h-[30px] w-[30px] flex items-center justify-center">
                 <Image
                   src="/assets/i.png"
                   alt="Menu 1"
-                  width={20}
-                  height={20}
+                  width={30}
+                  height={30}
                   className="object-contain"
                 />
               </div>
             </Link>
           </div>
           <div className="flex justify-center items-center w-full">
-          <div className="">
+          <div className="shadow-xl shadow-zinc-900">
             <SearchBar />
             </div>
           </div>
@@ -52,20 +52,20 @@ const NavBar = () => {
                   : "text-[#5c3d1e] hover:text-[#8b6b43]"
               }`}
             >
-              <div className="bg-white h-[28px] w-[28px] md:h-[32px] md:w-[32px] flex items-center justify-center">
+              <div className=" shadow-xl shadow-zinc-900 bg-white h-[30px] w-[30px] flex items-center justify-center">
                 <Image
                   src="/assets/p.png"
                   alt="Menu 2"
-                  width={20}
-                  height={20}
+                  width={30}
+                  height={30}
                   className="object-contain"
                 />
               </div>
             </Link>
           </div>
         </div>
-        <div className="absolute left-1/2 top-4 -translate-x-1/2 hidden md:block">
-          <p className="text-black bg-white px-4 font-rouge text-lg md:text-2xl">
+        <div className="absolute left-1/2 top-4 -translate-x-1/2">
+          <p className="text-black bg-white px-4 font-rouge lg:text-3xl md:text-xl">
             Testing Notes
           </p>
           </div>
