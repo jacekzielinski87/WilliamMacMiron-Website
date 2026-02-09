@@ -11,14 +11,14 @@ const NavBar = () => {
     <div className="fixed bottom-0 left-0 right-0 flex justify-center">
       <div
         className="bg-[url(/assets/corkTable.png)]
-        w-full mx-42 md:mx-0 
+        mx-4 md:mx-0 
         md:w-[640px] lg:w-[1028px]
         h-[64px] md:h-[58px]
         flex items-center
         bg-[url('/assets/cork-texture.png')] bg-repeat border-r-8 border-black border-opacity-35 border-l-8 border-black border-opacity-35 border-t-8 border-black border-opacity-35 shadow-lg shadow-slate-700"
       >
-        <div className="flex justify-center w-full px-2">
-          <div className="flex justify-center">
+        <div className="flex w-full px-32">
+        <div className="">
             <Link
               href="/Informations/Informations"
               className={`transition-colors relative ${
@@ -31,21 +31,22 @@ const NavBar = () => {
                 <Image
                   src="/assets/i.png"
                   alt="Menu 1"
-                  width={30}
-                  height={30}
+                  width={20}
+                  height={20}
                   className="object-contain"
                 />
               </div>
             </Link>
           </div>
-          <div className="flex justify-center items-center">
+          <div className="flex justify-center items-center w-full">
+          <div className="">
             <SearchBar />
             </div>
           </div>
-          <div className="flex justify-center">
+        <div className="">
             <Link
               href="/Partners/Partners"
-              className={`transition-colors relative ${
+              className={`transition-colors ${
                 router.pathname === "/Partners/Partners"
                   ? "text-[#5c3d1e]"
                   : "text-[#5c3d1e] hover:text-[#8b6b43]"
@@ -55,23 +56,22 @@ const NavBar = () => {
                 <Image
                   src="/assets/p.png"
                   alt="Menu 2"
-                  width={30}
-                  height={30}
+                  width={20}
+                  height={20}
                   className="object-contain"
                 />
               </div>
             </Link>
           </div>
         </div>
-        <div className="absolute left-1/2 top-4
-  -translate-x-1/2
-  hidden md:block">
+        <div className="absolute left-1/2 top-4 -translate-x-1/2 hidden md:block">
           <p className="text-black bg-white px-4 font-rouge text-lg md:text-2xl">
             Testing Notes
           </p>
+          </div>
         </div>
-      </div>
-  );
+        </div>
+    );
 };
 
 export default NavBar;

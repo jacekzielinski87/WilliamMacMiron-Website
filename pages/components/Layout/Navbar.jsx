@@ -14,11 +14,11 @@ const NavBar = () => {
         w-full mx-42 md:mx-0 
         md:w-[640px] lg:w-[1028px]
         h-[64px] md:h-[58px]
-        flex items-center
+        flex justify-between items-center
         bg-[url('/assets/cork-texture.png')] bg-repeat border-r-8 border-black border-opacity-35 border-l-8 border-black border-opacity-35 border-t-8 border-black border-opacity-35 shadow-lg shadow-slate-700"
       >
-        <div className="flex justify-center w-full px-2">
-          <div className="flex-1 flex justify-between">
+        <div className="flex w-full px-32">
+          <div className="">
             <Link
               href="/Alcohols/Alcohols"
               className={`transition-colors z-[50] ${
@@ -31,19 +31,19 @@ const NavBar = () => {
                 <Image
                   src="/assets/Menu 1.png"
                   alt="Menu 1"
-                  width={30}
-                  height={30}
+                  width={20}
+                  height={20}
                   className="object-contain"
                 />
               </div>
             </Link>
           </div>
-          <div className="flex justify-center w-full">
-            <div className="flex justify-center items-center ">
+          <div className="flex justify-center items-center w-full">
+            <div className="">
               <SearchBar />
             </div>
           </div>
-          <div className="flex justify-center">
+          <div className="">
             <Link
               href="/Others/Others"
               className={`transition-colors relative z-50 ${
@@ -56,8 +56,8 @@ const NavBar = () => {
                 <Image
                   src="/assets/Menu 2.png"
                   alt="Menu 2"
-                  width={30}
-                  height={30}
+                  width={20}
+                  height={20}
                   className="object-contain"
                 />
               </div>

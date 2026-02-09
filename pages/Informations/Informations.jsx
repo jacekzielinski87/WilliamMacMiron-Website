@@ -17,9 +17,9 @@ const Informations = () => {
       <Navbar />
       <NavbarDown />
 
-      <section className="mx-auto my-32">
+      <section className="lg:flex flex-col justify-center items-center gap-8 m-24">
         <div
-          className="w-[800px] h-full mx-auto flex justify-center items-center shadow-xl shadow-slate-900 transition-transform bg-[url('/assets/corkTable.png')] bg-cover bg-center border-8 border-black border-opacity-35"
+          className="w-[800px] mx-auto my-6 flex justify-center items-center shadow-xl shadow-slate-900 transition-transform bg-[url('/assets/corkTable.png')] bg-cover bg-center border-8 border-black border-opacity-35"
           role="alert"
         >
           <div className="bg-white flex flex-col items-center justify-center w-[800px] h-[150px] text-center p-4 m-2">
