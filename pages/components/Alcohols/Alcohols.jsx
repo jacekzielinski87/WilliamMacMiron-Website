@@ -18,12 +18,12 @@ const Alcohols = () => {
     <>
       <Navbar />
       <NavbarDown />
-      <div className="mx-auto my-20 flex justify-center z-10">
-        <div className="grid grid-cols-1 gap-6 justify-items-center">
+      <div className="">
+        <div className="lg:flex flex-col justify-center items-center m-24 gap-4 sm:grid">
           {alcohols.map((alcohol) => (
             <div
               key={alcohol.index}
-              className="shadow-lg shadow-slate-400 p-4 flex justify-center items-center transition-transform bg-[url('/assets/corkTable.png')] bg-cover bg-center border-8 border-black border-opacity-35 w-[800px] h-[75px]"
+              className="bg-[url('/assets/corkTable.png')] bg-cover  items-center hover:opacity-90 hover:scale-105 shadow-lg shadow-slate-400 flex justify-center items-center transition-transform bg-[url('/assets/corkTable.png')] bg-cover bg-center border-8 border-black border-opacity-35 h-[75px] sm:max-w-[400px] lg:max-w-[800px]"
             >
               <span className="text-lg font-serif text-black bg-white w-[750px] h-[40px] flex items-center justify-between p-4">
                 {alcohol.name}

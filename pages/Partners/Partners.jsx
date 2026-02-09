@@ -74,6 +74,16 @@ const partnersData = [
     specialties: ["Vodka"],
     established: 1917,
   },
+  {
+    id: 1,
+    name: "Bowmore",
+    image: "/assets/bowmore.jpg",
+    description:
+      "Located in the Scottish Highlands, this distillery has been crafting premium single malt whiskey since 1779.",
+    location: "Scotland",
+    specialties: ["Single Malt", "Aged Whiskey"],
+    established: 1779,
+  },
   // Add more partners
 ];
 
@@ -90,16 +100,16 @@ const Partners = () => {
     <>
       <NavBar />
       <NavbarDown />
-      <div className="max-w-xl w-full mx-auto my-20 py-16 px-4 flex justify-center">
+      <div className="">
         {!selectedPartner && (
           <>
             {/* Partner List - only shown when no partner is selected */}
-            <div className="grid grid-cols-1 justify-items-center w-full gap-6">
+            <div className="lg:flex flex-col justify-center items-center m-24 gap-4 sm:grid">
               {partnersData.map((partner) => (
                 <button
                   key={partner.id}
                   onClick={() => handlePartnerClick(partner)}
-                  className="bg-[url('/assets/corkTable.png')] bg-cover bg-center  items-center hover:opacity-90 hover:scale-105 shadow-lg shadow-slate-400 flex justify-center items-center transition-transform bg-[url('/assets/corkTable.png')] bg-cover bg-center border-8 border-black border-opacity-35 w-[800px] h-[75px]"
+                  className="bg-[url('/assets/corkTable.png')] bg-cover  items-center hover:opacity-90 hover:scale-105 shadow-lg shadow-slate-400 flex justify-center items-center transition-transform bg-[url('/assets/corkTable.png')] bg-cover bg-center border-8 border-black border-opacity-35 h-[75px] sm:max-w-[400px] lg:max-w-[800px]"
                 >
                   <span className="bg-white flex justify-start p-4 items-center w-[750px] h-[40px] text-black text-lg font-serif">
                     {partner.name}

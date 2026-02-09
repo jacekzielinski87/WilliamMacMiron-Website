@@ -6,6 +6,7 @@ import Raiting1 from "../../../public/assets/Raiting1.png";
 import Raiting2 from "../../../public/assets/Raiting2.png";
 import Image from "next/image";
 import Frame from "../../../public/assets/foto.png";
+import { useSearch } from "./SearchContext";
 
 const mortlachData = [
   {
@@ -211,7 +212,7 @@ const mortlachData = [
 const SearchBar = () => {
   const [query, setQuery] = useState("");
   const [showSuggestions, setShowSuggestions] = useState(false);
-  const [showResults, setShowResults] = useState(false);
+  const { showResults, setShowResults } = useSearch();
   const [selectedWhisky, setSelectedWhisky] = useState(null);
   const [placeholder, setPlaceholder] = useState("");
 
@@ -267,16 +268,16 @@ const SearchBar = () => {
           autoComplete="off"
         />
 
-        <div className="absolute bottom-0 right-60 w-6 h-6 pointer-events-none shadow-xl"></div>
-        {showSuggestions && query.length >= 2 && (
+        <div className="absolute bottom-0 right-60 w-6 h-6 pointer-events-none shadow-lg"></div>
+        {showSuggestions && query.length >= 2 && !showResults && (
           <div
-            className="top-16 left-[952px] transform -translate-x-1/2 w-[500px] z-20
-                         bg-[url(/assets/corkTable.png)] border-2 border-black rounded-lg shadow-lg font-serif font-bold"
+            className="fixed top-12 left-1/2 transform -translate-x-1/2 w-[450px] h-[125px] font-bold
+                         bg-[url(/assets/corkTable.png)] border-4 border-opacity-45 border-black rounded-lg shadow-xl font-serif"
           >
             {getSuggestions().map((suggestion, index) => (
               <div
                 key={index}
-                className="p-2 m-2 hover:bg-slate-200 hover:opacity-85 rounded-sm cursor-pointer text-zinc-900"
+                className="hover:bg-slate-300 hover:opacity-85 rounded-sm cursor-pointer text-zinc-900 flex justify-center px-2 mx-2 my-2"
                 onClick={() => handleSuggestionClick(suggestion)}
               >
                 {suggestion}
@@ -286,8 +287,8 @@ const SearchBar = () => {
         )}
       </div>
 
-      {SearchResults && selectedWhisky && (
-        <div className="bottom-[90px] left-0 right-0 bg-white top-[100px] z">
+      {showResults && selectedWhisky && (
+        <div className="bottom-[90px] left-0 right-0 bg-white top-[100px] fixed inset-0">
           <div className>
             <SearchResults query={selectedWhisky} />
           </div>
@@ -319,12 +320,12 @@ const SearchResults = ({ query }) => {
       {filteredWhiskies.map((whiskey, index) => (
         <div
           key={index}
-          className="flex justify-center items-center mx-auto w-[1024px]"
+          className="absolute flex justify-center items-center my-12 left-1/2 -translate-x-1/2 w-[1024px]"
         >
           <div className="bg-[url(/assets/corkTable.png)] shadow-2xl shadow-slate-900 relative border-8 border-opacity-35 border-black">
-            <div className="flex flex-col items-center">
-              <div className="flex flex-col p-2">
-                <div className="font-bold bg-white text-center w-full break-words whitespace-normal">
+            <div className="flex-col">
+              <div className="flex-col p-2">
+                <div className="font-bold bg-white text-center break-words whitespace-normal">
                   {whiskey.name}
                 </div>
                 <div className="flex">
@@ -343,7 +344,7 @@ const SearchResults = ({ query }) => {
                       priority
                     />
                   </div>
-                  <ul className="list-disc font-serif font-bold bg-white pl-10 p-2 mt-2 w-full h-[275px]">
+                  <ul className="list-disc font-serif font-bold bg-white pl-12 p-2 mt-2 w-full h-[275px]">
                     <li>Rating: {whiskey.aroma.score}/100, (61-100)</li>
                     <li>
                       Aroma: {whiskey.aroma.score}/100, {whiskey.aroma.notes}

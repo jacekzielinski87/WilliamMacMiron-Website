@@ -8,26 +8,26 @@ const NavBar = () => {
   const router = useRouter();
 
   return (
-    <div className="fixed top-0 left-0 right-0 flex justify-center w-full z-20">
+    <div className="fixed top-0 left-0 right-0 flex justify-center">
       <div
-        className="bg-[url(/assets/corkTable.png)] p-4
-        w-full mx-4 md:mx-0 
+        className="bg-[url(/assets/corkTable.png)]
+        w-full mx-42 md:mx-0 
         md:w-[640px] lg:w-[1028px]
-        h-[58px]
+        h-[64px] md:h-[58px]
         flex items-center
-        bg-[url('/assets/cork-texture.png')] bg-repeat border-r-8 border-black border-opacity-35 border-b-8 border-black border-opacity-35 border-l-8 border-black border-opacity-35 shadow-lg shadow-slate-700"
+        bg-[url('/assets/cork-texture.png')] bg-repeat border-r-8 border-black border-opacity-35 border-l-8 border-black border-opacity-35 border-t-8 border-black border-opacity-35 shadow-lg shadow-slate-700"
       >
-        <div className="flex items-center justify-between w-full gap-60">
-          <div className="flex-1 flex justify-around">
+        <div className="flex justify-center w-full px-2">
+          <div className="flex-1 flex justify-between">
             <Link
               href="/Alcohols/Alcohols"
-              className={`transition-colors relative z-50 ${
+              className={`transition-colors z-[50] ${
                 router.pathname === "/Alcohols/Alcohols"
                   ? "text-[#5c3d1e]"
                   : "text-[#5c3d1e] hover:text-[#8b6b43]"
               }`}
             >
-              <div className="relative z-50 flex items-center justify-center bg-white h-[32px]">
+              <div className="bg-white h-[28px] w-[28px] md:h-[32px] md:w-[32px] flex items-center justify-center">
                 <Image
                   src="/assets/Menu 1.png"
                   alt="Menu 1"
@@ -38,12 +38,12 @@ const NavBar = () => {
               </div>
             </Link>
           </div>
-          <div className="flex-1 flex justify-center relative">
-            <div className="relative z-50">
+          <div className="flex justify-center w-full">
+            <div className="flex justify-center items-center ">
               <SearchBar />
             </div>
           </div>
-          <div className="flex-1 flex justify-center">
+          <div className="flex justify-center">
             <Link
               href="/Others/Others"
               className={`transition-colors relative z-50 ${
@@ -52,7 +52,7 @@ const NavBar = () => {
                   : "text-[#5c3d1e] hover:text-[#8b6b43]"
               }`}
             >
-              <div className="relative z-50 flex items-center justify-center bg-white h-[32px]">
+              <div className="bg-white h-[28px] w-[28px] md:h-[32px] md:w-[32px] flex items-center justify-center">
                 <Image
                   src="/assets/Menu 2.png"
                   alt="Menu 2"

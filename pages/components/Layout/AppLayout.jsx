@@ -1,9 +1,19 @@
 import React from "react";
 import Navbar from "../Layout/Navbar";
 import NavbarDown from "../Layout/NavbarDown";
-
+import { useSearch } from "../Ui/SearchContext";
 
 const AppLayout = ({ children }) => {
+  const { showResults } = useSearch();
+
+  if (showResults) {
+    return (
+      <div className="min-h-screen overflow-x-hidden bg-gray-100">
+        {children}
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen overflow-x-hidden bg-gray-100">
       <Navbar />
@@ -15,7 +25,6 @@ const AppLayout = ({ children }) => {
         </main>
       </div>
     </div>
-    
   );
 };
 

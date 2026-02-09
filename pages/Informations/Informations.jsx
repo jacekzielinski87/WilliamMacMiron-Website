@@ -17,12 +17,12 @@ const Informations = () => {
       <Navbar />
       <NavbarDown />
 
-      <section className="mx-auto my-24">
+      <section className="mx-auto my-32">
         <div
           className="w-[800px] h-full mx-auto flex justify-center items-center shadow-xl shadow-slate-900 transition-transform bg-[url('/assets/corkTable.png')] bg-cover bg-center border-8 border-black border-opacity-35"
           role="alert"
         >
-          <div className="bg-white flex flex-col items-center justify-center w-[800px] h-[200px] text-center p-4 m-2">
+          <div className="bg-white flex flex-col items-center justify-center w-[800px] h-[150px] text-center p-4 m-2">
             <p className="text-red-600 text-lg font-serif text-black">
               Responsible Enjoyment:
             </p>
@@ -34,7 +34,7 @@ const Informations = () => {
           </div>
         </div>
         <div className="w-[800px] mx-auto my-6 flex justify-center items-center shadow-xl shadow-slate-900 transition-transform bg-[url('/assets/corkTable.png')] bg-cover bg-center border-8 border-black border-opacity-35">
-          <p className="bg-white flex items-center justify-center w-[800px] h-[200px] font-serif text-black text-center text-lg p-4 m-2">
+          <p className="bg-white flex items-center justify-center w-[800px] h-[150px] font-serif text-black text-center text-lg p-4 m-2">
             William MacMiron is the founder and creative mind behind this
             whisky-focused website. With over a decade of experience in the
             world of fine spirits, William works professionally as a certified
@@ -44,7 +44,7 @@ const Informations = () => {
           </p>
         </div>
         <div className="w-[800px] mx-auto flex justify-center items-center shadow-xl shadow-slate-900 transition-transform bg-[url('/assets/corkTable.png')] bg-cover bg-center border-8 border-black border-opacity-35">
-          <p className="bg-white flex items-center justify-center w-[800px] h-[200px] text-lg font-serif text-black text-center p-4 m-2">
+          <p className="bg-white flex items-center justify-center w-[800px] h-[150px] text-lg font-serif text-black text-center p-4 m-2">
             Through this site, William shares his personal insights, tasting
             notes, and recommendations—whether you're a seasoned connoisseur or
             just beginning your whisky journey. His goal is to create a
