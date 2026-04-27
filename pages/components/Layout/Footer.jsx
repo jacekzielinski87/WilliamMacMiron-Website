@@ -15,8 +15,7 @@ const Footer = () => {
       </div>
       <div className="text-black text-sm font-bold mb-4">
         <p>
-          &copy; {new Date().getFullYear()} William MacMiron. All rights
-          reserved.
+          &copy; {new Date().getFullYear()} William MacMiron. All rights reserved.
         </p>
       </div>
     </footer>

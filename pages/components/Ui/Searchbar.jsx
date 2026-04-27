@@ -1,368 +1,152 @@
-import React, { useState } from "react";
-import Bowmore from "../../../public/assets/Bowmore.jpg"
-import Mortlach70 from "../../../public/assets/MORTLA1.PNG";
-import Mortlach75 from "../../../public/assets/MORTLA2.PNG";
+"use client";
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import { useSearch } from "./SearchContext";
+import { searchItems, getItem } from "../../../services/publicService";
+
+// assets
+import Frame from "../../../public/assets/foto.png";
 import Raiting1 from "../../../public/assets/Raiting1.png";
 import Raiting2 from "../../../public/assets/Raiting2.png";
-import Image from "next/image";
-import Frame from "../../../public/assets/foto.png";
-import { useSearch } from "./SearchContext";
-
-const mortlachData = [
-  {
-    name: "Mortlach 70 Year Old Generations '2656 (1938) (2008) (Gordon and MacPhail) (46.10% ABV)",
-    image: Mortlach70,
-    aroma: {
-      score: 91,
-      notes:
-        "sweet², flowers³, tobacco², kiwi¹, orange¹, plum¹, black tea¹, aloe¹, clove¹, tangerine¹, nut¹",
-    },
-    taste: {
-      score: 90,
-      notes:
-        "bitter¹, warming¹, smoky², walnut², black tea², clove¹, mandarin¹, butter¹, tobacco¹, salt¹, pear¹",
-    },
-    finish: {
-      score: 90,
-      notes:
-        "long², bitter³, smoky², wood², unripe apple², cinnamon², black pepper¹, mushrooms¹, onion¹",
-    },
-    intensity: "1-2",
-  },
-  {
-    name: "Mortlach 75 Year Old Generations '2475 (1939) (2015) (Gordon and MacPhail) (44.40% ABV)",
-    image: Mortlach75,
-    aroma: {
-      score: 95,
-      notes:
-        "sweet², smoky², tangerine³, blueberry², oak², grass², cocoa¹, gooseberry¹, straw¹, earth¹, mint¹, pomegranate¹, bay leaf¹",
-    },
-    taste: {
-      score: 94,
-      notes:
-        "sweet², bitter¹, slightly spicy², red grapefruit², mango², coconut¹, green pepper¹, mirabelle plum¹, tobacco¹, passion fruit¹",
-    },
-    finish: {
-      score: 95,
-      notes:
-        "long³, sweet², slightly spicy², honey³, nut³, pineapple², plum¹, aloe¹, leather¹, vanilla¹, salt¹, wood¹, anise¹, coffee¹, yeast¹, bread¹, salt¹",
-    },
-    intensity: "1-3",
-  },
-  {
-    name: "Johnie Walker 70 Year Old Generations '2656 (1938) (2008) (Gordon and MacPhail) (46.10% ABV)",
-    image: Mortlach70,
-    aroma: {
-      score: 91,
-      notes:
-        "sweet², flowers³, tobacco², kiwi¹, orange¹, plum¹, black tea¹, aloe¹, clove¹, tangerine¹, nut¹",
-    },
-    taste: {
-      score: 90,
-      notes:
-        "bitter¹, warming¹, smoky², walnut², black tea², clove¹, mandarin¹, butter¹, tobacco¹, salt¹, pear¹",
-    },
-    finish: {
-      score: 90,
-      notes:
-        "long², bitter³, smoky², wood², unripe apple², cinnamon², black pepper¹, mushrooms¹, onion¹",
-    },
-    intensity: "1-2",
-  },
-  {
-    name: "Campari 70 Year Old Generations '2656 (1938) (2008) (Gordon and MacPhail) (46.10% ABV)",
-    image: Mortlach70,
-    aroma: {
-      score: 91,
-      notes:
-        "sweet², flowers³, tobacco², kiwi¹, orange¹, plum¹, black tea¹, aloe¹, clove¹, tangerine¹, nut¹",
-    },
-    taste: {
-      score: 90,
-      notes:
-        "bitter¹, warming¹, smoky², walnut², black tea², clove¹, mandarin¹, butter¹, tobacco¹, salt¹, pear¹",
-    },
-    finish: {
-      score: 90,
-      notes:
-        "long², bitter³, smoky², wood², unripe apple², cinnamon², black pepper¹, mushrooms¹, onion¹",
-    },
-    intensity: "1-2",
-  },{
-    name: "Brown Forman 70 Year Old Generations '2656 (1938) (2008) (Gordon and MacPhail) (46.10% ABV)",
-    image: Mortlach70,
-    aroma: {
-      score: 91,
-      notes:
-        "sweet², flowers³, tobacco², kiwi¹, orange¹, plum¹, black tea¹, aloe¹, clove¹, tangerine¹, nut¹",
-    },
-    taste: {
-      score: 90,
-      notes:
-        "bitter¹, warming¹, smoky², walnut², black tea², clove¹, mandarin¹, butter¹, tobacco¹, salt¹, pear¹",
-    },
-    finish: {
-      score: 90,
-      notes:
-        "long², bitter³, smoky², wood², unripe apple², cinnamon², black pepper¹, mushrooms¹, onion¹",
-    },
-    intensity: "1-2",
-  },
-  {
-    name: "Johnie Walker 70 Year Old Generations '2656 (1938) (2008) (Gordon and MacPhail) (46.10% ABV)",
-    image: Mortlach70,
-    aroma: {
-      score: 91,
-      notes:
-        "sweet², flowers³, tobacco², kiwi¹, orange¹, plum¹, black tea¹, aloe¹, clove¹, tangerine¹, nut¹",
-    },
-    taste: {
-      score: 90,
-      notes:
-        "bitter¹, warming¹, smoky², walnut², black tea², clove¹, mandarin¹, butter¹, tobacco¹, salt¹, pear¹",
-    },
-    finish: {
-      score: 90,
-      notes:
-        "long², bitter³, smoky², wood², unripe apple², cinnamon², black pepper¹, mushrooms¹, onion¹",
-    },
-    intensity: "1-2",
-  },{
-    name: "Campari 70 Year Old Generations '2656 (1938) (2008) (Gordon and MacPhail) (46.10% ABV)",
-    image: Mortlach70,
-    aroma: {
-      score: 91,
-      notes:
-        "sweet², flowers³, tobacco², kiwi¹, orange¹, plum¹, black tea¹, aloe¹, clove¹, tangerine¹, nut¹",
-    },
-    taste: {
-      score: 90,
-      notes:
-        "bitter¹, warming¹, smoky², walnut², black tea², clove¹, mandarin¹, butter¹, tobacco¹, salt¹, pear¹",
-    },
-    finish: {
-      score: 90,
-      notes:
-        "long², bitter³, smoky², wood², unripe apple², cinnamon², black pepper¹, mushrooms¹, onion¹",
-    },
-    intensity: "1-2",
-  },
-  {
-    name: "Brown Forman 70 Year Old Generations '2656 (1938) (2008) (Gordon and MacPhail) (46.10% ABV)",
-    image: Mortlach70,
-    aroma: {
-      score: 91,
-      notes:
-        "sweet², flowers³, tobacco², kiwi¹, orange¹, plum¹, black tea¹, aloe¹, clove¹, tangerine¹, nut¹",
-    },
-    taste: {
-      score: 90,
-      notes:
-        "bitter¹, warming¹, smoky², walnut², black tea², clove¹, mandarin¹, butter¹, tobacco¹, salt¹, pear¹",
-    },
-    finish: {
-      score: 90,
-      notes:
-        "long², bitter³, smoky², wood², unripe apple², cinnamon², black pepper¹, mushrooms¹, onion¹",
-    },
-    intensity: "1-2",
-  },
-  {
-    name: "Heaven Hill's 70 Year Old Generations '2656 (1938) (2008) (Gordon and MacPhail) (46.10% ABV)",
-    image: Mortlach70,
-    aroma: {
-      score: 91,
-      notes:
-        "sweet², flowers³, tobacco², kiwi¹, orange¹, plum¹, black tea¹, aloe¹, clove¹, tangerine¹, nut¹",
-    },
-    taste: {
-      score: 90,
-      notes:
-        "bitter¹, warming¹, smoky², walnut², black tea², clove¹, mandarin¹, butter¹, tobacco¹, salt¹, pear¹",
-    },
-    finish: {
-      score: 90,
-      notes:
-        "long², bitter³, smoky², wood², unripe apple², cinnamon², black pepper¹, mushrooms¹, onion¹",
-    },
-    intensity: "1-2",
-  },
-  {
-    name: "Diageo's 70 Year Old Generations '2656 (1938) (2008) (Gordon and MacPhail) (46.10% ABV)",
-    image: Mortlach70,
-    aroma: {
-      score: 91,
-      notes:
-        "sweet², flowers³, tobacco², kiwi¹, orange¹, plum¹, black tea¹, aloe¹, clove¹, tangerine¹, nut¹",
-    },
-    taste: {
-      score: 90,
-      notes:
-        "bitter¹, warming¹, smoky², walnut², black tea², clove¹, mandarin¹, butter¹, tobacco¹, salt¹, pear¹",
-    },
-    finish: {
-      score: 90,
-      notes:
-        "long², bitter³, smoky², wood², unripe apple², cinnamon², black pepper¹, mushrooms¹, onion¹",
-    },
-    intensity: "1-2",
-  },
-];
 
 const SearchBar = () => {
-  const [query, setQuery] = useState("");
-  const [showSuggestions, setShowSuggestions] = useState(false);
-  const { showResults, setShowResults } = useSearch();
+  const { query, setQuery, showResults, setShowResults } = useSearch();
   const [selectedWhisky, setSelectedWhisky] = useState(null);
-  const [placeholder, setPlaceholder] = useState("");
 
-  const getSuggestions = () => {
-    return mortlachData
-      .map((whisky) => whisky.name)
-      .filter((name) => name.toLowerCase().includes(query.toLowerCase()));
-  };
+  const [suggestions, setSuggestions] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
 
-  const handleSuggestionClick = (suggestion) => {
-    setSelectedWhisky(suggestion);
-    setShowSuggestions(false);
-    setShowResults(true);
-    setQuery("");
-    setPlaceholder("");
-  };
+  const isTyping = query.length > 0 && isFocused;
 
-  const handleInputChange = (e) => {
-    const value = e.target.value;
-    setQuery(value);
-    setShowSuggestions(value.length >= 1);
-    setShowResults(false);
-  };
-
-  const handleInputFocus = () => {
-    setPlaceholder("");
-  };
-
-  const handleInputBlur = () => {
+  // 🔥 SEARCH (backend + debounce)
+  useEffect(() => {
     if (!query) {
-      setPlaceholder("");
+      setSuggestions([]);
+      return;
+    }
+
+    const timeout = setTimeout(() => {
+      setLoading(true);
+
+      searchItems(query)
+        .then((data) => setSuggestions(data))
+        .catch(console.error)
+        .finally(() => setLoading(false));
+    }, 300);
+
+    return () => clearTimeout(timeout);
+  }, [query]);
+
+  // 🔥 DETAIL FETCH
+  const handleSuggestionClick = async (slug) => {
+    try {
+      const item = await getItem(slug);
+      setSelectedWhisky(item);
+      setShowResults(true);
+    } catch (e) {
+      console.error(e);
     }
   };
 
   return (
-    <>
-      <div
-        className={`flex flex-col items-center justify-center ${
-          showResults ? "" : ""
-        }`}
-      >
-        <input
-          className={`bg-[#FFFFFF] p-2 outline-none 
-                    h-[33px] w-[600px] fixed left-1/2 -translate-x-1/2 transform -translate-x-1/2 font-serif placeholder:text-black text-black ${
-                      showResults ? "" : ""
-                    }`}
-          type="text"
-          value={query}
-          onChange={handleInputChange}
-          onFocus={handleInputFocus}
-          onBlur={handleInputBlur}
-          placeholder={placeholder}
-          autoComplete="off"
-        />
+    <div className="flex flex-col items-center">
+      {/* 🔍 INPUT */}
+      <input
+        autoFocus
+        className="bg-white p-2 outline-none h-[33px] w-[600px] fixed top-5 left-1/2 -translate-x-1/2 z-[100] font-serif border shadow-sm text-black"
+        type="text"
+        value={query}
+        placeholder="Search..."
+        onFocus={() => setIsFocused(true)}
+        onBlur={() => setIsFocused(false)}
+        onChange={(e) => {
+          setQuery(e.target.value);
+          if (showResults) setShowResults(false);
+        }}
+      />
 
-        <div className="fixed bottom-0 right-60 w-6 h-6 pointer-events-none shadow-lg"></div>
-        {showSuggestions && query.length >= 2 && !showResults && (
-          <div
-            className="fixed top-12 left-1/2 transform -translate-x-1/2 w-[450px] h-[125px] font-bold
-                         bg-[url(/assets/corkTable.png)] border-4 border-opacity-45 border-black rounded-lg shadow-xl font-serif"
-          >
-            {getSuggestions().map((suggestion, index) => (
-              <div
-                key={index}
-                className="hover:bg-slate-300 hover:opacity-85 rounded-sm cursor-pointer text-zinc-900 flex justify-center px-2 mx-2 my-2"
-                onClick={() => handleSuggestionClick(suggestion)}
-              >
-                {suggestion}
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
+      {/* 🌫️ OVERLAY (NIE BLOKUJE INPUTA) */}
+      {(isTyping || showResults) && (
+        <div className="fixed inset-0 bg-white z-[80] top-[60px] bottom-[70px] w-full pointer-events-none" />
+      )}
 
-      {showResults && selectedWhisky && (
-        <div className="bottom-[90px] left-0 right-0 bg-white top-[100px] fixed inset-0">
-          <div className>
-            <SearchResults query={selectedWhisky} />
-          </div>
+      {/* 📋 SUGESTIE */}
+      {isTyping && !showResults && (
+        <div className="fixed top-[53px] left-1/2 -translate-x-1/2 w-[450px] max-h-[50vh] overflow-y-auto bg-[url(/assets/corkTable.png)] border-4 border-black/40 rounded-lg shadow-2xl z-[90] font-serif">
+          {loading && (
+            <div className="p-3 text-center text-sm">Loading...</div>
+          )}
+
+{Array.isArray(suggestions) && suggestions.map((suggestion, index) => (
+            <div
+              key={suggestion.slug || index}
+              className="hover:bg-slate-300 p-3 cursor-pointer text-zinc-900 text-center font-bold border-b border-black/10 text-sm"
+              onClick={() => handleSuggestionClick(suggestion.slug)}
+            >
+              {suggestion.title}
+            </div>
+          ))}
         </div>
       )}
-    </>
+
+      {/* 🥃 WYNIK */}
+      {showResults && selectedWhisky && (
+        <div className="fixed inset-0 top-[60px] bottom-[70px] flex justify-center items-center z-[95]">
+          <SearchResults whiskey={selectedWhisky} />
+        </div>
+      )}
+    </div>
   );
 };
 
-const SearchResults = ({ query }) => {
-  const filteredWhiskies = mortlachData.filter((whisky) =>
-    whisky.name.toLowerCase().includes(query.toLowerCase())
-  );
-
-  const getRatingImage = (score) => {
-    return score >= 95 ? Raiting1 : Raiting2;
-  };
-
-  if (filteredWhiskies.length === 0) {
-    return (
-      <div className="text-center">
-        <p className="text-gray-500">No whiskies found matching your search.</p>
-      </div>
-    );
-  }
+const SearchResults = ({ whiskey }) => {
+  const getRatingImage = (score) => (score >= 95 ? Raiting1 : Raiting2);
 
   return (
-    <div className="">
-      {filteredWhiskies.map((whiskey, index) => (
-        <div
-          key={index}
-          className="fixed left-1/2 -translate-x-1/2 w-[1024px]"
-        >
-          <div className="bg-[url(/assets/corkTable.png)] shadow-2xl shadow-slate-900 relative border-8 border-opacity-35 border-black">
-            <div className="">
-              <div className="">
-                <div className="font-bold bg-white text-center break-words whitespace-normal shadow-2xl">
-                  {whiskey.name}
-                </div>
-                <div className="flex justify-start items-end gap-2">
-                  <Image
-                    src={Frame}
-                    className="w-[275px] h-[275px] shadow-2xl shadow-zinc-900"
-                    alt={`Thumbnail of ${whiskey.name}`}
-                  />
-                  <div className="absolute top-8 left-60">
-                    <Image
-                      src={getRatingImage(whiskey.aroma.score)}
-                      width={70}
-                      height={70}
-                      className="object-contain"
-                      alt="Rating Note"
-                      priority
-                    />
-                  </div>
-                  <ul className="list-disc font-serif font-bold bg-white pl-12 p-2 mt-2 w-full h-[275px]">
-                    <li>Rating: {whiskey.aroma.score}/100, (61-100)</li>
-                    <li>
-                      Aroma: {whiskey.aroma.score}/100, {whiskey.aroma.notes}
-                    </li>
-                    <li>
-                      Taste: {whiskey.taste.score}/100, {whiskey.taste.notes}
-                    </li>
-                    <li>
-                      Finish: {whiskey.finish.score}/100, {whiskey.finish.notes}
-                    </li>
-                    <li>Intensity: {whiskey.intensity}</li>
-                  </ul>
-                </div>
-              </div>
+    <div className="w-[1024px] h-fit">
+      <div className="bg-[url(/assets/corkTable.png)] shadow-2xl border-8 border-black/35 flex flex-col overflow-hidden">
+        <div className="font-bold bg-white text-center p-2 text-[13px] border-b-2 border-black/10 uppercase">
+          {whiskey.title}
+        </div>
+
+        <div className="flex flex-row items-stretch relative p-4">
+          <div className="relative w-[300px] h-[300px] flex-shrink-0">
+            <Image src={Frame} alt="frame" fill className="z-20 object-contain" />
+
+            <div className="absolute inset-0 p-10 flex justify-center items-center z-10">
+              {whiskey.image && (
+                <Image
+                  src={whiskey.image}
+                  alt={whiskey.title}
+                  className="object-contain max-h-[180px]"
+                  width={180}
+                  height={180}
+                />
+              )}
             </div>
           </div>
+
+          <div className="absolute top-6 left-[265px] z-30">
+            <Image
+              src={getRatingImage(whiskey.rating || 0)}
+              width={65}
+              height={65}
+              alt="rating"
+            />
+          </div>
+
+          <div className="flex-1 bg-white ml-2 shadow-md">
+            <ul className="list-disc font-serif font-bold px-10 py-6 h-full text-[12px] leading-relaxed flex flex-col justify-between">
+              <li>Rating: {whiskey.rating || "-"}/100</li>
+              <li>Aroma: {whiskey.aroma || "-"}</li>
+              <li>Taste: {whiskey.taste || "-"}</li>
+              <li>Finish: {whiskey.finish || "-"}</li>
+              <li>Intensity: {whiskey.intensity || "-"}</li>
+            </ul>
+          </div>
         </div>
-      ))}
+      </div>
     </div>
   );
 };
