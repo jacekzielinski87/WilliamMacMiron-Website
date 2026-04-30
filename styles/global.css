@@ -4,4 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Elista';
+  src: url('/fonts/Elista.ttf') format('truetype');
+}
+
 

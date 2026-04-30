@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       fontFamily: {
         rouge: ['"Rouge Script"', 'cursive'],
+        elista: ['Elista', 'cursive'],
       },
     },
   },

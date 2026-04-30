@@ -68,7 +68,7 @@ const NavBar = () => {
         {/* Etykieta Testing Notes (Środek) */}
         <div className="absolute left-1/2 -translate-x-1/2 ">
           <div className="bg-white px-4 py-1 shadow-md shadow-zinc-900 w-[380px]">
-            <p className="text-black font-rouge lg:text-3xl md:text-lg text-center whitespace-nowrap">
+            <p className="text-black lg:text-3xl md:text-lg text-center font-['Elista'] whitespace-nowrap">
               Testing Notes
             </p>
           </div>
