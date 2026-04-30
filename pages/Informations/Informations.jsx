@@ -56,7 +56,7 @@ const Informations = () => {
           <div className="bg-white flex items-center justify-center w-full min-h-[150px] p-6 m-2">
             <p className="font-serif text-black text-center text-sm md:text-lg leading-relaxed">
               Through this site, William shares his personal insights, tasting
-              notes, and recommendations—whether you're a seasoned connoisseur or
+              notes, and recommendations-whether you&apos;re a seasoned connoisseur or
               just beginning your whisky journey. His goal is to create a
               welcoming space where education and passion meet, celebrating the
               rich heritage and diversity of whisky from around the world.

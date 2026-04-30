@@ -15,10 +15,7 @@ const alcohols = [
 ];
 
 const Alcohols = () => {
-  // Pobieramy stany z kontekstu wyszukiwania
   const { showResults, query } = useSearch();
-
-  // Katalog jest widoczny TYLKO wtedy, gdy nie szukamy i nie ma wyników
   const isSearchActive = (query && query.length > 0) || showResults;
 
   return (
@@ -27,17 +24,26 @@ const Alcohols = () => {
       <NavbarDown />
       
       {!isSearchActive && (
-        <div className="">
-          <div className="lg:flex flex-col justify-center items-center m-24 gap-4 sm:grid">
+        <div className="max-w-[975px] mx-auto m-12 p-14">
+          <div className="grid grid-cols-1 justify-items-center w-full gap-6">
             {alcohols.map((alcohol, index) => (
               <div
                 key={index}
-                className="bg-[url('/assets/corkTable.png')] bg-cover items-center hover:opacity-90 hover:scale-105 shadow-xl shadow-slate-700 flex justify-center transition-transform border-8 border-black border-opacity-35 h-[75px] sm:max-w-[400px] lg:max-w-[800px]"
+                className="w-full bg-[url('/assets/corkTable.png')] bg-cover bg-center 
+                          border-[10px]
+                          [border-image:url(/assets/border.png)_100_repeat] shadow-md shadow-zinc-900
+                           flex justify-center items-center transition-all duration-300
+                           hover:opacity-95 hover:scale-[1.02] cursor-pointer
+                           min-h-[80px] p-2"
               >
-                <span className="text-lg font-serif text-black bg-white w-[750px] h-[40px] flex items-center justify-between p-4 m-2">
-                  {alcohol.name}
-                  <span className="text-lg text-black relative right-20">{alcohol.count}</span>
-                </span>
+                {/* Biały pasek: justify-between rozsunie nazwę i liczbę na boki */}
+                <div className="bg-white flex items-center justify-between w-full h-full min-h-[45px] 
+                                text-black text-md font-bold font-serif px-8 py-2 shadow-inner shadow-zinc-900 shadow-md">
+                  <span>{alcohol.name}</span>
+                  <span className="font-sans font-bold text-gray-600">
+                    {alcohol.count}
+                  </span>
+                </div>
               </div>
             ))}
           </div>

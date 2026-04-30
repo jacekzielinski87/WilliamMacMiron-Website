@@ -1,0 +1,4 @@
+-Czcionka Testing od Przemka!
+-cien na dolnym navbar od gory!
+-napisy na mniejeze
+-search na czarno

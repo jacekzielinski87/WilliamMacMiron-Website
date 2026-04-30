@@ -13,7 +13,7 @@ const LoginPanel = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-md w-96">
-        <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">Welcome to William Mac Miron's website</h2>
+        <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">Welcome to William Mac Miron&apos;s website</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-700">
@@ -67,7 +67,7 @@ const LoginPanel = () => {
         </form>
         <div className="mt-6 text-center">
           <p className="text-sm text-gray-600">
-            Don't have an account?{' '}
+            Don&apos;t have an account?{' '}
             <a href="#" className="font-medium text-indigo-800 hover:text-indigo-400">
               Sign up
             </a>

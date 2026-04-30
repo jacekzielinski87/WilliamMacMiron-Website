@@ -26,6 +26,8 @@ const SearchBar = () => {
       return;
     }
 
+    console.log("Wpisałeś:", query); // Sprawdź czy to widać w konsoli
+
     const timeout = setTimeout(() => {
       setLoading(true);
 
@@ -50,35 +52,34 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center font-bold">
       {/* 🔍 INPUT */}
       <input
         autoFocus
-        className="bg-white p-2 outline-none h-[33px] w-[600px] fixed top-5 left-1/2 -translate-x-1/2 z-[100] font-serif border shadow-sm text-black"
+        className="bg-white p-4 outline-none h-[45px] w-[380px] fixed top-[18px] z-[100] shadow-md shadow-zinc-700 text-md font-serif"
         type="text"
         value={query}
-        placeholder="Search..."
+        placeholder ="Search..."
         onFocus={() => setIsFocused(true)}
-        onBlur={() => setIsFocused(false)}
         onChange={(e) => {
           setQuery(e.target.value);
           if (showResults) setShowResults(false);
         }}
       />
 
-      {/* 🌫️ OVERLAY (NIE BLOKUJE INPUTA) */}
+      {/* 🌫️ OVERLAY */}
       {(isTyping || showResults) && (
         <div className="fixed inset-0 bg-white z-[80] top-[60px] bottom-[70px] w-full pointer-events-none" />
       )}
 
       {/* 📋 SUGESTIE */}
       {isTyping && !showResults && (
-        <div className="fixed top-[53px] left-1/2 -translate-x-1/2 w-[450px] max-h-[50vh] overflow-y-auto bg-[url(/assets/corkTable.png)] border-4 border-black/40 rounded-lg shadow-2xl z-[90] font-serif">
+        <div className="fixed top-[53px] left-1/2 -translate-x-1/2 w-[450px] max-h-[50vh] overflow-y-auto bg-[url(/assets/corkTable.png)] border-4 border-black/40 rounded-lg z-[90] font-serif">
           {loading && (
-            <div className="p-3 text-center text-sm">Loading...</div>
+            <div className="p-3 text-center text-sm text-black-900">Loading...</div>
           )}
 
-{Array.isArray(suggestions) && suggestions.map((suggestion, index) => (
+          {Array.isArray(suggestions) && suggestions.map((suggestion, index) => (
             <div
               key={suggestion.slug || index}
               className="hover:bg-slate-300 p-3 cursor-pointer text-zinc-900 text-center font-bold border-b border-black/10 text-sm"

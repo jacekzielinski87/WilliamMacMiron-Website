@@ -7,6 +7,7 @@ const partnersData = [
   {
     id: 1,
     name: "Bowmore",
+    count: 12,
     image: "/assets/bowmore.jpg",
     description:
       "Located in the Scottish Highlands, this distillery has been crafting premium single malt whiskey since 1779.",
@@ -17,9 +18,10 @@ const partnersData = [
   {
     id: 2,
     name: "Dalwhinne",
+    count: 5,
     image: "/assets/Dalwhinnie.jpg",
     description:
-      "The Dalwhinnie distillery, situated in the Highland village of Dalwhinnie in Scotland, produces single malt Scotch whisky. The Dalwhinnie distillery is located in the Badenoch and Strathspey ward of the Highland Council and therefore is in the Speyside region.",
+      "The Dalwhinnie distillery, situated in the Highland village of Dalwhinnie in Scotland, produces single malt Scotch whisky.",
     location: "Scotland",
     specialties: ["Single Malt", "Aged Whiskey"],
     established: 1897,
@@ -27,9 +29,10 @@ const partnersData = [
   {
     id: 3,
     name: "Absolut",
+    count: 18,
     image: "/assets/absolut.jpg",
     description:
-      "Clean and complex on the nose, with subtle cereal notes. Smooth and mellow to taste with a distinct character of peppery grain, followed by a hint of dried fruit and sourdough bread. All Absolut Vodka is made from winter wheat, which is distilled on four story high column stills to a supremely high quality.",
+      "Clean and complex on the nose, with subtle cereal notes. Smooth and mellow to taste with a distinct character of peppery grain.",
     location: "Sweden",
     specialties: ["Vodka"],
     established: 1917,
@@ -37,57 +40,15 @@ const partnersData = [
   {
     id: 4,
     name: "Heineken",
+    count: 45,
     image: "/assets/heineken.jpg",
     description:
-      "Heineken is a lager style of beer so it is heavier than other types. It has more of a stronger taste to it. Heineken is a 5% ABV beer made without any additives. The yeast and barley make the beer thicker to have a great taste when you drink it.",
+      "Heineken is a lager style of beer so it is heavier than other types. It has more of a stronger taste to it.",
     location: "Netherlands",
     specialties: ["Beer"],
     established: 1864,
   },
-  {
-    id: 5,
-    name: "Dalwhinne",
-    image: "/assets/Dalwhinnie.jpg",
-    description:
-      "The Dalwhinnie distillery, situated in the Highland village of Dalwhinnie in Scotland, produces single malt Scotch whisky. The Dalwhinnie distillery is located in the Badenoch and Strathspey ward of the Highland Council and therefore is in the Speyside region.",
-    location: "Scotland",
-    specialties: ["Single Malt", "Aged Whiskey"],
-    established: 1897,
-  },
-  {
-    id: 6,
-    name: "Dalwhinne",
-    image: "/assets/Dalwhinnie.jpg",
-    description:
-      "The Dalwhinnie distillery, situated in the Highland village of Dalwhinnie in Scotland, produces single malt Scotch whisky. The Dalwhinnie distillery is located in the Badenoch and Strathspey ward of the Highland Council and therefore is in the Speyside region.",
-    location: "Scotland",
-    specialties: ["Single Malt", "Aged Whiskey"],
-    established: 1897,
-  },
-  {
-    id: 3,
-    name: "Absolut",
-    image: "/assets/absolut.jpg",
-    description:
-      "Clean and complex on the nose, with subtle cereal notes. Smooth and mellow to taste with a distinct character of peppery grain, followed by a hint of dried fruit and sourdough bread. All Absolut Vodka is made from winter wheat, which is distilled on four story high column stills to a supremely high quality.",
-    location: "Sweden",
-    specialties: ["Vodka"],
-    established: 1917,
-  },
-  {
-    id: 1,
-    name: "Bowmore",
-    image: "/assets/bowmore.jpg",
-    description:
-      "Located in the Scottish Highlands, this distillery has been crafting premium single malt whiskey since 1779.",
-    location: "Scotland",
-    specialties: ["Single Malt", "Aged Whiskey"],
-    established: 1779,
-  },
-  // Add more partners
 ];
-
-// ... imports remain the same ...
 
 const Partners = () => {
   const [selectedPartner, setSelectedPartner] = useState(null);
@@ -100,71 +61,86 @@ const Partners = () => {
     <>
       <NavBar />
       <NavbarDown />
-      <div className="">
-        {!selectedPartner && (
-          <>
-            {/* Partner List - only shown when no partner is selected */}
-            <div className="lg:flex flex-col justify-center items-center m-24 gap-4 sm:grid">
-              {partnersData.map((partner) => (
+
+      <div className="flex flex-col items-center min-h-screen bg-gray-100">
+        {!selectedPartner ? (
+          /* WIDOK LISTY */
+          <div className="w-full max-w-[975px] mx-auto m-12 p-14">
+            {/* Zmieniono justify-items-center na stretch, aby belki wypełniły szerokość */}
+            <div className="grid grid-cols-1 justify-items-stretch w-full gap-6">
+              {partnersData.map((partner, index) => (
                 <button
-                  key={partner.id}
+                  key={`${partner.id}-${index}`}
                   onClick={() => handlePartnerClick(partner)}
-                  className="bg-[url('/assets/corkTable.png')] bg-cover  items-center hover:opacity-90 hover:scale-105 shadow-xl shadow-slate-700 flex justify-center items-center transition-transform bg-[url('/assets/corkTable.png')] bg-cover bg-center border-8 border-black border-opacity-35 h-[75px] sm:max-w-[400px] lg:max-w-[800px]"
+                  className="w-full bg-[url('/assets/corkTable.png')] bg-cover bg-center 
+                         border-8 border-black border-opacity-35 shadow-zinc-900 shadow-md
+                         flex justify-center items-center transition-all duration-300
+                         hover:opacity-95 hover:scale-[1.02] cursor-pointer
+                         min-h-[80px] p-2"
                 >
-                  <span className="bg-white flex justify-start p-4 items-center w-[750px] h-[40px] text-black text-lg font-serif p-4 m-2">
-                    {partner.name}
-                  </span>
+                  <div className="bg-white flex items-center justify-between w-full h-full min-h-[45px] 
+                               text-black text-md font-bold font-serif px-8 py-2 shadow-inner shadow-zinc-900 shadow-md">
+                    <span>{partner.name}</span>
+                    <span className="font-sans font-bold text-gray-600">
+                      {partner.count}
+                    </span>
+                  </div>
                 </button>
               ))}
             </div>
-          </>
-        )}
+          </div>
+        ) : (
+          /* WIDOK SZCZEGÓŁÓW */
+          <div className="flex flex-col items-center my-16 px-4 w-full">
+            <button
+              onClick={() => setSelectedPartner(null)}
+              className="mb-8 self-center md:self-start md:ml-20 text-black font-bold flex items-center hover:underline"
+            >
+              ← POWRÓT DO LISTY
+            </button>
 
-        {/* Partner Details */}
-        {selectedPartner ? (
-          <div className="bg-[#c8c8c8] p-2 rounded-3xl shadow-lg w-[880px] h-[320px] border-2 border-black">
-            <div className="flex flex-row gap-4">
-              {/* Rest of the partner details remain the same */}
-              <div className="relative h-[200px] w-[200px] border-2 border-black rounded-lg flex shrink-0 my-20 ">
-                <Image
-                  src={selectedPartner.image}
-                  alt={selectedPartner.name}
-                  fill
-                  className="object-cover rounded-2xl "
-                  priority
-                />
-              </div>
+            <div className="bg-[#c8c8c8] p-6 rounded-3xl shadow-2xl max-w-[880px] w-full border-2 border-black">
+              <div className="flex flex-col md:flex-row gap-8">
+                <div className="relative h-[250px] w-[250px] border-2 border-black rounded-xl overflow-hidden shrink-0 mx-auto md:mx-0">
+                  <Image
+                    src={selectedPartner.image}
+                    alt={selectedPartner.name}
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </div>
 
-              <div className="flex flex-col">
-                <h2 className="text-2xl font-serif mb-10 my-4 font-bold relative right-44 top-4 ">
-                  {selectedPartner.name}
-                </h2>
-                <p className="text-sm mb-6 font-bold p-2">
-                  {selectedPartner.description}
-                </p>
-                <div className="flex justify-start gap-8 ml-2 ">
-                  <div>
-                    <h4 className="font-bold text-sm">Location</h4>
-                    <p>{selectedPartner.location}</p>
-                  </div>
-                  <div className="text-center">
-                    <h4 className="font-bold text-sm">Established</h4>
-                    <p>{selectedPartner.established}</p>
-                  </div>
-                  <div className="">
-                    <h4 className="font-bold text-sm">Specialties</h4>
-                    <ul className="flex gap-4">
-                      {selectedPartner.specialties.map((specialty, index) => (
-                        <li key={index}>{specialty}</li>
-                      ))}
-                    </ul>
+                <div className="flex flex-col justify-center">
+                  <h2 className="text-3xl font-serif font-bold mb-4">
+                    {selectedPartner.name}
+                  </h2>
+                  <p className="text-base mb-6 leading-relaxed">
+                    {selectedPartner.description}
+                  </p>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 border-t border-black/20 pt-4">
+                    <div>
+                      <h4 className="font-bold text-xs uppercase text-gray-500">Location</h4>
+                      <p className="font-medium">{selectedPartner.location}</p>
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-xs uppercase text-gray-500">Established</h4>
+                      <p className="font-medium">{selectedPartner.established}</p>
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-xs uppercase text-gray-500">Specialties</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {selectedPartner.specialties.map((s, i) => (
+                          <span key={i} className="text-sm italic">{s}</span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        ) : (
-          <div className="text-center text-gray-500 mt-8"></div>
         )}
       </div>
     </>

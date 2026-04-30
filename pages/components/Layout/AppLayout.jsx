@@ -8,14 +8,14 @@ const AppLayout = ({ children }) => {
 
   if (showResults) {
     return (
-      <div className="min-h-screen overflow-x-hidden bg-gray-100">
+      <div className="min-h-screen overflow-x-hidden">
         {children}
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-gray-100">
+    <div className="min-h-screen overflow-x-hidden">
       <Navbar />
       <NavbarDown />
       <div className="relative">

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router';
 
 const Login = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -42,7 +42,7 @@ const Login = () => {
       localStorage.setItem('isAdmin', 'true');
       
       // Redirect to admin panel
-      navigate('/admin');
+      router.push('/admin');
     } catch (err) {
       setError('Invalid email or password');
     }
